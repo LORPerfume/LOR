@@ -15,38 +15,27 @@
   header {
     background: black;
     color: white;
-    padding: 20px;
-    text-align: center;
-    position: sticky;
-    top: 0;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
   }
 
   .logo {
-    width: 150px;
-    margin: 20px auto;
-    display: block;
+    width: 120px;
   }
 
-  /* المنتجات */
   .container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
     padding: 20px;
   }
 
   .card {
     background: white;
-    width: 280px;
+    width: 300px;
     border-radius: 15px;
     padding: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: 0.3s;
-  }
-
-  .card:hover {
-    transform: translateY(-5px);
   }
 
   .card img {
@@ -63,10 +52,34 @@
   .desc {
     color: gray;
     font-size: 14px;
-    margin-bottom: 10px;
   }
 
-  /* أزرار */
+  /* السعر */
+  .price {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+
+  .old-price {
+    text-decoration: line-through;
+    color: gray;
+    margin-right: 8px;
+  }
+
+  .new-price {
+    color: #25D366;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  /* شرح المنتج */
+  .about {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.6;
+  }
+
   .btn {
     display: block;
     text-align: center;
@@ -80,10 +93,7 @@
   }
 
   .whatsapp { background: #25D366; }
-  .cart { background: #111; }
-  .instagram { background: #E1306C; margin: 20px auto; width: 200px; }
 
-  /* السلة */
   .cart-box {
     position: fixed;
     right: 15px;
@@ -95,60 +105,97 @@
     width: 220px;
   }
 
-  .cart-box h3 {
-    margin: 0 0 10px;
-  }
-
   .cart-item {
     font-size: 14px;
-    margin-bottom: 5px;
   }
+
+  .contact {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    margin-top: 40px;
+  }
+
+  .contact a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+
+  .insta { background: #E1306C; }
+  .wa { background: #25D366; }
+
 </style>
 </head>
 
 <body>
 
 <header>
-  <h1>LOR Perfume Luxury Store</h1>
+  <img class="logo" src="logo.png" alt="Logo">
 </header>
-
-<img class="logo" src="logo.png" alt="Logo">
-
-<!-- إنستقرام -->
-<a class="btn instagram"
-   href="https://www.instagram.com/lorperfumejordan?igsh=ZnhpODdhNGZ0a3pw"
-   target="_blank">
-   Instagram
-</a>
 
 <div class="container">
 
-  <!-- منتج -->
   <div class="card">
+
     <img src="product.jpg" alt="Product">
 
     <div class="title">Luxury Butter Perfume</div>
     <div class="desc">Eau de Parfum - 1.01 FL.OZ</div>
 
-    <!-- Add to Cart -->
-    <button class="btn cart" onclick="addToCart('Luxury Butter Perfume')">
+    <!-- السعر -->
+    <div class="price">
+      <span class="old-price">35 JD</span>
+      <span class="new-price">23 JD</span>
+    </div>
+
+    <!-- شرح -->
+    <div class="about">
+      عطر فاخر بثبات عالي ورائحة ناعمة فاخرة تدوم طوال اليوم.
+      مناسب للاستخدام اليومي والهدايا المميزة.
+    </div>
+
+    <button class="btn whatsapp"
+      onclick="addToCart('Luxury Butter Perfume - 23 JD')">
       Add to Cart
     </button>
 
-    <!-- WhatsApp -->
     <a class="btn whatsapp"
-       href="https://wa.me/962787727783?text=I%20want%20to%20buy%20Luxury%20Butter%20Perfume"
+       href="https://wa.me/962787727783?text=I%20want%20to%20buy%20Luxury%20Butter%20Perfume%20for%2023%20JD"
        target="_blank">
       Buy on WhatsApp
     </a>
+
   </div>
 
 </div>
 
-<!-- سلة مشتريات -->
+<!-- سلة -->
 <div class="cart-box">
   <h3>Cart 🛒</h3>
   <div id="cartItems"></div>
+</div>
+
+<!-- تواصل -->
+<div class="contact">
+  <h2>Contact Us</h2>
+
+  <a class="wa"
+     href="https://wa.me/962787727783"
+     target="_blank">
+     WhatsApp
+  </a>
+
+  <a class="insta"
+     href="https://www.instagram.com/lorperfumejordan?igsh=ZnhpODdhNGZ0a3pw"
+     target="_blank">
+     Instagram
+  </a>
 </div>
 
 <script>
@@ -163,7 +210,7 @@ function updateCart() {
   let cartDiv = document.getElementById("cartItems");
   cartDiv.innerHTML = "";
 
-  cart.forEach((item, index) => {
+  cart.forEach(item => {
     cartDiv.innerHTML += "<div class='cart-item'>• " + item + "</div>";
   });
 }
