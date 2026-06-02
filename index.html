@@ -20,15 +20,15 @@
     }
 
     .logo {
-      width: 160px;
+      width: 170px;
       margin-top: 20px;
     }
 
     .container {
       padding: 30px;
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 20px;
     }
 
@@ -38,6 +38,11 @@
       border-radius: 12px;
       padding: 15px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
     }
 
     .card img {
@@ -55,27 +60,42 @@
       color: gray;
       font-size: 14px;
     }
+
+    /* قسم التواصل */
+    #contact {
+      margin-top: 50px;
+      padding: 40px;
+      background: #111;
+      color: white;
+    }
   </style>
 </head>
 
 <body>
 
+  <!-- الهيدر -->
   <header>
     <h1>LOR Perfume</h1>
   </header>
 
   <!-- اللوجو -->
-  <img class="logo" src="logo.png.jpeg" alt="Logo">
+  <img class="logo" src="logo.png" alt="Logo">
 
+  <!-- المنتجات -->
   <div class="container">
 
-    <!-- منتج -->
     <div class="card">
-      <img src="product.jpg.jpeg" alt="Product">
+      <img src="product.jpg" alt="Product">
       <div class="title">Luxury Butter Perfume</div>
       <div class="desc">Eau de Parfum - 1.01 FL.OZ</div>
     </div>
 
+  </div>
+
+  <!-- contact section -->
+  <div id="contact">
+    <h2>Contact Us</h2>
+    <p>Instagram / WhatsApp / Email</p>
   </div>
 
 </body>
