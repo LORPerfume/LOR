@@ -9,64 +9,48 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      text-align: center;
     }
 
     header {
       background: black;
       color: white;
       padding: 20px;
+      text-align: center;
     }
 
+    /* اللوجو */
     .logo {
-      width: 170px;
-      margin-top: 20px;
+      display: block;
+      margin: 20px auto;
+      width: 180px;
     }
 
-    .container {
-      padding: 30px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
+    /* نفس فكرة المنتجات بدون تغيير كبير */
+    .product {
+      text-align: center;
+      margin: 20px;
     }
 
-    .card {
-      background: white;
-      width: 280px;
-      border-radius: 12px;
-      padding: 15px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card img {
-      width: 100%;
+    .product img {
+      width: 300px;
+      max-width: 90%;
       border-radius: 10px;
     }
 
-    .title {
-      font-size: 18px;
-      margin-top: 10px;
-      font-weight: bold;
+    .product h2 {
+      margin: 10px 0 5px;
     }
 
-    .desc {
+    .product p {
       color: gray;
-      font-size: 14px;
     }
 
-    /* قسم التواصل */
     #contact {
-      margin-top: 50px;
-      padding: 40px;
       background: #111;
       color: white;
+      text-align: center;
+      padding: 40px;
+      margin-top: 50px;
     }
   </style>
 </head>
@@ -78,24 +62,20 @@
     <h1>LOR Perfume</h1>
   </header>
 
-  <!-- اللوجو -->
-  <img class="logo" src="logo.png" alt="Logo">
+  <!-- اللوجو (مضاف صح) -->
+  <img src="logo.png" class="logo" alt="Logo">
 
-  <!-- المنتجات -->
-  <div class="container">
-
-    <div class="card">
-      <img src="product.jpg" alt="Product">
-      <div class="title">Luxury Butter Perfume</div>
-      <div class="desc">Eau de Parfum - 1.01 FL.OZ</div>
-    </div>
-
+  <!-- المنتج (مضاف صورة بدون ما نغير شكل الموقع) -->
+  <div class="product">
+    <img src="product.jpg" alt="Product">
+    <h2>Luxury Butter Perfume</h2>
+    <p>Eau de Parfum - 1.01 FL.OZ</p>
   </div>
 
-  <!-- contact section -->
+  <!-- contact نفس القسم -->
   <div id="contact">
     <h2>Contact Us</h2>
-    <p>Instagram / WhatsApp / Email</p>
+    <p>Instagram | WhatsApp | Email</p>
   </div>
 
 </body>
