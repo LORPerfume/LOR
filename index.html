@@ -6,215 +6,228 @@
 <title>LOR Perfume Store</title>
 
 <style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
-  }
 
-  /* ===== TOP NAV ===== */
-  .topbar {
-    background: black;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
+/* ===== BASE ===== */
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background: linear-gradient(135deg,#0f0f0f,#1a1a1a);
+  color:white;
+  scroll-behavior:smooth;
+}
 
-  .left {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
+/* ===== NAV ===== */
+.topbar{
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(10px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 20px;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  animation: slideDown 0.8s ease;
+}
 
-  .logo {
-    width: 60px;
-  }
+.logo{
+  width:55px;
+  border-radius:8px;
+}
 
-  .brand {
-    font-size: 18px;
-    font-weight: bold;
-  }
+.brand{
+  font-weight:bold;
+  margin-left:10px;
+  font-size:14px;
+  color:#fff;
+}
 
-  .nav a {
-    color: white;
-    margin-left: 15px;
-    text-decoration: none;
-    font-size: 14px;
-  }
+.left{
+  display:flex;
+  align-items:center;
+}
 
-  .nav a:hover {
-    color: #25D366;
-  }
+.nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:15px;
+  font-size:14px;
+  transition:0.3s;
+}
 
-  /* ===== PRODUCT ===== */
-  .container {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-  }
+.nav a:hover{
+  color:#25D366;
+}
 
-  .card {
-    background: white;
-    width: 320px;
-    border-radius: 15px;
-    padding: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  }
+/* ===== PRODUCT ===== */
+.container{
+  display:flex;
+  justify-content:center;
+  padding:50px 20px;
+}
 
-  .card img {
-    width: 100%;
-    border-radius: 12px;
-  }
+.card{
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  width:320px;
+  border-radius:18px;
+  padding:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.4);
+  animation: fadeIn 1s ease;
+  transition:0.4s;
+}
 
-  .title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 10px;
-  }
+.card:hover{
+  transform: translateY(-10px);
+}
 
-  .price {
-    margin-top: 10px;
-    font-size: 16px;
-  }
+.card img{
+  width:100%;
+  border-radius:14px;
+  transition:0.4s;
+}
 
-  .old {
-    text-decoration: line-through;
-    color: gray;
-    margin-right: 8px;
-  }
+.card img:hover{
+  transform: scale(1.05);
+}
 
-  .new {
-    color: #25D366;
-    font-weight: bold;
-    font-size: 18px;
-  }
+.title{
+  font-size:20px;
+  margin-top:10px;
+  font-weight:bold;
+}
 
-  .btn {
-    display: block;
-    padding: 10px;
-    margin-top: 8px;
-    text-align: center;
-    border-radius: 8px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    cursor: pointer;
-  }
+.price{
+  margin-top:10px;
+  font-size:16px;
+}
 
-  .cartbtn { background: #111; }
-  .whatsapp { background: #25D366; }
+.old{
+  text-decoration:line-through;
+  color:gray;
+  margin-right:10px;
+}
 
-  /* ===== ABOUT SECTION ===== */
-  .section {
-    padding: 50px 20px;
-    text-align: center;
-  }
+.new{
+  color:#25D366;
+  font-size:20px;
+  font-weight:bold;
+}
 
-  .about-box {
-    max-width: 700px;
-    margin: auto;
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  }
+/* ===== BUTTONS ===== */
+.btn{
+  display:block;
+  text-align:center;
+  padding:11px;
+  margin-top:10px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
+  cursor:pointer;
+}
 
-  /* ===== CART ===== */
-  .cart-box {
-    position: fixed;
-    right: 15px;
-    bottom: 15px;
-    background: white;
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-    width: 220px;
-  }
+.cartbtn{
+  background:#111;
+  color:white;
+}
 
-  /* ===== CHECKOUT ===== */
-  .checkout {
-    background: #111;
-    color: white;
-    padding: 50px 20px;
-    text-align: center;
-  }
+.cartbtn:hover{
+  background:#333;
+  transform:scale(1.03);
+}
 
-  .checkout form {
-    max-width: 400px;
-    margin: auto;
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    color: black;
-  }
+.buybtn{
+  background:#25D366;
+  color:black;
+}
 
-  .checkout input {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-  }
+.buybtn:hover{
+  transform:scale(1.05);
+}
 
-  .paybtn {
-    background: black;
-    color: white;
-    padding: 10px;
-    border: none;
-    width: 100%;
-    cursor: pointer;
-    font-weight: bold;
-  }
+/* ===== ABOUT ===== */
+.about{
+  max-width:750px;
+  margin:60px auto;
+  background:rgba(255,255,255,0.06);
+  padding:25px;
+  border-radius:15px;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 1.2s ease;
+}
 
-  /* ===== CONTACT ===== */
-  .contact {
-    background: black;
-    color: white;
-    text-align: center;
-    padding: 40px;
-  }
+/* ===== CART ===== */
+.cart{
+  position:fixed;
+  right:15px;
+  bottom:15px;
+  background:white;
+  color:black;
+  padding:15px;
+  border-radius:12px;
+  width:220px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
 
-  .contact a {
-    display: inline-block;
-    margin: 10px;
-    padding: 10px 15px;
-    border-radius: 8px;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-  }
+/* ===== CONTACT ===== */
+.contact{
+  margin-top:60px;
+  background:black;
+  padding:40px;
+  text-align:center;
+}
 
-  .insta { background: #E1306C; }
-  .wa { background: #25D366; }
+.contact a{
+  display:inline-block;
+  margin:10px;
+  padding:10px 15px;
+  border-radius:8px;
+  text-decoration:none;
+  color:white;
+  font-weight:bold;
+}
+
+.wa{background:#25D366;}
+.insta{background:#E1306C;}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes slideDown{
+  from{transform:translateY(-100%);}
+  to{transform:translateY(0);}
+}
 
 </style>
 </head>
 
 <body>
 
-<!-- ===== NAVBAR ===== -->
+<!-- ===== NAV ===== -->
 <div class="topbar">
 
   <div class="left">
     <img src="logo.png" class="logo">
-    <div class="brand">LOR PERFUME LUXURY STORE</div>
+    <div class="brand">LOR PERFUME</div>
   </div>
 
   <div class="nav">
     <a href="#about">About</a>
+    <a href="#product">Product</a>
     <a href="#contact">Contact</a>
-    <a href="#checkout">Buy</a>
   </div>
 
 </div>
 
 <!-- ===== PRODUCT ===== -->
-<div class="container">
+<div class="container" id="product">
 
   <div class="card">
+
     <img src="product.jpg">
 
     <div class="title">Luxury Butter Perfume</div>
@@ -228,46 +241,29 @@
       Add to Cart
     </button>
 
-    <a class="btn whatsapp"
+    <!-- بدل checkout → يوديك مباشرة على واتساب شراء -->
+    <a class="btn buybtn"
        href="https://wa.me/962787727783?text=I%20want%20Luxury%20Butter%20Perfume%20for%2023%20JD"
        target="_blank">
-      Buy on WhatsApp
+      Buy / Pay Now
     </a>
+
   </div>
 
 </div>
 
-<!-- ===== ABOUT PERFUME ===== -->
-<div class="section" id="about">
-  <div class="about-box">
-    <h2>About The Perfume</h2>
-    <p>
-      Luxury Butter Perfume is a premium fragrance crafted with elegant notes
-      that deliver a smooth, warm, and long-lasting scent. It combines soft
-      buttery accords with refined aromatic layers, making it perfect for
-      daily wear and special occasions. Designed for people who appreciate
-      luxury and sophistication in every detail.
-    </p>
-  </div>
-</div>
-
-<!-- ===== CHECKOUT (FAKE) ===== -->
-<div class="checkout" id="checkout">
-  <h2>Secure Checkout</h2>
-
-  <form onsubmit="fakePay(event)">
-    <input type="text" placeholder="Full Name" required>
-    <input type="text" placeholder="Address" required>
-    <input type="text" placeholder="Card Number (Fake)" required>
-    <input type="text" placeholder="Expiry Date" required>
-    <input type="text" placeholder="CVV" required>
-
-    <button class="paybtn">Pay Now</button>
-  </form>
+<!-- ===== ABOUT ===== -->
+<div class="about" id="about">
+  <h2>About The Perfume</h2>
+  <p>
+    Luxury Butter Perfume is a premium fragrance crafted with elegance and depth.
+    It delivers a long-lasting warm scent with soft buttery notes blended with luxury aromatic layers.
+    Designed for confident, modern personalities who appreciate high-end fragrances.
+  </p>
 </div>
 
 <!-- ===== CART ===== -->
-<div class="cart-box">
+<div class="cart">
   <h3>Cart 🛒</h3>
   <div id="cartItems"></div>
 </div>
@@ -276,37 +272,30 @@
 <div class="contact" id="contact">
   <h2>Contact Us</h2>
 
-  <a class="wa" href="https://wa.me/962787727783" target="_blank">
-    WhatsApp
-  </a>
+  <a class="wa" href="https://wa.me/962787727783" target="_blank">WhatsApp</a>
 
   <a class="insta"
      href="https://www.instagram.com/lorperfumejordan?igsh=ZnhpODdhNGZ0a3pw"
      target="_blank">
-    Instagram
+     Instagram
   </a>
 </div>
 
 <script>
 
-let cart = [];
+let cart=[];
 
-function addToCart(item) {
+function addToCart(item){
   cart.push(item);
   updateCart();
 }
 
-function updateCart() {
-  let box = document.getElementById("cartItems");
-  box.innerHTML = "";
-  cart.forEach(i => {
-    box.innerHTML += "<div>• " + i + "</div>";
+function updateCart(){
+  let box=document.getElementById("cartItems");
+  box.innerHTML="";
+  cart.forEach(i=>{
+    box.innerHTML+="<div>• "+i+"</div>";
   });
-}
-
-function fakePay(e) {
-  e.preventDefault();
-  alert("Payment Successful (Demo Mode) ✔");
 }
 
 </script>
