@@ -7,16 +7,23 @@
 
 <style>
 
-/* ===== LOADING SCREEN ===== */
+/* ===== GLOBAL LUXURY ===== */
+body{
+  margin:0;
+  font-family:Arial;
+  background: radial-gradient(circle at top,#0f0f0f,#000);
+  color:white;
+}
+
+/* ===== LOADER ===== */
 #loader{
   position:fixed;
-  width:100%;
-  height:100%;
+  inset:0;
   background:black;
   display:flex;
+  flex-direction:column;
   justify-content:center;
   align-items:center;
-  flex-direction:column;
   z-index:9999;
 }
 
@@ -25,35 +32,19 @@
   animation:pulse 1.5s infinite;
 }
 
-.loader-text{
-  color:white;
-  margin-top:15px;
-  letter-spacing:3px;
-  font-size:12px;
-  opacity:0.7;
-}
-
 @keyframes pulse{
   0%{transform:scale(1); opacity:0.5;}
   50%{transform:scale(1.2); opacity:1;}
   100%{transform:scale(1); opacity:0.5;}
 }
 
-/* ===== BODY ===== */
-body{
-  margin:0;
-  font-family:Arial;
-  background: radial-gradient(circle at top,#111,#000);
-  color:white;
-}
-
-/* ===== TOPBAR ===== */
+/* ===== TOP BAR ===== */
 .topbar{
   display:flex;
   justify-content:space-between;
   align-items:center;
   padding:12px 20px;
-  background:rgba(0,0,0,0.7);
+  background:rgba(0,0,0,0.6);
   backdrop-filter:blur(15px);
   position:sticky;
   top:0;
@@ -69,13 +60,6 @@ body{
 .logo{
   width:50px;
   border-radius:10px;
-  animation:logoFloat 3s infinite ease-in-out;
-}
-
-@keyframes logoFloat{
-  0%{transform:translateY(0px);}
-  50%{transform:translateY(-3px);}
-  100%{transform:translateY(0px);}
 }
 
 .brand{
@@ -87,48 +71,74 @@ body{
   color:white;
   margin-left:15px;
   text-decoration:none;
-  font-size:13px;
 }
 
-.nav a:hover{
-  color:#d4af37;
-}
-
-/* ===== PRODUCT LAYOUT ===== */
+/* ===== PRODUCT SECTION ===== */
 .container{
   display:flex;
   justify-content:center;
   padding:40px 20px;
 }
 
+/* CARD */
 .card{
-  background:rgba(255,255,255,0.06);
-  width:280px;   /* 👈 أصغر عشان ما يبلع الصفحة */
-  padding:15px;
-  border-radius:18px;
+  background:rgba(255,255,255,0.05);
+  width:340px;
+  border-radius:20px;
+  padding:18px;
   border:1px solid rgba(255,255,255,0.1);
   backdrop-filter:blur(15px);
-  transition:0.4s;
-  animation:fade 1s ease;
 }
 
-.card:hover{
-  transform:translateY(-8px);
+/* ===== PRODUCT FLEX (NEW LUXURY LAYOUT) ===== */
+.product-box{
+  display:flex;
+  gap:15px;
+  align-items:center;
 }
 
-.card img{
-  width:100%;
+/* small image */
+.product-box img{
+  width:120px;
+  height:120px;
+  object-fit:cover;
   border-radius:12px;
+  transition:0.4s;
 }
 
-/* ===== TEXT ===== */
-.title{
-  font-size:18px;
+.product-box img:hover{
+  transform:scale(1.05);
+}
+
+/* text next to image */
+.product-info h2{
+  margin:0;
+  font-size:16px;
+  color:#fff;
+}
+
+.badge{
+  display:inline-block;
+  margin-top:5px;
+  font-size:11px;
+  padding:4px 8px;
+  background:#d4af37;
+  color:black;
+  border-radius:6px;
+  font-weight:bold;
+}
+
+/* luxury phrase */
+.lux-text{
   margin-top:10px;
+  font-size:13px;
+  color:#ccc;
+  line-height:1.5;
 }
 
+/* PRICE */
 .price{
-  margin-top:8px;
+  margin-top:15px;
 }
 
 .old{
@@ -142,41 +152,40 @@ body{
   font-weight:bold;
 }
 
-/* ===== BUTTONS ===== */
+/* BUTTONS */
 .btn{
   display:block;
   padding:10px;
   margin-top:8px;
-  text-align:center;
   border-radius:10px;
+  text-align:center;
   text-decoration:none;
   font-weight:bold;
-  cursor:pointer;
 }
 
-.cartbtn{
-  background:#111;
-  color:white;
-}
+.cartbtn{background:#111;color:white;}
+.buybtn{background:#d4af37;color:black;}
 
-.buybtn{
-  background:#d4af37;
-  color:black;
-}
-
-/* ===== ABOUT ===== */
+/* ===== ABOUT LUXURY CARDS ===== */
 .about{
   max-width:900px;
   margin:60px auto;
-  padding:30px;
-  background:rgba(255,255,255,0.05);
-  border-radius:20px;
-  border:1px solid rgba(255,255,255,0.1);
-  line-height:1.8;
+  display:grid;
+  gap:15px;
+  padding:20px;
 }
 
-.about h2{
+.about-card{
+  background:rgba(255,255,255,0.05);
+  padding:20px;
+  border-radius:15px;
+  border:1px solid rgba(255,255,255,0.1);
+  backdrop-filter:blur(10px);
+}
+
+.about-card h3{
   color:#d4af37;
+  margin-top:0;
 }
 
 /* ===== CART ===== */
@@ -191,21 +200,11 @@ body{
   border-radius:15px;
 }
 
-.cart-item{
-  font-size:12px;
-}
-
-.total{
-  margin-top:10px;
-  color:#d4af37;
-  font-weight:bold;
-}
-
 /* ===== CONTACT ===== */
 .contact{
   background:black;
-  padding:40px;
   text-align:center;
+  padding:40px;
   margin-top:60px;
 }
 
@@ -221,29 +220,22 @@ body{
 .wa{background:#25D366;}
 .insta{background:#E1306C;}
 
-/* ===== ANIMATION ===== */
-@keyframes fade{
-  from{opacity:0; transform:translateY(20px);}
-  to{opacity:1; transform:translateY(0);}
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- ===== LOADER ===== -->
+<!-- LOADER -->
 <div id="loader">
   <img src="logo.png" class="loader-logo">
-  <div class="loader-text">LOR PERFUME LUXURY</div>
 </div>
 
-<!-- ===== TOPBAR ===== -->
+<!-- TOPBAR -->
 <div class="topbar">
 
   <div class="left">
     <img src="logo.png" class="logo">
-    <div class="brand">LOR PERFUME</div>
+    <div class="brand">LOR PERFUME LUXURY</div>
   </div>
 
   <div class="nav">
@@ -254,14 +246,27 @@ body{
 
 </div>
 
-<!-- ===== PRODUCT ===== -->
+<!-- PRODUCT -->
 <div class="container" id="product">
 
   <div class="card">
 
-    <img src="product.jpg">
+    <!-- NEW LAYOUT -->
+    <div class="product-box">
 
-    <div class="title">Luxury Butter Perfume</div>
+      <img src="product.jpg">
+
+      <div class="product-info">
+        <h2>Luxury Butter Perfume</h2>
+        <span class="badge">NOT JUST A SPRAY</span>
+
+        <div class="lux-text">
+          A luxury fragrance experience — not a simple spray like ordinary perfumes.
+          Designed to stay, evolve, and leave a signature trail.
+        </div>
+      </div>
+
+    </div>
 
     <div class="price">
       <span class="old">35 JD</span>
@@ -273,8 +278,7 @@ body{
     </button>
 
     <a class="btn buybtn"
-       href="https://wa.me/962787727783?text=I%20want%20Luxury%20Butter%20Perfume%20for%2023%20JD"
-       target="_blank">
+       href="https://wa.me/962787727783?text=I%20want%20Luxury%20Butter%20Perfume%20for%2023%20JD">
       Buy Now
     </a>
 
@@ -282,45 +286,38 @@ body{
 
 </div>
 
-<!-- ===== ABOUT (LONG LUXURY TEXT) ===== -->
+<!-- ABOUT (PREMIUM CARDS) -->
 <div class="about" id="about">
-  <h2>About The Perfume</h2>
 
-  <p>
-    Luxury Butter Perfume is a high-end signature fragrance crafted for elegance and confidence.
-    It opens with a soft creamy vanilla note that immediately gives a warm and luxurious feeling.
-  </p>
+  <div class="about-card">
+    <h3>Concept</h3>
+    <p>A fragrance built for elegance and presence, not just scent.</p>
+  </div>
 
-  <p>
-    The heart of the fragrance develops into smooth buttery accords mixed with subtle floral touches,
-    creating a rich and comforting scent profile that feels both modern and timeless.
-  </p>
+  <div class="about-card">
+    <h3>Opening Notes</h3>
+    <p>Soft Vanilla Cream with a warm sweet introduction.</p>
+  </div>
 
-  <p>
-    As it dries down, the fragrance settles into deep musky and woody notes,
-    leaving a long-lasting trail that stays on the skin for hours.
-  </p>
+  <div class="about-card">
+    <h3>Heart Notes</h3>
+    <p>Butter Accord blended with smooth floral layers.</p>
+  </div>
 
-  <p>
-    Top Notes: Vanilla Cream, Soft Sugar  
-    Heart Notes: Butter Accord, White Flowers  
-    Base Notes: Musk, Amber, Light Woods
-  </p>
+  <div class="about-card">
+    <h3>Dry Down</h3>
+    <p>Musk, Amber & soft woods creating long-lasting luxury trail.</p>
+  </div>
 
-  <p>
-    This perfume is designed for those who appreciate luxury lifestyle,
-    perfect for daily wear, evenings, and special occasions.
-  </p>
 </div>
 
-<!-- ===== CART ===== -->
+<!-- CART -->
 <div class="cart">
   <h3>Cart 🛒</h3>
   <div id="cartItems"></div>
-  <div class="total" id="total">Total: 0 JD</div>
 </div>
 
-<!-- ===== CONTACT ===== -->
+<!-- CONTACT -->
 <div class="contact" id="contact">
   <h2>Contact Us</h2>
 
@@ -330,34 +327,27 @@ body{
 
 <script>
 
-/* ===== LOADER ===== */
-window.onload = function(){
+/* LOADER */
+window.onload=function(){
   setTimeout(()=>{
     document.getElementById("loader").style.display="none";
-  },1500);
-};
+  },1200);
+}
 
-/* ===== CART ===== */
+/* CART */
 let cart=[];
-let total=0;
 
 function addToCart(name,price){
   cart.push({name,price});
-  total+=price;
   updateCart();
 }
 
 function updateCart(){
   let box=document.getElementById("cartItems");
-  let totalBox=document.getElementById("total");
-
   box.innerHTML="";
-
   cart.forEach(i=>{
-    box.innerHTML+=`<div class='cart-item'>• ${i.name} - ${i.price} JD</div>`;
+    box.innerHTML+=`<div>• ${i.name} - ${i.price} JD</div>`;
   });
-
-  totalBox.innerHTML="Total: "+total+" JD";
 }
 
 </script>
