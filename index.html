@@ -15,7 +15,7 @@ body{
   color:white;
   overflow-x:hidden;
   scroll-behavior:smooth;
-  line-height:1.6;
+  line-height:1.7;
   letter-spacing:0.3px;
 }
 
@@ -127,11 +127,13 @@ body{
   margin-top:10px;
 }
 
-.glow{
-  width:120px;
-  height:2px;
-  background:#d4af37;
-  margin:15px auto;
+/* EXTRA HERO TEXT */
+.hero-extra{
+  max-width:800px;
+  margin:20px auto 0;
+  color:#ccc;
+  font-size:14px;
+  line-height:1.8;
 }
 
 /* ===== SLIDER ===== */
@@ -170,6 +172,26 @@ body{
 .prev{left:10px;}
 .next{right:10px;}
 
+/* ===== BRAND STORY ===== */
+.section{
+  max-width:900px;
+  margin:60px auto;
+  padding:25px;
+  text-align:center;
+}
+
+.section h2{
+  color:#d4af37;
+  margin-bottom:12px;
+  letter-spacing:2px;
+}
+
+.section p{
+  color:#ccc;
+  font-size:14px;
+  line-height:1.9;
+}
+
 /* ===== PRODUCT ===== */
 .product-text{
   text-align:center;
@@ -188,7 +210,6 @@ h2{
   font-size:22px;
 }
 
-/* PRICE */
 .old-price{
   text-decoration:line-through;
   color:#888;
@@ -200,14 +221,12 @@ h2{
   font-weight:bold;
 }
 
-/* COUNTDOWN */
 .countdown{
   margin-top:8px;
   font-size:13px;
   color:#ffcc70;
 }
 
-/* BUY */
 .buy-now{
   display:inline-block;
   margin-top:14px;
@@ -231,7 +250,6 @@ h2{
   padding:16px;
   margin-bottom:12px;
   border-radius:12px;
-  border:1px solid rgba(255,255,255,0.08);
 }
 
 /* ===== CONTACT ===== */
@@ -259,14 +277,11 @@ h2{
 
 <body>
 
-<!-- LOADER -->
 <div id="loader">
   <img src="logo.png">
 </div>
 
-<!-- TOPBAR -->
 <div class="topbar">
-
   <div class="right">
     <img src="logo.png" class="logo">
     <div class="brand">LOR PERFUME</div>
@@ -275,19 +290,21 @@ h2{
   <div class="nav">
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
-    <a class="buy" href="https://wa.me/962787727783" target="_blank">BUY</a>
+    <a class="buy" href="https://wa.me/962787727783">BUY</a>
   </div>
-
 </div>
 
-<!-- HERO -->
 <div class="hero">
   <h1>THE ART OF SCENT</h1>
-  <div class="glow"></div>
   <p>Luxury fragrance experience beyond spraying</p>
+
+  <div class="hero-extra">
+    LOR Perfume is not just a fragrance brand, it is a lifestyle statement.
+    Every scent is designed to reflect confidence, elegance, and long-lasting presence.
+    We combine luxury ingredients with modern identity to create perfumes that stay in memory.
+  </div>
 </div>
 
-<!-- SLIDER -->
 <div class="slider">
   <div class="slides" id="slides">
     <img src="product.jpg">
@@ -299,7 +316,27 @@ h2{
   <button class="btn next" onclick="move(1)">›</button>
 </div>
 
-<!-- PRODUCT -->
+<!-- BRAND STORY -->
+<div class="section">
+  <h2>OUR STORY</h2>
+  <p>
+    LOR Perfume was born from passion for luxury and detail.
+    We believe perfume is identity, not just scent.
+    Every bottle represents elegance, strength, and personality that lasts all day.
+  </p>
+</div>
+
+<div class="section">
+  <h2>WHY LOR?</h2>
+  <p>
+    ✔ Long-lasting performance<br>
+    ✔ Premium butter-based formula<br>
+    ✔ Unique signature scents<br>
+    ✔ Luxury feel with modern touch<br>
+    ✔ Designed for confidence & presence
+  </p>
+</div>
+
 <div class="product-text">
   <span class="badge">NOT JUST A SPRAY</span>
   <h2>Luxury Butter Perfume</h2>
@@ -312,35 +349,22 @@ h2{
   <a class="buy-now" href="https://wa.me/962787727783">BUY NOW</a>
 </div>
 
-<!-- ABOUT -->
 <div class="about" id="about">
   <div class="about-card">Vanilla Opening luxury scent</div>
   <div class="about-card">Butter heart notes elegance</div>
   <div class="about-card">Musk amber long lasting trail</div>
 </div>
 
-<!-- CONTACT -->
 <div class="contact" id="contact">
   <h2>Contact Us</h2>
 
   <a class="wa" href="https://wa.me/962787727783">WhatsApp</a>
   <a class="insta" href="https://www.instagram.com/lorperfumejordan?igsh=ZnhpODdhNGZ0a3pw">Instagram</a>
   <a class="fb" href="https://www.facebook.com/people/LOR-Perfume-JO/61590472924155/" target="_blank">Facebook</a>
-
 </div>
 
 <script>
 
-/* loader */
-document.addEventListener("DOMContentLoaded",()=>{
-  const loader=document.getElementById("loader");
-  setTimeout(()=>{
-    loader.classList.add("hide");
-    setTimeout(()=>loader.style.display="none",600);
-  },1200);
-});
-
-/* slider */
 let index=0;
 function move(dir){
   let slides=document.getElementById("slides");
@@ -352,7 +376,6 @@ function move(dir){
 }
 setInterval(()=>move(1),4000);
 
-/* countdown */
 function startCountdown(){
   let end=new Date().getTime()+86400000;
   setInterval(()=>{
