@@ -485,15 +485,6 @@ h2{
   </div>
 
 </div>
-  <div class="mood-section">
-  <h2>WHAT’S YOUR SCENT MOOD?</h2>
-
-  <div class="mood-buttons">
-    <button onclick="setMood('elegant')">✨ Elegant</button>
-    <button onclick="setMood('bold')">🔥 Bold</button>
-    <button onclick="setMood('soft')">🌙 Soft</button>
-    <button onclick="setMood('luxury')">👑 Signature</button>
-  </div>
 </div>
 <!-- SLIDER -->
 <div class="slider">
@@ -652,26 +643,6 @@ function startCountdown(){
     document.getElementById("countdown").innerText=
     "Offer ends in: "+h+"h "+m+"m "+s+"s";
   },1000);
-}
-startCountdown();
-function setMood(type){
-
-  if(type === "elegant"){
-    document.body.style.background = "radial-gradient(circle at top,#111,#000)";
-  }
-
-  if(type === "bold"){
-    document.body.style.background = "radial-gradient(circle at top,#2a0000,#000)";
-  }
-
-  if(type === "soft"){
-    document.body.style.background = "radial-gradient(circle at top,#001a2a,#000)";
-  }
-
-  if(type === "luxury"){
-    document.body.style.background = "radial-gradient(circle at top,#1a1400,#000)";
-  }
-
 }
 </script>
 
