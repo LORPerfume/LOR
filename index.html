@@ -238,7 +238,37 @@ h2{
   text-align:center;
   padding:60px 20px;
 }
+/* ===== CONTACT ===== */
+.contact{
+  background:black;
+  text-align:center;
+  padding:60px 20px;
+}
 
+.contact-buttons{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.contact a{
+  display:inline-block;
+  padding:12px 18px;
+  border-radius:12px;
+  text-decoration:none;
+  color:white;
+  font-weight:bold;
+  transition:0.3s;
+  min-width:130px;
+  text-align:center;
+}
+
+/* hover effect */
+.contact a:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 20px rgba(212,175,55,0.2);
+}
 .contact a{
   display:inline-block;
   margin:10px;
@@ -670,12 +700,30 @@ h2{
 </div>
 <!-- CONTACT -->
 <div class="contact" id="contact">
-  <h2>Contact Us</h2>
 
-  <a class="wa" href="https://wa.me/962787727783">WhatsApp</a>
-  <a class="insta" href="https://www.instagram.com/lorperfumejordan?igsh=ZnhpODdhNGZ0a3pw">Instagram</a>
-  <a class="fb" href="https://www.facebook.com/people/LOR-Perfume-JO/61590472924155/" target="_blank">Facebook</a>
+  <h2 style="color:#d4af37; letter-spacing:3px;">GET IN TOUCH</h2>
 
+  <p style="color:#bbb; font-size:14px; margin-bottom:25px;">
+    We’re here to help you with orders, questions, and support.
+  </p>
+
+  <div class="contact-buttons">
+
+    <a class="wa" href="https://wa.me/962787727783" target="_blank">
+      💬 WhatsApp
+    </a>
+
+    <a class="insta" href="https://www.instagram.com/lorperfumejordan?igsh=ZnhpODdhNGZ0a3pw" target="_blank">
+      📸 Instagram
+    </a>
+
+    <a class="fb" href="https://www.facebook.com/people/LOR-Perfume-JO/61590472924155/" target="_blank">
+      📘 Facebook
+    </a>
+
+  </div>
+
+</div>
 </div>
 
 <script>
