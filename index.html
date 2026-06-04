@@ -704,17 +704,28 @@ setInterval(()=>move(1),4000);
 
 /* countdown */
 function startCountdown(){
-  let end=new Date().getTime()+86400000;
-  setInterval(()=>{
-    let now=new Date().getTime();
-    let diff=end-now;
-    let h=Math.floor(diff/3600000);
-    let m=Math.floor((diff%3600000)/60000);
-    let s=Math.floor((diff%60000)/1000);
-    document.getElementById("countdown").innerText=
-    "Offer ends in: "+h+"h "+m+"m "+s+"s";
-  },1000);
+  let end = new Date().getTime() + 86400000;
+
+  function update(){
+    let now = new Date().getTime();
+    let diff = end - now;
+
+    let h = Math.floor(diff / 3600000);
+    let m = Math.floor((diff % 3600000) / 60000);
+    let s = Math.floor((diff % 60000) / 1000);
+
+    let el = document.getElementById("countdown");
+
+    if(el){
+      el.innerText = `⏳ Offer ends in: ${h}h ${m}m ${s}s`;
+    }
+  }
+
+  update();
+  setInterval(update, 1000);
 }
+
+startCountdown();
 </script>
 
 </body>
