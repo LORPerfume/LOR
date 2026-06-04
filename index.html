@@ -634,7 +634,10 @@ h2{
 </div>
 
 <script>
-
+<script>
+history.scrollRestoration = "manual";
+window.scrollTo(0, 0);
+</script>
 /* loader */
 document.addEventListener("DOMContentLoaded",()=>{
   const loader=document.getElementById("loader");
@@ -672,6 +675,14 @@ function startCountdown(){
 startCountdown();
 
 </script>
+<script>
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+};
 
+window.onload = function () {
+  window.scrollTo(0, 0);
+};
+</script>
 </body>
 </html>
