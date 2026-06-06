@@ -1037,7 +1037,13 @@ if (highlight.length > 0) {
 
 /* زر التبديل */
 document.getElementById("langBtn").addEventListener("click", () => {
-  setLanguage(isArabic ? "en" : "ar");
+  const newLang = isArabic ? "en" : "ar";
+
+  // نحفظ اللغة قبل الريفرش
+  localStorage.setItem("lang", newLang);
+
+  // نعمل ريفرش
+  location.reload();
 });
 
 /* تشغيل اللغة المحفوظة */
