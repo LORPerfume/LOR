@@ -928,17 +928,22 @@ startCountdown();
   });
 })();
 </script>
-
 <script>
 let isArabic = false;
-  let highlight = document.querySelector(".story-highlight");
 
-/* حفظ اللغة */
+/* ===== تحديث Highlight ===== */
+function updateHighlight() {
+  const highlight = document.querySelector(".story-highlight");
+  if (!highlight) return;
+
+  highlight.innerHTML = isArabic
+    ? "✦ مصنوع بزيوت عطرية فاخرة من الزبدة<br>✦ مصمم لثبات يدوم مع تجربة عطر مميزة<br>✦ مستوحى من دور الأزياء العالمية والبساطة العصرية"
+    : "✦ Crafted with premium butter-based fragrance oils<br>✦ Designed for long-lasting signature scent experience<br>✦ Inspired by luxury fashion houses & modern minimalism";
+}
+
+/* ===== تغيير اللغة ===== */
 function setLanguage(lang){
   isArabic = (lang === "ar");
-  // INSIDE SECTION
-document.querySelector(".inside-title").innerText =
-isArabic ? "ماذا يوجد داخل المنتج" : "WHAT'S INSIDE";
 
   // حفظ
   localStorage.setItem("lang", lang);
@@ -949,105 +954,103 @@ isArabic ? "ماذا يوجد داخل المنتج" : "WHAT'S INSIDE";
   document.body.classList.toggle("rtl", isArabic);
 
   // النصوص
-  document.querySelector("a[href='#story']").innerText = isArabic ? "حول" : "About";
-  document.querySelector("a[href='#contact']").innerText = isArabic ? "تواصل" : "Contact";
+  document.querySelector(".inside-title").innerText =
+    isArabic ? "ماذا يوجد داخل المنتج" : "WHAT'S INSIDE";
 
-  document.querySelector(".hero h1").innerText = isArabic ? "فن العطر" : "THE ART OF SCENT";
-  document.querySelector(".hero p").innerText = isArabic ? "تجربة عطر فاخرة تتجاوز الرش" : "Luxury fragrance experience beyond spraying";
+  document.querySelector("a[href='#story']").innerText =
+    isArabic ? "حول" : "About";
 
-  document.querySelector(".product-text h2").innerText = isArabic ? "عطر لوكس بتر" : "Luxury Butter Perfume";
-  document.querySelector(".buy-now").innerText = isArabic ? "اشتري الآن" : "BUY NOW";
+  document.querySelector("a[href='#contact']").innerText =
+    isArabic ? "تواصل" : "Contact";
 
-  document.querySelector(".story-title").innerText = isArabic ? "قصة عطر LOR" : "THE STORY OF LOR PERFUME";
+  document.querySelector(".hero h1").innerText =
+    isArabic ? "فن العطر" : "THE ART OF SCENT";
 
-  document.querySelector(".story-text").innerText = isArabic
-    ? "وُلدت LOR Perfume من رؤية لإعادة تعريف الفخامة العطرية الحديثة."
-    : "LOR Perfume was born from a vision of redefining modern luxury fragrance.";
+  document.querySelector(".hero p").innerText =
+    isArabic ? "تجربة عطر فاخرة تتجاوز الرش" : "Luxury fragrance experience beyond spraying";
 
-  document.querySelector("#contact h2").innerText = isArabic ? "تواصل معنا" : "Contact us";
+  document.querySelector(".product-text h2").innerText =
+    isArabic ? "عطر لوكس بتر" : "Luxury Butter Perfume";
 
-  document.querySelector("#contact p").innerText = isArabic
-    ? "نحن هنا لمساعدتك في الطلبات والاستفسارات والدعم."
-    : "We’re here to help you with orders, questions, and support.";
+  document.querySelector(".buy-now").innerText =
+    isArabic ? "اشتري الآن" : "BUY NOW";
 
-  // زر اللغة
-  document.getElementById("langBtn").innerText = isArabic ? "EN" : "AR";
+  document.querySelector(".story-title").innerText =
+    isArabic ? "قصة عطر LOR" : "THE STORY OF LOR PERFUME";
+
+  document.querySelector(".story-text").innerText =
+    isArabic
+      ? "وُلدت LOR Perfume من رؤية لإعادة تعريف الفخامة العطرية الحديثة."
+      : "LOR Perfume was born from a vision of redefining modern luxury fragrance.";
+
+  document.querySelector("#contact h2").innerText =
+    isArabic ? "تواصل معنا" : "Contact us";
+
+  document.querySelector("#contact p").innerText =
+    isArabic
+      ? "نحن هنا لمساعدتك في الطلبات والاستفسارات والدعم."
+      : "We’re here to help you with orders, questions, and support.";
+
+  // inside box
   let names = document.querySelectorAll(".inside-name");
-let desc = document.querySelectorAll(".inside-desc");
+  let desc = document.querySelectorAll(".inside-desc");
 
-if (isArabic) {
-  names[0].innerText = "عطر فاخر";
-  names[1].innerText = "ثبات طويل";
-  names[2].innerText = "تغليف أنيق";
-  names[3].innerText = "تجربة مميزة";
+  if (names.length >= 4) {
+    if (isArabic) {
+      names[0].innerText = "عطر فاخر";
+      names[1].innerText = "ثبات طويل";
+      names[2].innerText = "تغليف أنيق";
+      names[3].innerText = "تجربة مميزة";
 
-  desc[0].innerText = "تركيبة عطر فاخرة بزبدة عطرية";
-  desc[1].innerText = "يدوم لساعات طويلة";
-  desc[2].innerText = "تغليف فاخر مناسب للهدايا";
-  desc[3].innerText = "رائحة تترك أثر قوي";
-} else {
-  names[0].innerText = "Luxury Perfume";
-  names[1].innerText = "Long Lasting";
-  names[2].innerText = "Elegant Packaging";
-  names[3].innerText = "Signature Experience";
+      desc[0].innerText = "تركيبة عطر فاخرة بزبدة عطرية";
+      desc[1].innerText = "يدوم لساعات طويلة";
+      desc[2].innerText = "تغليف فاخر مناسب للهدايا";
+      desc[3].innerText = "رائحة تترك أثر قوي";
+    } else {
+      names[0].innerText = "Luxury Perfume";
+      names[1].innerText = "Long Lasting";
+      names[2].innerText = "Elegant Packaging";
+      names[3].innerText = "Signature Experience";
 
-  desc[0].innerText = "Premium butter-based fragrance formula.";
-  desc[1].innerText = "Designed to stay noticeable for hours.";
-  desc[2].innerText = "Luxury presentation ready for gifting.";
-  desc[3].innerText = "Crafted to leave a memorable impression.";
-}
-document.querySelector("#contact h2").innerText =
-isArabic ? "تواصل معنا" : "Contact us";
-
-let reviews = document.querySelectorAll(".about .about-card");
-
-if (reviews.length >= 3) {
-  if (isArabic) {
-    reviews[0].innerHTML = "⭐⭐⭐⭐⭐<br><br>\"واحدة من أكثر العطور تميزاً التي جربتها. أنيقة وناعمة وتدوم طويلاً.\"";
-    reviews[1].innerHTML = "⭐⭐⭐⭐⭐<br><br>\"تركيبة الزبدة الفاخرة تعطي إحساس راقي والرائحة تبقى لساعات.\"";
-    reviews[2].innerHTML = "⭐⭐⭐⭐⭐<br><br>\"تغليف جميل ورائحة مذهلة وجودة عالية جداً أنصح به.\"";
-  } else {
-    reviews[0].innerHTML = "⭐⭐⭐⭐⭐<br><br>\"One of the most unique fragrances I have ever used. Elegant, smooth, and long lasting.\"";
-    reviews[1].innerHTML = "⭐⭐⭐⭐⭐<br><br>\"The luxury butter formula feels premium and the scent stays noticeable for hours.\"";
-    reviews[2].innerHTML = "⭐⭐⭐⭐⭐<br><br>\"Beautiful packaging, amazing scent, and exceptional quality. Highly recommended.\"";
+      desc[0].innerText = "Premium butter-based fragrance formula.";
+      desc[1].innerText = "Designed to stay noticeable for hours.";
+      desc[2].innerText = "Luxury presentation ready for gifting.";
+      desc[3].innerText = "Crafted to leave a memorable impression.";
+    }
   }
-}
-if (expTitle) {
-  expTitle.innerHTML = isArabic
-    ? "⭐⭐⭐ تجربة العملاء ⭐⭐⭐"
-    : "CUSTOMER EXPERIENCE";
-  function updateHighlight() {
-  const highlight = document.querySelector(".story-highlight");
-  if (!highlight) return;
 
-  highlight.innerHTML = isArabic
-    ? "✦ مصنوع بزيوت عطرية فاخرة من الزبدة<br>" +
-      "✦ مصمم لثبات يدوم مع تجربة عطر مميزة<br>" +
-      "✦ مستوحى من دور الأزياء العالمية والبساطة العصرية"
-    : "✦ Crafted with premium butter-based fragrance oils<br>" +
-      "✦ Designed for long-lasting signature scent experience<br>" +
-      "✦ Inspired by luxury fashion houses & modern minimalism";
+  // reviews
+  let reviews = document.querySelectorAll(".about .about-card");
+
+  if (reviews.length >= 3) {
+    if (isArabic) {
+      reviews[0].innerHTML = "⭐⭐⭐⭐⭐<br><br>\"واحدة من أكثر العطور تميزاً التي جربتها. أنيقة وناعمة وتدوم طويلاً.\"";
+      reviews[1].innerHTML = "⭐⭐⭐⭐⭐<br><br>\"تركيبة الزبدة الفاخرة تعطي إحساس راقي والرائحة تبقى لساعات.\"";
+      reviews[2].innerHTML = "⭐⭐⭐⭐⭐<br><br>\"تغليف جميل ورائحة مذهلة وجودة عالية جداً أنصح به.\"";
+    } else {
+      reviews[0].innerHTML = "⭐⭐⭐⭐⭐<br><br>\"One of the most unique fragrances I have ever used. Elegant, smooth, and long lasting.\"";
+      reviews[1].innerHTML = "⭐⭐⭐⭐⭐<br><br>\"The luxury butter formula feels premium and the scent stays noticeable for hours.\"";
+      reviews[2].innerHTML = "⭐⭐⭐⭐⭐<br><br>\"Beautiful packaging, amazing scent, and exceptional quality. Highly recommended.\"";
+    }
+  }
+
+  // highlight
+  updateHighlight();
 }
 
-}
-updateHighlight();
-}
-  
-/* زر التبديل */
-  document.getElementById("langBtn").addEventListener("click", () => {
+/* ===== زر اللغة ===== */
+document.getElementById("langBtn").addEventListener("click", () => {
   const newLang = isArabic ? "en" : "ar";
-
-  // نحفظ اللغة قبل الريفرش
   localStorage.setItem("lang", newLang);
-
-  // نعمل ريفرش
   location.reload();
 });
 
-/* تشغيل اللغة المحفوظة */
+/* ===== تشغيل اللغة عند فتح الصفحة ===== */
 window.addEventListener("load", () => {
   const saved = localStorage.getItem("lang") || "en";
   setLanguage(saved);
+});
+</script>
 });
 </script>
 </body>
