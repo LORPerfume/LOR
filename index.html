@@ -232,12 +232,7 @@ h2{
   border:1px solid rgba(255,255,255,0.08);
 }
 
-/* ===== CONTACT ===== */
-.contact{
-  background:black;
-  text-align:center;
-  padding:60px 20px;
-}
+
 /* ===== CONTACT ===== */
 .contact{
   background:black;
@@ -541,21 +536,8 @@ h2{
   font-size:12px;
   color:#ffcc70;
 }
-  .hero-product{
-  display:flex;
-  justify-content:center;
-  margin:40px 0;
-  perspective:1000px;
-}
+ 
 
-.product-img{
-  width:240px;
-  background:transparent;
-  border:none;
-  box-shadow:none;
-  filter:drop-shadow(0 25px 35px rgba(212,175,55,0.25));
-  transform-style:preserve-3d;
-}
   @media (max-width: 600px){
   .contact-buttons{
     gap:8px;
@@ -570,9 +552,6 @@ h2{
 }
   html {
   scroll-behavior: smooth;
-}
-  .product-img{
-  animation: pulseProduct 2.5s infinite ease-in-out;
 }
 
 @keyframes pulseProduct{
@@ -650,10 +629,15 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
 }
 
 .product-img{
-  background: transparent;
-  border: none;
-  box-shadow: 0 25px 40px rgba(212,175,55,0.25);
+  width:240px;
+  border:none;
+  background:transparent;
+  box-shadow:none;
+
   filter: drop-shadow(0 20px 30px rgba(0,0,0,0.6));
+
+  animation: pulseProduct 2.5s infinite ease-in-out;
+  transform-style: preserve-3d;
 }
   .lang-switch{
   background: transparent;
@@ -729,7 +713,6 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
     <span>Luxury Quality</span>
   </div>
 
-</div>
 </div>
 <!-- SLIDER -->
 <div class="hero-product">
@@ -999,33 +982,6 @@ document.getElementById("langBtn").addEventListener("click", () => {
 window.addEventListener("load", () => {
   const saved = localStorage.getItem("lang") || "en";
   setLanguage(saved);
-});
-</script>
-  const langBtn = document.getElementById("langBtn");
-
-langBtn.addEventListener("click", () => {
-  isArabic = !isArabic;
-
-  const lang = isArabic ? "ar" : "en";
-
-  document.querySelector("a[href='#story']").innerText = translations[lang].about;
-document.querySelector("a[href='#contact']").innerText = translations[lang].contact;
-
-document.querySelector(".hero h1").innerText = translations[lang].title;
-document.querySelector(".hero p").innerText = translations[lang].subtitle;
-
-document.querySelector(".product-text h2").innerText = translations[lang].product;
-document.querySelector(".buy-now").innerText = translations[lang].buyNow;
-
-// STORY
-document.querySelector(".story-title").innerText = translations[lang].storyTitle;
-document.querySelector(".story-text").innerText = translations[lang].storyText;
-
-// CONTACT
-document.querySelector("#contact h2").innerText = translations[lang].contactTitle;
-document.querySelector("#contact p").innerText = translations[lang].contactDesc;
-  
-  langBtn.innerText = isArabic ? "EN" : "AR";
 });
 </script>
 </body>
