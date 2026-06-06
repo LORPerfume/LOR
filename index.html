@@ -938,6 +938,9 @@ let isArabic = false;
 /* حفظ اللغة */
 function setLanguage(lang){
   isArabic = (lang === "ar");
+  // INSIDE SECTION
+document.querySelector(".inside-title").innerText =
+isArabic ? "ماذا يوجد داخل المنتج" : "WHAT'S INSIDE";
 
   // حفظ
   localStorage.setItem("lang", lang);
