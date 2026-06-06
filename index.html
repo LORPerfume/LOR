@@ -931,15 +931,15 @@ startCountdown();
 
 <script>
 let isArabic = false;
+  let highlight = document.querySelector(".story-highlight");
 
 /* حفظ اللغة */
-  
 function setLanguage(lang){
   isArabic = (lang === "ar");
   // INSIDE SECTION
 document.querySelector(".inside-title").innerText =
 isArabic ? "ماذا يوجد داخل المنتج" : "WHAT'S INSIDE";
-let highlight = document.querySelector(".story-highlight");
+
   // حفظ
   localStorage.setItem("lang", lang);
 
@@ -1017,7 +1017,8 @@ if (expTitle) {
     ? "⭐⭐⭐ تجربة العملاء ⭐⭐⭐"
     : "CUSTOMER EXPERIENCE";
 }
-
+updateHighlight();
+}
   
 function updateHighlight() {
   if (!highlight) return;
@@ -1030,14 +1031,6 @@ function updateHighlight() {
       "✦ Designed for long-lasting signature scent experience<br>" +
       "✦ Inspired by luxury fashion houses & modern minimalism";
 }
-  document.querySelector(".story-highlight").innerHTML = isArabic
-  ? "✦ مصنوع بزيوت عطرية فاخرة من الزبدة<br>" +
-    "✦ مصمم لثبات يدوم مع تجربة عطر مميزة<br>" +
-    "✦ مستوحى من دور الأزياء العالمية والبساطة العصرية"
-  : "✦ Crafted with premium butter-based fragrance oils<br>" +
-    "✦ Designed for long-lasting signature scent experience<br>" +
-    "✦ Inspired by luxury fashion houses & modern minimalism";
-  }
 /* زر التبديل */
   document.getElementById("langBtn").addEventListener("click", () => {
   const newLang = isArabic ? "en" : "ar";
