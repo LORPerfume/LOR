@@ -974,7 +974,32 @@ isArabic ? "ماذا يوجد داخل المنتج" : "WHAT'S INSIDE";
 
   // زر اللغة
   document.getElementById("langBtn").innerText = isArabic ? "EN" : "AR";
+  let names = document.querySelectorAll(".inside-name");
+let desc = document.querySelectorAll(".inside-desc");
+
+if (isArabic) {
+  names[0].innerText = "عطر فاخر";
+  names[1].innerText = "ثبات طويل";
+  names[2].innerText = "تغليف أنيق";
+  names[3].innerText = "تجربة مميزة";
+
+  desc[0].innerText = "تركيبة عطر فاخرة بزبدة عطرية";
+  desc[1].innerText = "يدوم لساعات طويلة";
+  desc[2].innerText = "تغليف فاخر مناسب للهدايا";
+  desc[3].innerText = "رائحة تترك أثر قوي";
+} else {
+  names[0].innerText = "Luxury Perfume";
+  names[1].innerText = "Long Lasting";
+  names[2].innerText = "Elegant Packaging";
+  names[3].innerText = "Signature Experience";
+
+  desc[0].innerText = "Premium butter-based fragrance formula.";
+  desc[1].innerText = "Designed to stay noticeable for hours.";
+  desc[2].innerText = "Luxury presentation ready for gifting.";
+  desc[3].innerText = "Crafted to leave a memorable impression.";
 }
+}
+  
 
 /* زر التبديل */
 document.getElementById("langBtn").addEventListener("click", () => {
