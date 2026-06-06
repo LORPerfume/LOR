@@ -1016,11 +1016,8 @@ if (expTitle) {
   expTitle.innerHTML = isArabic
     ? "⭐⭐⭐ تجربة العملاء ⭐⭐⭐"
     : "CUSTOMER EXPERIENCE";
-}
-updateHighlight();
-}
-  
-function updateHighlight() {
+  function updateHighlight() {
+  const highlight = document.querySelector(".story-highlight");
   if (!highlight) return;
 
   highlight.innerHTML = isArabic
@@ -1031,6 +1028,11 @@ function updateHighlight() {
       "✦ Designed for long-lasting signature scent experience<br>" +
       "✦ Inspired by luxury fashion houses & modern minimalism";
 }
+
+}
+updateHighlight();
+}
+  
 /* زر التبديل */
   document.getElementById("langBtn").addEventListener("click", () => {
   const newLang = isArabic ? "en" : "ar";
