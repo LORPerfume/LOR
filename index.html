@@ -611,17 +611,16 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
   position:relative;
   width:280px;
   height:320px;
+
   display:flex;
   justify-content:center;
   align-items:center;
 
-  background:rgba(255,255,255,0.03);
-  border:1px solid rgba(212,175,55,0.25);
-  border-radius:24px;
-
-  backdrop-filter:blur(12px);
-  box-shadow:0 20px 60px rgba(0,0,0,0.6);
-  overflow:hidden;
+  background:transparent;
+  border:none;
+  box-shadow:none;
+  backdrop-filter:none;
+  overflow:visible;
 }
 
 .product-glow{
@@ -640,10 +639,23 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
 }
 
 .product-img{
-  width:180px;
-  z-index:2;
-  filter:drop-shadow(0 25px 25px rgba(0,0,0,0.6));
-  animation:floatProduct 3s ease-in-out infinite;
+  width: 200px;
+  height: auto;
+
+  display: block;
+  margin: 0 auto;
+
+  /* يخلي الصورة نظيفة ومش مشوهة */
+  object-fit: contain;
+
+  /* ظل ناعم يعطي عمق فقط */
+  filter: drop-shadow(0 25px 30px rgba(0,0,0,0.6));
+
+  /* حركة خفيفة فخمة */
+  animation: floatProduct 3s ease-in-out infinite;
+
+  /* يمنع أي تشوه بالحركة */
+  transform-origin: center;
 }
 
 @keyframes floatProduct{
