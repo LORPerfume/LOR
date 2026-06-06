@@ -956,7 +956,11 @@ const translations = {
     title: "THE ART OF SCENT",
     subtitle: "Luxury fragrance experience beyond spraying",
     product: "Luxury Butter Perfume",
-    buyNow: "BUY NOW"
+    buyNow: "BUY NOW",
+    storyTitle: "THE STORY OF LOR PERFUME",
+    storyText: "LOR Perfume was born from a vision of redefining modern luxury fragrance.",
+    contactTitle: "Contact us",
+    contactDesc: "We’re here to help you with orders, questions, and support."
   },
 
   ar: {
@@ -964,12 +968,15 @@ const translations = {
     contact: "تواصل",
     buy: "شراء",
     title: "فن العطر",
-    subtitle: "تجربة فاخرة تتجاوز الرش",
+    subtitle: "تجربة عطر فاخرة تتجاوز الرش",
     product: "عطر لوكس بتر",
-    buyNow: "اشتري الآن"
+    buyNow: "اشتري الآن",
+    storyTitle: "قصة عطر LOR",
+    storyText: "وُلدت LOR Perfume من رؤية لإعادة تعريف الفخامة العطرية الحديثة.",
+    contactTitle: "تواصل معنا",
+    contactDesc: "نحن هنا لمساعدتك في الطلبات والاستفسارات والدعم."
   }
 };
-
 const langBtn = document.getElementById("langBtn");
 
 langBtn.addEventListener("click", () => {
@@ -978,14 +985,22 @@ langBtn.addEventListener("click", () => {
   const lang = isArabic ? "ar" : "en";
 
   document.querySelector("a[href='#story']").innerText = translations[lang].about;
-  document.querySelector("a[href='#contact']").innerText = translations[lang].contact;
+document.querySelector("a[href='#contact']").innerText = translations[lang].contact;
 
-  document.querySelector(".hero h1").innerText = translations[lang].title;
-  document.querySelector(".hero p").innerText = translations[lang].subtitle;
+document.querySelector(".hero h1").innerText = translations[lang].title;
+document.querySelector(".hero p").innerText = translations[lang].subtitle;
 
-  document.querySelector(".product-text h2").innerText = translations[lang].product;
-  document.querySelector(".buy-now").innerText = translations[lang].buyNow;
+document.querySelector(".product-text h2").innerText = translations[lang].product;
+document.querySelector(".buy-now").innerText = translations[lang].buyNow;
 
+// STORY
+document.querySelector(".story-title").innerText = translations[lang].storyTitle;
+document.querySelector(".story-text").innerText = translations[lang].storyText;
+
+// CONTACT
+document.querySelector("#contact h2").innerText = translations[lang].contactTitle;
+document.querySelector("#contact p").innerText = translations[lang].contactDesc;
+  
   langBtn.innerText = isArabic ? "EN" : "AR";
 });
 </script>
