@@ -655,6 +655,20 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
   box-shadow: 0 25px 40px rgba(212,175,55,0.25);
   filter: drop-shadow(0 20px 30px rgba(0,0,0,0.6));
 }
+  .lang-switch{
+  background: transparent;
+  border: 1px solid #d4af37;
+  color: #d4af37;
+  padding: 7px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.lang-switch:hover{
+  background:#d4af37;
+  color:black;
+}
 </style>
   </head>
 
@@ -684,6 +698,7 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
 <a href="#story">About</a>
     <a href="#contact">Contact</a>
     <a class="buy" href="https://wa.me/962787727783" target="_blank">BUY</a>
+    <button id="langBtn" class="lang-switch">AR</button>
   </div>
 
 </div>
@@ -929,7 +944,49 @@ startCountdown();
   });
 
 })();
-</script>
+<script>
+let isArabic = false;
 
+const translations = {
+  en: {
+    about: "About",
+    contact: "Contact",
+    buy: "BUY",
+    title: "THE ART OF SCENT",
+    subtitle: "Luxury fragrance experience beyond spraying",
+    product: "Luxury Butter Perfume",
+    buyNow: "BUY NOW"
+  },
+
+  ar: {
+    about: "حول",
+    contact: "تواصل",
+    buy: "شراء",
+    title: "فن العطر",
+    subtitle: "تجربة فاخرة تتجاوز الرش",
+    product: "عطر لوكس بتر",
+    buyNow: "اشتري الآن"
+  }
+};
+
+const langBtn = document.getElementById("langBtn");
+
+langBtn.addEventListener("click", () => {
+  isArabic = !isArabic;
+
+  const lang = isArabic ? "ar" : "en";
+
+  document.querySelector("a[href='#story']").innerText = translations[lang].about;
+  document.querySelector("a[href='#contact']").innerText = translations[lang].contact;
+
+  document.querySelector(".hero h1").innerText = translations[lang].title;
+  document.querySelector(".hero p").innerText = translations[lang].subtitle;
+
+  document.querySelector(".product-text h2").innerText = translations[lang].product;
+  document.querySelector(".buy-now").innerText = translations[lang].buyNow;
+
+  langBtn.innerText = isArabic ? "EN" : "AR";
+});
+</script>
 </body>
 </html>
