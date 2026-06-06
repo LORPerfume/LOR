@@ -658,6 +658,32 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
   box-shadow:
   0 15px 40px rgba(212,175,55,.25);
 }
+  .product-wrapper{
+  text-align:center;
+  position:relative;
+}
+
+.product-caption{
+  margin-top:12px;
+  font-size:14px;
+  letter-spacing:3px;
+  color:#d4af37;
+  text-transform:uppercase;
+  opacity:0.9;
+  animation: fadeUp 1s ease forwards;
+}
+
+/* حركة دخول ناعمة */
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(10px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
 </style>
   </head>
 
