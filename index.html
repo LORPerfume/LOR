@@ -998,7 +998,22 @@ if (isArabic) {
   desc[2].innerText = "Luxury presentation ready for gifting.";
   desc[3].innerText = "Crafted to leave a memorable impression.";
 }
-}
+document.querySelector("#contact h2").innerText =
+isArabic ? "تجربة العملاء" : "CUSTOMER EXPERIENCE";
+
+let reviews = document.querySelectorAll(".about .about-card");
+
+if (reviews.length >= 3) {
+  if (isArabic) {
+    reviews[0].innerHTML = "⭐⭐⭐⭐⭐<br><br>\"واحدة من أكثر العطور تميزاً التي جربتها. أنيقة وناعمة وتدوم طويلاً.\"";
+    reviews[1].innerHTML = "⭐⭐⭐⭐⭐<br><br>\"تركيبة الزبدة الفاخرة تعطي إحساس راقي والرائحة تبقى لساعات.\"";
+    reviews[2].innerHTML = "⭐⭐⭐⭐⭐<br><br>\"تغليف جميل ورائحة مذهلة وجودة عالية جداً أنصح به.\"";
+  } else {
+    reviews[0].innerHTML = "⭐⭐⭐⭐⭐<br><br>\"One of the most unique fragrances I have ever used. Elegant, smooth, and long lasting.\"";
+    reviews[1].innerHTML = "⭐⭐⭐⭐⭐<br><br>\"The luxury butter formula feels premium and the scent stays noticeable for hours.\"";
+    reviews[2].innerHTML = "⭐⭐⭐⭐⭐<br><br>\"Beautiful packaging, amazing scent, and exceptional quality. Highly recommended.\"";
+  }
+}}
   
 
 /* زر التبديل */
