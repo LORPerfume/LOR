@@ -1201,8 +1201,14 @@ function sendOrder() {
     return;
   }
 
+  // رقم الطلب التسلسلي
+  let lastOrder = localStorage.getItem("orderID");
+  let newOrderID = lastOrder ? parseInt(lastOrder) + 1 : 1000;
+
+  localStorage.setItem("orderID", newOrderID);
+
   let message = 
-`🛍️ NEW ORDER
+`🛍️ NEW ORDER #${newOrderID}
 
 👤 Name: ${name}
 📞 Phone: ${phone}
