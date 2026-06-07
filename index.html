@@ -724,6 +724,47 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
   transform:scale(1.1);
   box-shadow:0 15px 30px rgba(37,211,102,0.5);
 }
+  .order-form{
+  max-width:500px;
+  margin:60px auto;
+  padding:25px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(212,175,55,0.2);
+  border-radius:15px;
+  text-align:center;
+}
+
+.order-form h2{
+  color:#d4af37;
+  margin-bottom:20px;
+}
+
+.order-form input,
+.order-form textarea{
+  width:100%;
+  box-sizing:border-box;
+  margin-bottom:12px;
+  padding:12px;
+  border:none;
+  border-radius:10px;
+  background:#111;
+  color:white;
+}
+
+.order-form textarea{
+  height:100px;
+  resize:none;
+}
+
+.order-form button{
+  background:#d4af37;
+  color:black;
+  border:none;
+  padding:12px 30px;
+  border-radius:30px;
+  font-weight:bold;
+  cursor:pointer;
+}
 </style>
   </head>
 
@@ -894,6 +935,19 @@ BUY NOW
     ✦ Designed for long-lasting signature scent experience<br>
     ✦ Inspired by luxury fashion houses & modern minimalism
   </div>
+</div>
+  <div class="order-form">
+
+  <h2>Place Your Order</h2>
+
+  <input type="text" id="customerName" placeholder="Full Name">
+
+  <input type="tel" id="customerPhone" placeholder="Phone Number">
+
+  <textarea id="customerAddress" placeholder="Delivery Address"></textarea>
+
+  <button onclick="sendOrder()">PLACE ORDER</button>
+
 </div>
 <!-- CONTACT -->
 <div class="contact" id="contact">
@@ -1131,7 +1185,31 @@ window.addEventListener("load", () => {
   setLanguage(saved);
 });
 </script>
-});
+function sendOrder(){
+
+  let name = document.getElementById("customerName").value;
+  let phone = document.getElementById("customerPhone").value;
+  let address = document.getElementById("customerAddress").value;
+
+  let message =
+`🛍️ NEW ORDER
+
+👤 Name: ${name}
+
+📞 Phone: ${phone}
+
+📍 Address:
+${address}
+
+💎 Product: LOR Luxury Butter Perfume
+💰 Price: 23 JD`;
+
+  let whatsapp =
+  "https://wa.me/962790276691?text=" +
+  encodeURIComponent(message);
+
+  window.open(whatsapp, "_blank");
+}
 </script>
 <a href="https://wa.me/962790276691" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
