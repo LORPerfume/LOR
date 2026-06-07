@@ -960,8 +960,8 @@ setInterval(()=>move(1),4000);
 
 /* countdown */
 function startCountdown(){
-  let end = new Date().getTime() + 86400000;
-
+let end = new Date().getTime() + 3600000;
+  
   function update(){
     let now = new Date().getTime();
     let diff = end - now;
