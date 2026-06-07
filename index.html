@@ -1311,8 +1311,8 @@ ${address}
       🔥 10% OFF for limited time only
     </div>
 
-    <a href="#orderForm" class="popup-btn">CLAIM OFFER</a>
-
+<a href="#orderForm" class="popup-btn" onclick="goToOrder()">CLAIM OFFER</a>
+    
     <button onclick="closePopup()" class="close-btn">No thanks</button>
   </div>
 </div>
@@ -1331,5 +1331,17 @@ function closePopup(){
   document.getElementById("exitPopup").classList.remove("active");
 }
 </script>
+  <script>
+
+  function goToOrder(){
+  // إغلاق البوب أب
+  document.getElementById("exitPopup").classList.remove("active");
+
+  // النزول إلى الفورم
+  document.getElementById("orderForm").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+  </script>
 </body>
 </html>
