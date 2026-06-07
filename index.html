@@ -1184,10 +1184,15 @@ window.addEventListener("load", () => {
   const saved = localStorage.getItem("lang") || "en";
   setLanguage(saved);
 });
+</script>
+
+<!-- WhatsApp Floating Button -->
 <a href="https://wa.me/962790276691" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
 </a>
-  function sendOrder() {
+
+<script>
+function sendOrder() {
   let name = document.getElementById("customerName").value;
   let phone = document.getElementById("customerPhone").value;
   let address = document.getElementById("customerAddress").value;
@@ -1212,5 +1217,7 @@ ${address}
 
   window.open(whatsapp, "_blank");
 }
+</script>
+
 </body>
 </html>
