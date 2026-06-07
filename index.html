@@ -771,6 +771,69 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
   #orderForm {
   scroll-margin-top: 160px;
 }
+  .exit-popup{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.85);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:99999;
+
+  opacity:0;
+  pointer-events:none;
+  transition:0.4s;
+}
+
+.exit-popup.active{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.popup-box{
+  width:300px;
+  background:linear-gradient(135deg,#111,#000);
+  border:1px solid rgba(212,175,55,0.3);
+  padding:25px;
+  border-radius:15px;
+  text-align:center;
+  color:white;
+  box-shadow:0 0 40px rgba(212,175,55,0.2);
+}
+
+.popup-box h2{
+  color:#d4af37;
+  letter-spacing:3px;
+}
+
+.offer{
+  margin:15px 0;
+  color:#ffcc70;
+  font-weight:bold;
+}
+
+.popup-btn{
+  display:inline-block;
+  margin-top:10px;
+  padding:10px 20px;
+  background:#d4af37;
+  color:black;
+  text-decoration:none;
+  border-radius:20px;
+  font-weight:bold;
+}
+
+.close-btn{
+  margin-top:10px;
+  background:transparent;
+  border:none;
+  color:#aaa;
+  cursor:pointer;
+  font-size:12px;
+}
 </style>
   </head>
 
@@ -1239,6 +1302,34 @@ ${address}
   window.open(whatsapp, "_blank");
 }
 </script>
+<div id="exitPopup" class="exit-popup">
+  <div class="popup-box">
+    <h2>WAIT ✦</h2>
+    <p>Before you go… you still have a special offer</p>
 
+    <div class="offer">
+      🔥 10% OFF for limited time only
+    </div>
+
+    <a href="#orderForm" class="popup-btn">CLAIM OFFER</a>
+
+    <button onclick="closePopup()" class="close-btn">No thanks</button>
+  </div>
+</div>
+  </script>
+<script>
+let popupShown = false;
+
+document.addEventListener("mouseout", function(e){
+  if (e.clientY <= 0 && !popupShown){
+    document.getElementById("exitPopup").classList.add("active");
+    popupShown = true;
+  }
+});
+
+function closePopup(){
+  document.getElementById("exitPopup").classList.remove("active");
+}
+</script>
 </body>
 </html>
