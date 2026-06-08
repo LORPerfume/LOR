@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cart - LOR Perfume</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#111;
+  color:white;
+  text-align:center;
+  padding:40px;
+}
+
+h2{
+  color:#d4af37;
+  letter-spacing:2px;
+}
+
+input, textarea, select{
+  width:90%;
+  max-width:400px;
+  padding:12px;
+  margin:10px 0;
+  border:none;
+  border-radius:10px;
+  background:#000;
+  color:white;
+}
+
+button{
+  background:#d4af37;
+  color:black;
+  border:none;
+  padding:12px 30px;
+  border-radius:30px;
+  font-weight:bold;
+  cursor:pointer;
+  margin-top:10px;
+}
+
+.price{
+  color:#d4af37;
+  font-size:18px;
+  margin:10px 0;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>🛒 Place Your Order</h2>
+
+<!-- quantity -->
+<input type="number" id="qty" value="1" min="1">
+
+<div class="price" id="price">Total: 23 JD</div>
+
+<!-- gender -->
+<select id="type">
+  <option value="">Select Type</option>
+  <option value="For Men">For Men</option>
+  <option value="For Women">For Women</option>
+</select>
+
+<!-- info -->
+<input type="text" id="name" placeholder="Full Name">
+<input type="tel" id="phone" placeholder="Phone Number">
+<textarea id="address" placeholder="Address"></textarea>
+
+<button onclick="sendOrder()">Confirm Order</button>
+
+<script>
+function updatePrice(){
+  let qty = parseInt(document.getElementById("qty").value) || 1;
+  if(qty < 1) qty = 1;
+
+  let price = 23 + ((qty - 1) * 19);
+
+  document.getElementById("price").innerText = "Total: " + price + " JD";
+}
+
+document.getElementById("qty").addEventListener("input", updatePrice);
+updatePrice();
+
+function sendOrder(){
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+  let address = document.getElementById("address").value;
+  let qty = document.getElementById("qty").value;
+  let type = document.getElementById("type").value;
+
+  if(!name || !phone || !address || !type){
+    alert("Please fill all fields");
+    return;
+  }
+
+  let price = 23 + ((qty - 1) * 19);
+
+  let message = `
+🛒 NEW ORDER
+
+👤 Name: ${name}
+📞 Phone: ${phone}
+📦 Quantity: ${qty}
+👑 Type: ${type}
+💰 Price: ${price} JD
+
+📍 Address:
+${address}
+
+💎 LOR Perfume Order
+`;
+
+  let url = "https://wa.me/962790276691?text=" + encodeURIComponent(message);
+
+  window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
