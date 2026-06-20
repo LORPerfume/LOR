@@ -1108,6 +1108,39 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
     flex-direction:column;
   }
 }
+      .review-user{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:15px;
+  text-align:right;
+}
+
+.avatar{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#d4af37,#fff3b0,#8a6d1d);
+  color:#000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+  font-size:18px;
+  box-shadow:0 0 18px rgba(212,175,55,.35);
+}
+
+.review-user strong{
+  display:block;
+  color:#d4af37;
+  font-size:14px;
+}
+
+.review-user span{
+  display:block;
+  color:#aaa;
+  font-size:12px;
+}
 </style>
   </head>
 
@@ -1252,23 +1285,44 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
 <div class="about">
   <h2 style="text-align:center;color:#d4af37;">CUSTOMER EXPERIENCE</h2>
 
-  <div class="about-card">
-    ⭐⭐⭐⭐⭐<br><br>
-    "One of the most unique fragrances I have ever used.
-    Elegant, smooth, and long lasting."
+<div class="about-card">
+  <div class="review-user">
+    <div class="avatar">س</div>
+    <div>
+      <strong>سارة</strong>
+      <span>عمّان</span>
+    </div>
   </div>
 
-  <div class="about-card">
-    ⭐⭐⭐⭐⭐<br><br>
-    "The luxury butter formula feels premium and the scent
-    stays noticeable for hours."
+  ⭐⭐⭐⭐⭐<br><br>
+  "واحدة من أكثر العطور تميزاً التي جربتها. أنيقة وناعمة وتدوم طويلاً."
+</div>
+
+<div class="about-card">
+  <div class="review-user">
+    <div class="avatar">ل</div>
+    <div>
+      <strong>لين</strong>
+      <span>إربد</span>
+    </div>
   </div>
 
-  <div class="about-card">
-    ⭐⭐⭐⭐⭐<br><br>
-    "Beautiful packaging, amazing scent, and exceptional quality.
-    Highly recommended."
+  ⭐⭐⭐⭐⭐<br><br>
+  "تركيبة الزبدة الفاخرة تعطي إحساس راقي والرائحة تبقى لساعات."
+</div>
+
+<div class="about-card">
+  <div class="review-user">
+    <div class="avatar">م</div>
+    <div>
+      <strong>ميرا</strong>
+      <span>الزرقاء</span>
+    </div>
   </div>
+
+  ⭐⭐⭐⭐⭐<br><br>
+  "تغليف جميل ورائحة مذهلة وجودة عالية جداً أنصح به."
+</div>
 </div>
 <div class="story-section" id="story">
 
