@@ -1284,32 +1284,52 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
   </p>
 
 </div>
-<div class="order-form" id="orderForm">
+<div class="order-luxury-section" id="orderForm">
 
-  <img src="order-banner2.png" class="order-banner2">
+  <div class="order-left">
+    <img src="order-banner2.png" class="order-product-img">
+  </div>
 
-  <h2>Place Your Order</h2>
-  <input
-  type="number"
-  id="quantity"
-  min="1"
-  value="1"
-  placeholder="Quantity"
-  style="width:100%;padding:12px;margin-bottom:12px;border-radius:10px;background:#111;color:white;border:none;"
->
-  <div id="totalPrice" style="color:#d4af37;font-weight:bold;margin-bottom:12px;">
-Total Price: 26 JD
+  <div class="order-right">
+
+    <div class="order-small-title">PLACE YOUR ORDER</div>
+
+    <h2 class="order-brand-title">LOR’</h2>
+    <div class="order-brand-subtitle">PERFUME</div>
+
+    <p class="order-desc">
+      A luxurious butter perfume with a long-lasting unforgettable scent.
+    </p>
+
+    <div class="order-price">
+      <span class="new-price">26 JD</span>
+      <span class="old-price">40 JD</span>
+    </div>
+
+    <div class="trust-bar order-trust">
+      <span>🚚 Fast Delivery</span>
+      <span>💵 Cash On Delivery</span>
+      <span>✨ Premium Formula</span>
+    </div>
+
+    <input type="number" id="quantity" min="1" value="1" placeholder="Quantity">
+
+    <div id="totalPrice" class="total-price">
+      Total Price: 26 JD
+    </div>
+
+    <input type="text" id="customerName" placeholder="Full Name">
+
+    <input type="tel" id="customerPhone" placeholder="Phone Number">
+
+    <textarea id="customerAddress" placeholder="Delivery Address"></textarea>
+
+    <button onclick="sendOrder()">PLACE ORDER</button>
+
+  </div>
+
 </div>
-  <input type="text" id="customerName" placeholder="Full Name">
-
-  <input type="tel" id="customerPhone" placeholder="Phone Number">
-
-  <textarea id="customerAddress" placeholder="Delivery Address"></textarea>
-
-  <button onclick="sendOrder()">PLACE ORDER</button>
-
-</div>
-<!-- CONTACT -->
+  <!-- CONTACT -->
 <div class="contact" id="contact">
 
 <h2 style="color:#d4af37; letter-spacing:3px;">Contact us</h2>
