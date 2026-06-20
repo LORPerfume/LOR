@@ -1303,7 +1303,17 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
         <div class="feature-item">
           ✦ Inspired by luxury fashion houses & modern minimalism
         </div>
+<div class="feature-item">
+  ✦ Luxurious texture that melts smoothly on the skin
+</div>
 
+<div class="feature-item">
+  ✦ Creates a unique personal scent identity
+</div>
+
+<div class="feature-item">
+  ✦ Suitable for daily wear and special occasions
+</div>
       </div>
 
     </div>
@@ -1676,8 +1686,8 @@ document.getElementById("customerAddress").placeholder =
   isArabic ? "إرسال الطلب" : "PLACE ORDER";
   let features = document.querySelectorAll(".feature-item");
 
-if(features.length >= 3){
-
+if(features.length >= 6){
+  
   features[0].innerText =
     isArabic
     ? "✦ مصنوع من زيوت عطرية فاخرة قائمة على الزبدة"
@@ -1692,7 +1702,20 @@ if(features.length >= 3){
     isArabic
     ? "✦ مستوحى من دور الأزياء الفاخرة والبساطة العصرية"
     : "✦ Inspired by luxury fashion houses & modern minimalism";
+features[3].innerText =
+  isArabic
+  ? "✦ تركيبة فاخرة تنساب بسلاسة على البشرة"
+  : "✦ Luxurious texture that melts smoothly on the skin";
 
+features[4].innerText =
+  isArabic
+  ? "✦ تمنحك هوية عطرية فريدة تعكس شخصيتك"
+  : "✦ Creates a unique personal scent identity";
+
+features[5].innerText =
+  isArabic
+  ? "✦ مناسبة للاستخدام اليومي والمناسبات الخاصة"
+  : "✦ Suitable for daily wear and special occasions";
 }
   document.querySelector(".popup-box h2").innerText =
   isArabic ? "انتظري ✦" : "WAIT ✦";
