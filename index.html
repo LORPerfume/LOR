@@ -947,6 +947,59 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
     opacity:0;
   }
 }
+      .story-container{
+  display:flex;
+  align-items:center;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+.story-image{
+  flex:1;
+  min-width:280px;
+}
+
+.story-image img{
+  width:100%;
+  border-radius:18px;
+  box-shadow:0 15px 40px rgba(212,175,55,0.15);
+  border:1px solid rgba(212,175,55,0.2);
+}
+
+.story-content{
+  flex:1;
+  min-width:280px;
+  text-align:left;
+}
+
+.story-features{
+  margin-top:25px;
+}
+
+.feature-item{
+  padding:12px 15px;
+  margin-bottom:10px;
+  border-radius:12px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(212,175,55,0.15);
+  color:#ddd;
+  transition:.3s;
+}
+
+.feature-item:hover{
+  transform:translateX(5px);
+  border-color:#d4af37;
+}
+
+@media(max-width:768px){
+  .story-container{
+    flex-direction:column;
+  }
+
+  .story-content{
+    text-align:center;
+  }
+}
 </style>
   </head>
 
@@ -1101,6 +1154,46 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
   </div>
 </div>
 <div class="story-section" id="story">
+
+  <div class="story-container">
+
+    <div class="story-image">
+      <img src="story-lor.jpg" alt="LOR Perfume Experience">
+    </div>
+
+    <div class="story-content">
+
+      <div class="story-title">
+        THE STORY OF LOR PERFUME
+      </div>
+
+      <div class="story-text">
+        LOR Perfume was born from a vision of redefining modern luxury fragrance.
+        More than a perfume, it is a statement of elegance, confidence, and identity.
+        Every detail is carefully crafted to deliver a luxurious experience that leaves a lasting impression.
+      </div>
+
+      <div class="story-features">
+
+        <div class="feature-item">
+          ✦ Crafted with premium butter-based fragrance oils
+        </div>
+
+        <div class="feature-item">
+          ✦ Designed for a long-lasting signature scent experience
+        </div>
+
+        <div class="feature-item">
+          ✦ Inspired by luxury fashion houses & modern minimalism
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
   <div class="story-title">THE STORY OF LOR PERFUME</div>
 
   <div class="story-text">
