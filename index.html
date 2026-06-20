@@ -1938,7 +1938,10 @@ document.getElementById("customerAddress").placeholder =
   document.querySelector(".order-form button").innerText =
   isArabic ? "إرسال الطلب" : "PLACE ORDER";
   let features = document.querySelectorAll(".feature-item");
-
+document.querySelector(".secure-note").innerText =
+  isArabic
+  ? "🔒 معلوماتك تستخدم فقط لأغراض التوصيل"
+  : "🔒 Your information is used only for delivery purposes.";
 if(features.length >= 6){
   
   features[0].innerText =
