@@ -1228,10 +1228,35 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
     margin-top:5px;
   }
 
-  .how-step p{
-    display:none;
+@media(max-width:768px){
+
+  .how-steps{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
   }
 
+  .step-image{
+    height:90px;
+  }
+
+  .how-step{
+    padding:10px;
+  }
+
+  .how-step h3{
+    font-size:12px;
+    margin-top:5px;
+  }
+
+  .how-step p{
+    display:block;
+    font-size:10px;
+    line-height:1.4;
+    color:#bbb;
+  }
+
+}
 }
 }
       .step-image{
