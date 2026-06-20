@@ -202,6 +202,17 @@ h2{
 .new-price{
   font-size:42px;
   font-weight:700;
+  .old-price{
+  order:1;
+}
+
+.new-price{
+  order:2;
+}
+
+.countdown{
+  order:3;
+}
 
   background:linear-gradient(
     90deg,
@@ -562,15 +573,17 @@ h2{
   font-size:11px;
   margin-top:3px;
 }
-  .price-row{
+.price-row{
   display:flex;
+  flex-direction:column;
+
   justify-content:center;
   align-items:center;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:10px;
-}
 
+  gap:8px;
+
+  margin-top:15px;
+}
 .price-row .countdown{
   background:rgba(255,204,112,0.12);
   border:1px solid rgba(255,204,112,0.3);
