@@ -1143,6 +1143,75 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
   color:#aaa;
   font-size:12px;
 }
+      .how-use{
+  max-width:1000px;
+  margin:70px auto;
+  padding:30px 20px;
+  text-align:center;
+}
+
+.how-use h2{
+  color:#d4af37;
+  margin-bottom:10px;
+  letter-spacing:3px;
+}
+
+.how-subtitle{
+  color:#bbb;
+  margin-bottom:30px;
+}
+
+.how-steps{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.how-step{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(212,175,55,0.15);
+  border-radius:16px;
+  padding:25px;
+  transition:.3s;
+}
+
+.how-step:hover{
+  transform:translateY(-8px);
+  border-color:#d4af37;
+}
+
+.step-number{
+  width:50px;
+  height:50px;
+  margin:auto;
+  margin-bottom:15px;
+  border-radius:50%;
+  background:#d4af37;
+  color:black;
+  font-weight:bold;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:20px;
+}
+
+.how-step h3{
+  color:#fff;
+  margin-bottom:10px;
+}
+
+.how-step p{
+  color:#bbb;
+  font-size:14px;
+}
+
+@media(max-width:768px){
+
+  .how-steps{
+    grid-template-columns:1fr;
+  }
+
+}
 </style>
   </head>
 
@@ -1234,6 +1303,38 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
 <a class="buy-now" href="#orderForm">
   BUY NOW
 </a>
+</div>
+  <!-- HOW TO USE -->
+<div class="how-use">
+
+  <h2>HOW TO USE</h2>
+
+  <p class="how-subtitle">
+    A small touch is all you need.
+  </p>
+
+  <div class="how-steps">
+
+    <div class="how-step">
+      <div class="step-number">💜</div>
+      <h3>Press</h3>
+      <p>Press the pump gently to release a small amount.</p>
+    </div>
+
+    <div class="how-step">
+      <div class="step-number">👆</div>
+      <h3>Apply</h3>
+      <p>Apply on pulse points like the neck, wrist or behind the ears.</p>
+    </div>
+
+    <div class="how-step">
+      <div class="step-number">✨</div>
+      <h3>Enjoy</h3>
+      <p>Let the butter perfume melt into your skin and reveal its scent.</p>
+    </div>
+
+  </div>
+
 </div>
   <!-- WHAT'S INSIDE -->
 <div class="inside-box">
