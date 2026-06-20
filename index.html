@@ -1425,7 +1425,10 @@ function setLanguage(lang){
     isArabic
       ? "وُلدت LOR Perfume من رؤية لإعادة تعريف الفخامة العطرية الحديثة."
       : "LOR Perfume was born from a vision of redefining modern luxury fragrance.";
-
+document.querySelector(".about h2").innerText =
+  isArabic ? "آراء العملاء" : "CUSTOMER EXPERIENCE";
+  document.querySelector(".order-form h2").innerText =
+  isArabic ? "اطلبي الآن" : "Place Your Order";
   document.querySelector("#contact h2").innerText =
     isArabic ? "تواصل معنا" : "Contact us";
 
@@ -1433,7 +1436,33 @@ function setLanguage(lang){
     isArabic
       ? "نحن هنا لمساعدتك في الطلبات والاستفسارات والدعم."
       : "We’re here to help you with orders, questions, and support.";
+let stats = document.querySelectorAll(".stats-bar span");
+document.querySelector(".footer h3").innerText =
+  isArabic ? "خدمة العملاء" : "Customer Service";
+  document.querySelector(".footer h3").innerText =
+  isArabic ? "خدمة العملاء" : "Customer Service";
 
+let footerLinks = document.querySelectorAll(".footer a");
+
+if(footerLinks.length >= 4){
+
+  footerLinks[0].innerText =
+    isArabic ? "سياسة الخصوصية" : "Privacy Policy";
+
+  footerLinks[1].innerText =
+    isArabic ? "الشروط والأحكام" : "Terms and Conditions";
+
+  footerLinks[2].innerText =
+    isArabic ? "سياسة الإلغاء" : "Cancellation Policy";
+
+  footerLinks[3].innerText =
+    isArabic ? "سياسة الاسترجاع والاستبدال" : "Refund & Returns Policy";
+
+}
+if(stats.length >= 2){
+  stats[0].innerText = isArabic ? "عميل" : "Customers";
+  stats[1].innerText = isArabic ? "جودة فاخرة" : "Luxury Quality";
+}
   // inside box
   let names = document.querySelectorAll(".inside-name");
   let desc = document.querySelectorAll(".inside-desc");
@@ -1477,7 +1506,45 @@ function setLanguage(lang){
       reviews[2].innerHTML = "⭐⭐⭐⭐⭐<br><br>\"Beautiful packaging, amazing scent, and exceptional quality. Highly recommended.\"";
     }
   }
+let policyTitles = document.querySelectorAll(".policy-section h2");
+let policyText = document.querySelectorAll(".policy-section p");
 
+if(policyText.length >= 3){
+
+  policyText[0].innerText = isArabic
+  ? "تم ابتكار عطر LOR لإعادة تعريف مفهوم العطر الفاخر العصري، فهو ليس مجرد رائحة بل هو جزء من هويتك."
+  : "LOR Perfume was created to redefine what a modern luxury fragrance means. It is not just a scent — it is a personal identity that stays with you.";
+
+  policyText[1].innerText = isArabic
+  ? "الفكرة وراء هذا العطر هي الجمع بين الأناقة والثقة والحضور طويل الأمد في تجربة واحدة مميزة."
+  : "The idea behind this fragrance is to combine elegance, confidence, and long-lasting presence in one signature experience.";
+
+  policyText[2].innerText = isArabic
+  ? "يتطور العطر على بشرتك ليمنحك تجربة متكاملة تبدأ بنفحات منعشة وتنتهي بلمسات دافئة وعميقة."
+  : "This perfume evolves on your skin: fresh at first, warm in the middle, and deep at the end.";
+}
+if(policyTitles.length >= 2){
+
+  policyTitles[0].innerText =
+    isArabic ? "قصة العطر" : "FRAGRANCE STORY BREAKDOWN";
+
+  policyTitles[1].innerText =
+    isArabic ? "التجربة" : "THE EXPERIENCE";
+
+}
+  document.getElementById("quantity").placeholder =
+  isArabic ? "الكمية" : "Quantity";
+
+document.getElementById("customerName").placeholder =
+  isArabic ? "الاسم الكامل" : "Full Name";
+
+document.getElementById("customerPhone").placeholder =
+  isArabic ? "رقم الهاتف" : "Phone Number";
+
+document.getElementById("customerAddress").placeholder =
+  isArabic ? "عنوان التوصيل" : "Delivery Address";
+  document.querySelector(".order-form button").innerText =
+  isArabic ? "إرسال الطلب" : "PLACE ORDER";
   // highlight
   updateHighlight();
 }
