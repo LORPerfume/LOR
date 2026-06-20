@@ -1231,12 +1231,6 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
   <div id="totalPrice" style="color:#d4af37;font-weight:bold;margin-bottom:12px;">
 Total Price: 26 JD
 </div>
-  <select id="genderType"
-style="width:100%;padding:12px;margin-bottom:12px;border-radius:10px;background:#111;color:white;border:none;">
-  <option value="">Select Type</option>
-  <option value="For Men">For Men</option>
-  <option value="For Women">For Women</option>
-</select>
   <input type="text" id="customerName" placeholder="Full Name">
 
   <input type="tel" id="customerPhone" placeholder="Phone Number">
@@ -1494,9 +1488,8 @@ function sendOrder() {
   let phone = document.getElementById("customerPhone").value;
   let address = document.getElementById("customerAddress").value;
   let quantity = document.getElementById("quantity").value;
-  let gender = document.getElementById("genderType").value;
 
-if (!name || !phone || !address || !gender) {
+if (!name || !phone || !address) {
   alert("Please fill all fields");
   return;
 }
@@ -1522,7 +1515,6 @@ let price = 26 + ((quantityNum - 1) * 19);
 👤 Name: ${name}
 📞 Phone: ${phone}
 📦 Quantity: ${quantity} Bottle(s)
-👑 Type: ${gender}
 💰 Price: ${price} JD
 
 📍 Address:
