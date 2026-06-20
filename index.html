@@ -1117,19 +1117,21 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
 }
 
 .avatar{
-  width:42px;
-  height:42px;
+  width:50px;
+  height:50px;
   border-radius:50%;
+  overflow:hidden;
   background:linear-gradient(135deg,#d4af37,#fff3b0,#8a6d1d);
-  color:#000;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:bold;
-  font-size:18px;
+  padding:2px;
   box-shadow:0 0 18px rgba(212,175,55,.35);
 }
-
+      .avatar img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:50%;
+  display:block;
+}
 .review-user strong{
   display:block;
   color:#d4af37;
@@ -1287,7 +1289,9 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
 
 <div class="about-card">
   <div class="review-user">
-    <div class="avatar">س</div>
+<div class="avatar">
+  <img src="customer.jpg" alt="Customer">
+</div>
     <div>
       <strong>سارة ***</strong>
       <span>عمّان</span>
@@ -1300,7 +1304,9 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
 
 <div class="about-card">
   <div class="review-user">
-    <div class="avatar">ل</div>
+<div class="avatar">
+  <img src="customer.jpg" alt="Customer">
+</div>
     <div>
       <strong>لين ***</strong>
       <span>إربد</span>
@@ -1313,7 +1319,9 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
 
 <div class="about-card">
   <div class="review-user">
-    <div class="avatar">م</div>
+<div class="avatar">
+  <img src="customer.jpg" alt="Customer">
+</div>
     <div>
       <strong>ميرا ***</strong>
       <span>الزرقاء</span>
