@@ -797,29 +797,7 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
   color:#d4af37;
   margin-bottom:20px;
 }
-.order-subtitle{
-  color:#bbb;
-  font-size:13px;
-  margin-top:-10px;
-  margin-bottom:15px;
-}
 
-.order-benefits{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-  justify-content:center;
-  margin-bottom:15px;
-}
-
-.order-benefits span{
-  font-size:12px;
-  color:#d4af37;
-  border:1px solid rgba(212,175,55,.25);
-  padding:7px 10px;
-  border-radius:20px;
-  background:rgba(255,255,255,.03);
-}
 .order-form input,
 .order-form textarea{
   width:100%;
@@ -1291,17 +1269,6 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
   border:1px solid rgba(212,175,55,0.2);
   box-shadow:0 10px 25px rgba(212,175,55,0.15);
 }
-      .price-box{
-  background:rgba(212,175,55,.08);
-  border:1px solid rgba(212,175,55,.25);
-  color:#d4af37;
-  font-weight:bold;
-  padding:12px;
-  border-radius:12px;
-  margin-bottom:15px;
-  text-align:center;
-  font-size:18px;
-}
 </style>
   </head>
 
@@ -1608,20 +1575,7 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
 
     <div class="order-info-side">
 
-<h2>Place Your Order</h2>
-
-<p class="order-subtitle">
-  Cash on delivery • Fast delivery across Jordan
-</p>
-      <div class="order-benefits">
-
-  <span>💵 Cash on Delivery</span>
-
-  <span>🚚 Fast Delivery</span>
-
-  <span>💜 Premium Butter Perfume</span>
-
-</div>
+      <h2>Place Your Order</h2>
       <input
   type="number"
   id="quantity"
@@ -1630,8 +1584,8 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
   placeholder="Quantity"
 style="width:100%;padding:12px;font-size:16px;margin-bottom:12px;border-radius:10px;background:#111;color:white;border:none;"
         >
-<div id="totalPrice" class="price-box">
-  Total Price: 26 JD
+  <div id="totalPrice" style="color:#d4af37;font-weight:bold;margin-bottom:12px;">
+Total Price: 26 JD
 </div>
   <input type="text" id="customerName" placeholder="Full Name">
 
