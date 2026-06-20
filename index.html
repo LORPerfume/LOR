@@ -190,17 +190,33 @@ h2{
 
 /* PRICE */
 .old-price{
+  color:#777;
+  font-size:18px;
   text-decoration:line-through;
-  color:#888;
+  opacity:.8;
 }
 
 .new-price{
-  color:#d4af37;
-  font-size:24px;
-  font-weight:bold;
-}
+  font-size:42px;
+  font-weight:700;
 
-/* COUNTDOWN */
+  background:linear-gradient(
+    90deg,
+    #b8860b,
+    #ffd700,
+    #fff3b0,
+    #d4af37
+  );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  text-shadow:
+    0 0 15px rgba(212,175,55,.4);
+
+  letter-spacing:1px;
+}
+      /* COUNTDOWN */
 .countdown{
   margin-top:8px;
   font-size:13px;
