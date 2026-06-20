@@ -1545,6 +1545,26 @@ document.getElementById("customerAddress").placeholder =
   isArabic ? "عنوان التوصيل" : "Delivery Address";
   document.querySelector(".order-form button").innerText =
   isArabic ? "إرسال الطلب" : "PLACE ORDER";
+  let features = document.querySelectorAll(".feature-item");
+
+if(features.length >= 3){
+
+  features[0].innerText =
+    isArabic
+    ? "✦ مصنوع من زيوت عطرية فاخرة قائمة على الزبدة"
+    : "✦ Crafted with premium butter-based fragrance oils";
+
+  features[1].innerText =
+    isArabic
+    ? "✦ مصمم ليمنحك رائحة مميزة تدوم طويلاً"
+    : "✦ Designed for a long-lasting signature scent experience";
+
+  features[2].innerText =
+    isArabic
+    ? "✦ مستوحى من دور الأزياء الفاخرة والبساطة العصرية"
+    : "✦ Inspired by luxury fashion houses & modern minimalism";
+
+}
   // highlight
   updateHighlight();
 }
