@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Customer Reviews | LOR Perfume</title>
+<title>آراء العملاء | LOR Perfume</title>
 
 <style>
 body{
@@ -11,6 +11,7 @@ body{
   font-family:Arial,sans-serif;
   background:#000;
   color:white;
+  direction:rtl;
 }
 
 .navbar{
@@ -79,13 +80,15 @@ body{
 .hero h1{
   font-family:Georgia,serif;
   font-size:58px;
-  letter-spacing:5px;
+  letter-spacing:2px;
   margin:25px 0 10px;
+  color:#fff;
 }
 
 .hero em{
   color:#d4af37;
   font-size:22px;
+  font-style:normal;
 }
 
 .hero p{
@@ -110,7 +113,7 @@ body{
   border-left:1px solid rgba(212,175,55,.2);
 }
 
-.stat:first-child{
+.stat:last-child{
   border-left:none;
 }
 
@@ -254,10 +257,19 @@ body{
 @media(max-width:900px){
   .navbar{
     padding:15px 20px;
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px;
   }
 
   .nav a{
-    margin:0 7px;
+    margin:0 5px;
     font-size:12px;
   }
 
@@ -307,41 +319,41 @@ body{
   </div>
 
   <div class="nav">
-    <a href="index.html">HOME</a>
-    <a href="index.html#story">ABOUT</a>
-    <a class="active" href="reviews.html">REVIEWS</a>
-    <a href="index.html#contact">CONTACT</a>
-    <a class="buy-btn" href="index.html#orderForm">BUY NOW</a>
+    <a href="index.html">الرئيسية</a>
+    <a href="index.html#story">قصتنا</a>
+    <a class="active" href="reviews.html">التقييمات</a>
+    <a href="index.html#contact">تواصل معنا</a>
+    <a class="buy-btn" href="index.html#orderForm">اطلب الآن</a>
   </div>
 </div>
 
 <section class="hero">
   <img src="product.png">
-  <h1>CUSTOMER REVIEWS</h1>
-  <em>Real experiences from real people</em>
-  <p>We are proud of the trust our customers place in LOR' Perfume.</p>
+  <h1>آراء العملاء</h1>
+  <em>تجارب حقيقية من عملائنا</em>
+  <p>نفخر بثقة عملائنا بعطر LOR وتجربتهم المميزة معنا.</p>
 </section>
 
 <section class="stats">
   <div class="stat">
     <div>☆</div>
     <strong>4.9/5</strong>
-    <span>Average Rating</span>
+    <span>متوسط التقييم</span>
   </div>
   <div class="stat">
     <div>💬</div>
     <strong>1,248+</strong>
-    <span>Happy Reviews</span>
+    <span>تقييم إيجابي</span>
   </div>
   <div class="stat">
     <div>👥</div>
     <strong>2,500+</strong>
-    <span>Happy Customers</span>
+    <span>عميل سعيد</span>
   </div>
   <div class="stat">
     <div>♡</div>
     <strong>98%</strong>
-    <span>Would Recommend</span>
+    <span>يوصون به</span>
   </div>
 </section>
 
@@ -350,8 +362,14 @@ body{
   <div class="card">
     <div>
       <div class="stars">★★★★★</div>
-      <p>The scent is amazing and lasts for hours. It feels so luxurious and unique.</p>
-      <div class="user"><img src="customer.jpg"><div><strong>Sarah A.</strong><span>Amman, Jordan</span></div></div>
+      <p>الرائحة رائعة وتدوم لساعات طويلة. حسّيت إنه المنتج فاخر ومختلف عن العطور العادية.</p>
+      <div class="user">
+        <img src="customer.jpg">
+        <div>
+          <strong>سارة أ.</strong>
+          <span>عمّان، الأردن</span>
+        </div>
+      </div>
     </div>
     <img class="review-img" src="product.png">
   </div>
@@ -359,8 +377,14 @@ body{
   <div class="card">
     <div>
       <div class="stars">★★★★★</div>
-      <p>Very elegant scent. I get compliments every time I wear it.</p>
-      <div class="user"><img src="customer.jpg"><div><strong>Lynn M.</strong><span>Irbid, Jordan</span></div></div>
+      <p>رائحته أنيقة جداً، وكل مرة أستخدمه الناس بتسألني عنه. تجربة جميلة جداً.</p>
+      <div class="user">
+        <img src="customer.jpg">
+        <div>
+          <strong>لين م.</strong>
+          <span>إربد، الأردن</span>
+        </div>
+      </div>
     </div>
     <img class="review-img" src="product.png">
   </div>
@@ -368,8 +392,14 @@ body{
   <div class="card">
     <div>
       <div class="stars">★★★★★</div>
-      <p>Fast delivery, beautiful packaging, and the smell is just perfect.</p>
-      <div class="user"><img src="customer.jpg"><div><strong>Mira K.</strong><span>Zarqa, Jordan</span></div></div>
+      <p>التوصيل كان سريع، والتغليف مرتب وفخم، والرائحة فعلاً مميزة.</p>
+      <div class="user">
+        <img src="customer.jpg">
+        <div>
+          <strong>ميرا ك.</strong>
+          <span>الزرقاء، الأردن</span>
+        </div>
+      </div>
     </div>
     <img class="review-img" src="order-banner2.png">
   </div>
@@ -377,8 +407,14 @@ body{
   <div class="card">
     <div>
       <div class="stars">★★★★★</div>
-      <p>A little goes a long way. The texture is smooth and non-greasy.</p>
-      <div class="user"><img src="customer.jpg"><div><strong>Rama O.</strong><span>Amman, Jordan</span></div></div>
+      <p>كمية بسيطة تكفي، والقوام ناعم على البشرة وما بترك إحساس مزعج.</p>
+      <div class="user">
+        <img src="customer.jpg">
+        <div>
+          <strong>راما ع.</strong>
+          <span>عمّان، الأردن</span>
+        </div>
+      </div>
     </div>
     <img class="review-img" src="product.png">
   </div>
@@ -386,8 +422,14 @@ body{
   <div class="card">
     <div>
       <div class="stars">★★★★★</div>
-      <p>This is not just perfume, it’s an experience. You can feel the quality.</p>
-      <div class="user"><img src="customer.jpg"><div><strong>Dana H.</strong><span>Aqaba, Jordan</span></div></div>
+      <p>مش مجرد عطر، فعلاً تجربة فخمة. واضح الاهتمام بالتفاصيل والجودة.</p>
+      <div class="user">
+        <img src="customer.jpg">
+        <div>
+          <strong>دانا هـ.</strong>
+          <span>العقبة، الأردن</span>
+        </div>
+      </div>
     </div>
     <img class="review-img" src="product.png">
   </div>
@@ -395,8 +437,14 @@ body{
   <div class="card">
     <div>
       <div class="stars">★★★★★</div>
-      <p>I ordered again. It became my daily essential.</p>
-      <div class="user"><img src="customer.jpg"><div><strong>Nour B.</strong><span>Zarqa, Jordan</span></div></div>
+      <p>طلبته مرة ثانية لأنه صار من أساسياتي اليومية، وثباته ممتاز.</p>
+      <div class="user">
+        <img src="customer.jpg">
+        <div>
+          <strong>نور ب.</strong>
+          <span>الزرقاء، الأردن</span>
+        </div>
+      </div>
     </div>
     <img class="review-img" src="product.png">
   </div>
@@ -405,34 +453,34 @@ body{
 
 <section class="cta">
   <div>
-    <h2>Join thousands of happy customers</h2>
-    <p>Experience the luxury of LOR' Perfume yourself.</p>
+    <h2>انضم إلى آلاف العملاء الراضين</h2>
+    <p>اكتشف تجربة LOR الفاخرة بنفسك.</p>
   </div>
-  <a href="index.html#orderForm">BUY NOW</a>
+  <a href="index.html#orderForm">اطلب الآن</a>
 </section>
 
 <footer class="footer">
   <div>
     <img src="logo.png">
-    <p>Redefining luxury in every drop.</p>
+    <p>نعيد تعريف الفخامة في كل لمسة عطرية.</p>
   </div>
 
   <div>
-    <h3>QUICK LINKS</h3>
-    <a href="index.html">Home</a>
-    <a href="index.html#story">About</a>
-    <a href="reviews.html">Reviews</a>
+    <h3>روابط سريعة</h3>
+    <a href="index.html">الرئيسية</a>
+    <a href="index.html#story">قصتنا</a>
+    <a href="reviews.html">التقييمات</a>
   </div>
 
   <div>
-    <h3>CONTACT US</h3>
+    <h3>تواصل معنا</h3>
     <p>+962 790276691</p>
-    <p>Amman, Jordan</p>
+    <p>عمّان، الأردن</p>
     <p>@lorperfumejordan</p>
   </div>
 
   <div>
-    <h3>FOLLOW US</h3>
+    <h3>تابعنا</h3>
     <a href="#">Instagram</a>
     <a href="#">WhatsApp</a>
     <a href="#">Facebook</a>
