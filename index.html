@@ -1746,30 +1746,25 @@ let end = new Date().getTime() + 3600000;
 }
 
 startCountdown();
+<script>
 (function () {
-
-  function forceTop() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-    window.scrollTo(0, 0);
-  }
-
-  // يمنع حفظ آخر مكان
   if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
   }
 
-  // تشغيل قوي جداً لكل الحالات
   window.addEventListener('load', function () {
-    forceTop();
-    setTimeout(forceTop, 50);
-    setTimeout(forceTop, 200);
-  });
-
-  window.addEventListener('pageshow', function () {
-    forceTop();
+    if (window.location.hash === '#orderForm') {
+      setTimeout(function () {
+        document.getElementById('orderForm').scrollIntoView({
+          behavior: 'smooth'
+        });
+      }, 300);
+    } else {
+      window.scrollTo(0, 0);
+    }
   });
 })();
+</script>
 </script>
 <script>
 let isArabic = false;
