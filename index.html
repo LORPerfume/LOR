@@ -1370,6 +1370,18 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
   font-size:13px;
   font-weight:bold;
 }
+      .quantity-select{
+  width:100%;
+  max-width:360px;
+  margin-bottom:12px;
+  padding:14px;
+  font-size:15px;
+  border:none;
+  border-radius:12px;
+  background:#111;
+  color:white;
+  border:1px solid rgba(212,175,55,0.25);
+}
 </style>
   </head>
 
@@ -1695,16 +1707,13 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
     <div class="order-info-side">
 
       <h2>Place Your Order</h2>
-      <input
 <select id="quantity" class="quantity-select">
   <option value="1">1 Piece - 26 JD</option>
   <option value="2">2 Pieces - 45 JD</option>
   <option value="3">3 Pieces - 64 JD</option>
   <option value="4">4 Pieces - 83 JD</option>
 </select>
-      style="width:100%;padding:12px;font-size:16px;margin-bottom:12px;border-radius:10px;background:#111;color:white;border:none;"
-        >
-  <div id="totalPrice" style="color:#d4af37;font-weight:bold;margin-bottom:12px;">
+      <div id="totalPrice" style="color:#d4af37;font-weight:bold;margin-bottom:12px;">
 Total Price: 26 JD
 </div>
   <input type="text" id="customerName" placeholder="Full Name">
