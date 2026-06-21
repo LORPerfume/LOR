@@ -1299,6 +1299,77 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
   font-size:12px;
   text-align:center;
 }
+      .quantity-select{
+  width:100%;
+  max-width:360px;
+  margin-bottom:12px;
+  padding:14px;
+  font-size:15px;
+  border:none;
+  border-radius:12px;
+  background:#111;
+  color:white;
+  text-align:center;
+  border:1px solid rgba(212,175,55,0.25);
+  cursor:pointer;
+}
+      .price-box{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+  margin-top:15px;
+}
+
+.save-badge{
+  background:#d4af37;
+  color:#000;
+  font-weight:bold;
+  font-size:12px;
+  padding:6px 12px;
+  border-radius:20px;
+  letter-spacing:1px;
+}
+
+.old-price{
+  color:#888;
+  font-size:22px;
+  text-decoration:line-through;
+}
+
+.new-price{
+  font-size:54px;
+  font-weight:800;
+
+  background:linear-gradient(
+    90deg,
+    #b8860b,
+    #ffd700,
+    #fff3b0,
+    #d4af37
+  );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  text-shadow:0 0 20px rgba(212,175,55,.35);
+}
+      .bundle-offers{
+  margin-top:10px;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.bundle-offers div{
+  background:rgba(212,175,55,0.08);
+  border:1px solid rgba(212,175,55,0.25);
+  padding:8px 14px;
+  border-radius:10px;
+  color:#d4af37;
+  font-size:13px;
+  font-weight:bold;
+}
 </style>
   </head>
 
@@ -1373,9 +1444,27 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
   <h2>Luxury Butter Perfume</h2>
 
   <div class="price-row">
-  <div class="old-price">40 JD</div>
-  <div class="new-price">26 JD</div>
+<div class="price-box">
 
+  <div class="save-badge">
+    SAVE 35%
+  </div>
+
+  <div class="old-price">
+    40 JD
+  </div>
+
+  <div class="new-price">
+    26 JD
+  </div>
+<div class="bundle-offers">
+
+  <div>🔥 Buy 2 → 45 JD</div>
+
+  <div>🔥 Buy 3 → 64 JD</div>
+
+</div>
+</div>
   <div class="countdown" id="countdown"></div>
 </div>
   <div class="trust-bar">
@@ -1607,12 +1696,13 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
 
       <h2>Place Your Order</h2>
       <input
-  type="number"
-  id="quantity"
-  min="1"
-  value="1"
-  placeholder="Quantity"
-style="width:100%;padding:12px;font-size:16px;margin-bottom:12px;border-radius:10px;background:#111;color:white;border:none;"
+<select id="quantity" class="quantity-select">
+  <option value="1">1 Piece - 26 JD</option>
+  <option value="2">2 Pieces - 45 JD</option>
+  <option value="3">3 Pieces - 64 JD</option>
+  <option value="4">4 Pieces - 83 JD</option>
+</select>
+      style="width:100%;padding:12px;font-size:16px;margin-bottom:12px;border-radius:10px;background:#111;color:white;border:none;"
         >
   <div id="totalPrice" style="color:#d4af37;font-weight:bold;margin-bottom:12px;">
 Total Price: 26 JD
