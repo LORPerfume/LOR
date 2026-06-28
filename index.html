@@ -1314,6 +1314,84 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
   transform:translateY(-3px);
   box-shadow:0 10px 25px rgba(212,175,55,.25);
 }
+      /* ===== FRAGRANCE NOTES ===== */
+
+.fragrance-section{
+    max-width:1100px;
+    margin:70px auto;
+    padding:30px;
+    display:flex;
+    gap:40px;
+    align-items:center;
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(212,175,55,.18);
+    border-radius:22px;
+    backdrop-filter:blur(12px);
+}
+
+.fragrance-image{
+    flex:1;
+    text-align:center;
+}
+
+.fragrance-image img{
+    width:100%;
+    max-width:360px;
+    border-radius:20px;
+    border:1px solid rgba(212,175,55,.2);
+    box-shadow:0 20px 40px rgba(212,175,55,.15);
+}
+
+.fragrance-content{
+    flex:1;
+}
+
+.fragrance-content h2{
+    color:#d4af37;
+    margin-bottom:25px;
+    letter-spacing:3px;
+    text-align:center;
+}
+
+.note-card{
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(212,175,55,.15);
+    padding:18px;
+    border-radius:15px;
+    margin-bottom:15px;
+    transition:.3s;
+}
+
+.note-card:hover{
+    transform:translateY(-5px);
+    border-color:#d4af37;
+    box-shadow:0 10px 25px rgba(212,175,55,.18);
+}
+
+.note-card h3{
+    color:#d4af37;
+    margin-bottom:8px;
+    font-size:18px;
+}
+
+.note-card p{
+    color:#ddd;
+    line-height:1.8;
+    font-size:15px;
+}
+
+@media(max-width:768px){
+
+.fragrance-section{
+    flex-direction:column;
+    text-align:center;
+}
+
+.fragrance-image img{
+    max-width:260px;
+}
+
+}
 </style>
   </head>
 
@@ -1375,6 +1453,40 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
   </div>
 
 </div>
+  <!-- FRAGRANCE NOTES -->
+<section class="fragrance-section">
+
+    <div class="fragrance-image">
+        <img src="notes.png" alt="Fragrance Notes">
+    </div>
+
+    <div class="fragrance-content">
+
+        <h2>FRAGRANCE NOTES</h2>
+
+        <div class="note-card">
+            <h3>🌸 العائلة العطرية</h3>
+            <p>الزهور الشرقية</p>
+        </div>
+
+        <div class="note-card">
+            <h3>🍐 المكونات العليا</h3>
+            <p>الكمثرى، الفلفل الوردي، زهر البرتقال</p>
+        </div>
+
+        <div class="note-card">
+            <h3>☕ المكونات الوسطى</h3>
+            <p>القهوة، الياسمين، اللوز المر، العرقسوس</p>
+        </div>
+
+        <div class="note-card">
+            <h3>🌳 مكونات القاعدة</h3>
+            <p>الفانيليا، الباتشولي، خشب الكشمير، خشب الأرز</p>
+        </div>
+
+    </div>
+
+</section>
 <!-- SLIDER -->
 <div class="hero-product">
   <div class="product-card">
