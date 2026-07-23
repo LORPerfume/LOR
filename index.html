@@ -666,11 +666,9 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
 .hero-product{
   display:flex;
   justify-content:center;
-  align-items:center;
-  gap:40px;
-  flex-wrap:wrap;
   margin:70px 0;
 }
+
 .product-card{
   position:relative;
   width:280px;
@@ -703,14 +701,12 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
 }
 
 .product-img{
-  width:170px;
-  height:auto;
-  display:block;
-  object-fit:contain;
-  filter:drop-shadow(0 25px 30px rgba(0,0,0,0.6));
-  animation:floatProduct 3s ease-in-out infinite;
-  transform-origin:center;
+  width: 200px;
+  height: auto;
+  .product-img{
+  mix-blend-mode: screen;
 }
+
   display: block;
   margin: 0 auto;
 
@@ -1493,18 +1489,12 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
 </section>
 <!-- SLIDER -->
 <div class="hero-product">
-
   <div class="product-card">
     <div class="product-glow"></div>
     <img src="product.png" class="product-img">
   </div>
-
-  <div class="product-card">
-    <div class="product-glow"></div>
-    <img src="product2.png" class="product-img">
-  </div>
-
 </div>
+
 <!-- PRODUCT -->
 <div class="product-text">
   <h2>Luxury Butter Perfume</h2>
@@ -1811,29 +1801,8 @@ Total Price: 26 JD
 
 <script>
 const container = document.querySelector(".hero-product");
-const productCards = document.querySelectorAll(".product-card");
+const product = document.querySelector(".product-img");
 
-productCards.forEach((card) => {
-  const product = card.querySelector(".product-img");
-
-  card.addEventListener("mousemove", (e) => {
-    const rect = card.getBoundingClientRect();
-
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
-
-    const x = (card.offsetWidth / 2 - mouseX) / 15;
-    const y = (card.offsetHeight / 2 - mouseY) / 15;
-
-    product.style.transform =
-      `rotateY(${x}deg) rotateX(${y}deg) scale(1.05)`;
-  });
-
-  card.addEventListener("mouseleave", () => {
-    product.style.transform =
-      "rotateY(0deg) rotateX(0deg) scale(1)";
-  });
-});
 container.addEventListener("mousemove", (e) => {
   let x = (container.offsetWidth / 2 - e.offsetX) / 15;
   let y = (container.offsetHeight / 2 - e.offsetY) / 15;
