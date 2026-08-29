@@ -1392,6 +1392,125 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
 }
 
 }
+      /* ===== PACKAGE BUTTON ===== */
+
+.package-btn{
+  display:block;
+  margin:15px auto 0;
+  padding:11px 28px;
+
+  background:transparent;
+  color:#d4af37;
+
+  border:1px solid #d4af37;
+  border-radius:30px;
+
+  font-size:14px;
+  font-weight:bold;
+
+  cursor:pointer;
+  transition:.3s;
+}
+
+.package-btn:hover{
+  background:#d4af37;
+  color:#000;
+
+  transform:translateY(-3px);
+
+  box-shadow:
+  0 10px 30px rgba(212,175,55,.25);
+}
+
+
+/* ===== PACKAGE POPUP ===== */
+
+.package-modal{
+  position:fixed;
+  inset:0;
+
+  background:rgba(0,0,0,.92);
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  z-index:999999;
+
+  opacity:0;
+  visibility:hidden;
+
+  transition:.35s;
+}
+
+.package-modal.active{
+  opacity:1;
+  visibility:visible;
+}
+
+.package-modal-content{
+  position:relative;
+
+  width:90%;
+  max-width:500px;
+
+  padding:15px;
+
+  background:#080808;
+
+  border:1px solid rgba(212,175,55,.4);
+  border-radius:20px;
+
+  box-shadow:
+  0 0 50px rgba(212,175,55,.2);
+
+  transform:scale(.85);
+
+  transition:.35s;
+
+  text-align:center;
+}
+
+.package-modal.active .package-modal-content{
+  transform:scale(1);
+}
+
+.package-modal-content img{
+  width:100%;
+  max-height:75vh;
+
+  object-fit:contain;
+
+  border-radius:15px;
+}
+
+.package-modal-title{
+  color:#d4af37;
+
+  margin-top:12px;
+
+  font-size:16px;
+  letter-spacing:2px;
+}
+
+.package-close{
+  position:absolute;
+
+  top:20px;
+  right:25px;
+
+  color:#d4af37;
+
+  font-size:40px;
+
+  cursor:pointer;
+
+  z-index:10;
+}
+
+.package-close:hover{
+  color:white;
+}
 </style>
   </head>
 
@@ -1517,6 +1636,10 @@ box-shadow:0 0 35px rgba(212,175,55,.7);
 <a class="buy-now" href="#orderForm">
   BUY NOW
 </a>
+
+<button class="package-btn" onclick="openPackage()">
+  🎁 شوف البكج
+</button>
 </div>
   <!-- HOW TO USE -->
 <div class="how-use">
@@ -2386,5 +2509,63 @@ updatePrice();
   <span></span>
   <span></span>
 </div>
+  <div id="packageModal" class="package-modal">
+
+  <span class="package-close" onclick="closePackage()">×</span>
+
+  <div class="package-modal-content">
+
+    <img src="package.jpg" alt="LOR Package">
+
+    <div class="package-modal-title">
+      LOR Luxury Package
+    </div>
+
+  </div>
+
+</div>
+  <script>
+
+function openPackage(){
+  document
+  .getElementById("packageModal")
+  .classList.add("active");
+
+  document.body.style.overflow = "hidden";
+}
+
+function closePackage(){
+  document
+  .getElementById("packageModal")
+  .classList.remove("active");
+
+  document.body.style.overflow = "";
+}
+
+
+/* إغلاق عند الضغط خارج الصورة */
+
+document
+.getElementById("packageModal")
+.addEventListener("click", function(e){
+
+  if(e.target === this){
+    closePackage();
+  }
+
+});
+
+
+/* إغلاق بزر ESC */
+
+document.addEventListener("keydown", function(e){
+
+  if(e.key === "Escape"){
+    closePackage();
+  }
+
+});
+
+</script>
 </body>
 </html>
