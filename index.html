@@ -1901,7 +1901,20 @@ Total Price: 25 JD
     <option value="CliQ">📱 الدفع عن طريق CliQ</option>
 
   </select>
-
+<div id="cliqDetails" style="
+  display:none;
+  margin-top:12px;
+  padding:12px;
+  border:1px solid rgba(212,175,55,0.3);
+  border-radius:10px;
+  background:#111;
+  color:#d4af37;
+  font-size:14px;
+  line-height:1.8;
+">
+  <div>📱 يرجى التحويل عبر CliQ إلى:</div>
+  <div><strong>CliQ Alias: LOR2026</strong></div>
+</div>
 </div>
 
 <div class="secure-note">
@@ -2457,6 +2470,25 @@ ${address}
 
   window.open(whatsapp, "_blank");
 }
+  let whatsapp = "https://wa.me/962790276691?text=" + encodeURIComponent(message);
+
+window.open(whatsapp, "_blank");
+}
+
+
+/* إظهار بيانات CliQ عند اختياره */
+const paymentMethodSelect = document.getElementById("paymentMethod");
+const cliqDetails = document.getElementById("cliqDetails");
+
+paymentMethodSelect.addEventListener("change", function () {
+  if (this.value === "CliQ") {
+    cliqDetails.style.display = "block";
+  } else {
+    cliqDetails.style.display = "none";
+  }
+});
+
+</script>
 </script>
 <div id="exitPopup" class="exit-popup">
   <div class="popup-box">
