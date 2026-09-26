@@ -1879,53 +1879,7 @@ Total Price: 25 JD
 <input type="tel" id="customerPhone" placeholder="Phone Number" dir="rtl">
       
   <textarea id="customerAddress" placeholder="Delivery Address"></textarea>
-<div style="width:100%;max-width:360px;margin-bottom:15px;text-align:right;">
 
-  <label style="display:block;color:#d4af37;font-weight:bold;margin-bottom:8px;">
-    طريقة الدفع
-  </label>
-
-  <select id="paymentMethod" onchange="toggleCliqDetails()"
-    style="
-      width:100%;
-      padding:12px;
-      font-size:16px;
-      border-radius:10px;
-      background:#111;
-      color:white;
-      border:1px solid rgba(212,175,55,0.3);
-    ">
-
-    <option value="">اختر طريقة الدفع</option>
-    <option value="الدفع عند الاستلام">💵 الدفع عند الاستلام</option>
-    <option value="CliQ">📱 الدفع عن طريق CliQ</option>
-    function toggleCliqDetails() {
-  const paymentMethod = document.getElementById("paymentMethod");
-  const cliqDetails = document.getElementById("cliqDetails");
-
-  if (paymentMethod.value === "CliQ") {
-    cliqDetails.style.display = "block";
-  } else {
-    cliqDetails.style.display = "none";
-  }
-}
-
-  </select>
-<div id="cliqDetails" style="
-  display:none;
-  margin-top:12px;
-  padding:12px;
-  border:1px solid rgba(212,175,55,0.3);
-  border-radius:10px;
-  background:#111;
-  color:#d4af37;
-  font-size:14px;
-  line-height:1.8;
-">
-  <div>📱 يرجى التحويل عبر CliQ إلى:</div>
-  <div><strong>CliQ Alias: LOR2026</strong></div>
-</div>
-</div>
 
 <div class="secure-note">
   🔒 Your information is used only for delivery purposes.
@@ -2420,13 +2374,12 @@ function sendOrder() {
   let phone = document.getElementById("customerPhone").value;
   let address = document.getElementById("customerAddress").value;
   let quantity = document.getElementById("quantity").value;
-  let paymentMethod = document.getElementById("paymentMethod").value;
 
-if (!name || !phone || !address || !paymentMethod) {
-  alert(
+if (!name || !phone || !address) {
+alert(
   isArabic
-  ? "يرجى تعبئة جميع الحقول واختيار طريقة الدفع"
-  : "Please fill all fields and select payment method"
+  ? "يرجى تعبئة جميع الحقول"
+  : "Please fill all fields"
 );
   return;
 }
@@ -2457,7 +2410,6 @@ let message = isArabic
 📞 الهاتف: ${phone}
 📦 الكمية: ${quantity} عبوة
 💰 السعر: ${price} دينار
-💳 طريقة الدفع: ${paymentMethod}
 
 📍 العنوان:
 ${address}
@@ -2469,7 +2421,6 @@ ${address}
 📞 Phone: ${phone}
 📦 Quantity: ${quantity} Bottle(s)
 💰 Price: ${price} JD
-💳 Payment Method: ${paymentMethod}
 
 📍 Address:
 ${address}
@@ -2480,25 +2431,6 @@ ${address}
 
   window.open(whatsapp, "_blank");
 }
-  let whatsapp = "https://wa.me/962790276691?text=" + encodeURIComponent(message);
-
-window.open(whatsapp, "_blank");
-}
-
-
-/* إظهار بيانات CliQ عند اختياره */
-const paymentMethodSelect = document.getElementById("paymentMethod");
-const cliqDetails = document.getElementById("cliqDetails");
-
-paymentMethodSelect.addEventListener("change", function () {
-  if (this.value === "CliQ") {
-    cliqDetails.style.display = "block";
-  } else {
-    cliqDetails.style.display = "none";
-  }
-});
-
-</script>
 </script>
 <div id="exitPopup" class="exit-popup">
   <div class="popup-box">
