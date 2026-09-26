@@ -1885,7 +1885,7 @@ Total Price: 25 JD
     طريقة الدفع
   </label>
 
-  <select id="paymentMethod"
+  <select id="paymentMethod" onchange="toggleCliqDetails()"
     style="
       width:100%;
       padding:12px;
@@ -1899,6 +1899,16 @@ Total Price: 25 JD
     <option value="">اختر طريقة الدفع</option>
     <option value="الدفع عند الاستلام">💵 الدفع عند الاستلام</option>
     <option value="CliQ">📱 الدفع عن طريق CliQ</option>
+    function toggleCliqDetails() {
+  const paymentMethod = document.getElementById("paymentMethod");
+  const cliqDetails = document.getElementById("cliqDetails");
+
+  if (paymentMethod.value === "CliQ") {
+    cliqDetails.style.display = "block";
+  } else {
+    cliqDetails.style.display = "none";
+  }
+}
 
   </select>
 <div id="cliqDetails" style="
