@@ -151,7 +151,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=El+Messiri:wght@500;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -239,7 +239,6 @@ section{padding:56px 0}
 }
 
 /* ===== HERO ===== */
-.hero{padding:calc(var(--header-h) + 36px) 0 30px;text-align:center}
 .hero h1{
   font-family:"Cinzel","Tajawal",serif;
   font-size:clamp(32px,7vw,58px);
@@ -247,14 +246,6 @@ section{padding:56px 0}
 }
 html[lang="ar"] .hero h1{letter-spacing:0;font-family:"Tajawal",sans-serif;font-weight:800}
 .hero p.lead{color:var(--muted);font-size:17px;max-width:560px;margin:0 auto 22px}
-.hero-images{
-  display:grid;grid-template-columns:1fr 1fr;gap:12px;
-  max-width:620px;margin:26px auto 0;
-}
-.hero-images img{
-  width:100%;aspect-ratio:3/4;object-fit:cover;
-  border-radius:var(--radius);border:1px solid var(--gold-line);
-}
 .chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:20px}
 .chip{
   background:rgba(255,255,255,.04);border:1px solid var(--gold-line);
@@ -461,9 +452,137 @@ footer nav a:hover{color:var(--gold)}
   html{scroll-behavior:auto}
   .reveal{opacity:1;transform:none;transition:none}
 }
+
+/* ===== VISUAL v2 ===== */
+/* luxury Arabic display font */
+html[lang="ar"] .section-title,
+html[lang="ar"] .hero h1,
+html[lang="ar"] .product h3,
+html[lang="ar"] .step h4,
+html[lang="ar"] .feature h4,
+html[lang="ar"] .pyramid h4{font-family:"El Messiri","Tajawal",serif}
+html[lang="ar"] .section-title{font-weight:700;font-size:30px}
+
+/* icons */
+.ic{width:1.15em;height:1.15em;flex:none;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.2em}
+.chip{display:inline-flex;align-items:center;gap:7px}
+.chip .ic{color:var(--gold)}
+.feature .icon{
+  width:58px;height:58px;margin:0 auto 10px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--gold-line);
+  background:radial-gradient(circle at 30% 30%,rgba(212,175,55,.22),rgba(212,175,55,.04));
+  color:var(--gold);
+}
+.feature .icon .ic{width:28px;height:28px;stroke-width:1.3}
+.contact-links a{display:inline-flex;align-items:center;gap:8px}
+.secure,.upsell{gap:6px}
+.secure .ic,.upsell .ic{color:var(--gold)}
+.btn .ic{width:1.1em;height:1.1em}
+
+/* 3. shimmer */
+.gold-text{background-size:200% auto;animation:goldShine 7s linear infinite}
+@keyframes goldShine{to{background-position:200% center}}
+.btn{position:relative;overflow:hidden;isolation:isolate}
+.btn:not(.ghost)::after{
+  content:"";position:absolute;top:0;bottom:0;left:-70%;width:45%;z-index:-1;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.65),transparent);
+  transform:skewX(-20deg);animation:btnSweep 4.8s ease-in-out infinite;
+}
+@keyframes btnSweep{0%,72%{left:-70%}100%{left:135%}}
+
+/* 7. ornaments */
+.ornament{display:flex;align-items:center;justify-content:center;gap:12px;margin:0 auto 14px;max-width:260px;color:var(--gold)}
+.ornament.start{justify-content:flex-start;margin-inline:0}
+.ornament i{flex:1;height:1px;max-width:90px;background:linear-gradient(90deg,transparent,var(--gold))}
+.ornament i:last-child{background:linear-gradient(90deg,var(--gold),transparent)}
+.ornament.start i:first-child{display:none}
+.ornament svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.2}
+
+/* 2. cinematic hero */
+.hero{
+  position:relative;min-height:100vh;min-height:100svh;
+  display:flex;align-items:flex-end;
+  padding:calc(var(--header-h) + 20px) 0 64px;
+  overflow:hidden;text-align:center;
+}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 22%;
+  animation:kenBurns 22s ease-out both}
+@keyframes kenBurns{from{transform:scale(1.12)}to{transform:scale(1)}}
+.hero-shade{position:absolute;inset:0;
+  background:
+    linear-gradient(to top,#000 6%,rgba(0,0,0,.72) 34%,rgba(0,0,0,.18) 64%,rgba(0,0,0,.5) 100%),
+    radial-gradient(ellipse at 50% 100%,rgba(212,175,55,.18),transparent 60%);}
+.dust{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.hero-content{position:relative;z-index:2;width:100%}
+.hero-content > *{opacity:0;animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+.hero-content > :nth-child(1){animation-delay:.15s}
+.hero-content > :nth-child(2){animation-delay:.35s}
+.hero-content > :nth-child(3){animation-delay:.55s}
+.hero-content > :nth-child(4){animation-delay:.75s}
+.hero-content > :nth-child(5){animation-delay:.9s}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.hero p.lead{color:#e6e6e6;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.hero h1{filter:drop-shadow(0 4px 18px rgba(0,0,0,.55))}
+.hero .chip{background:rgba(0,0,0,.45);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.scroll-cue{display:block;width:26px;height:40px;margin:26px auto 0;border:1.5px solid var(--gold-line);border-radius:14px;position:relative}
+.scroll-cue::after{content:"";position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:var(--gold);animation:cue 1.8s ease-in-out infinite}
+@keyframes cue{0%{opacity:0;transform:translateY(0)}40%{opacity:1}100%{opacity:0;transform:translateY(14px)}}
+
+/* 6. fragrance pyramid */
+.notes-wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:28px;align-items:center}
+@media (max-width:760px){.notes-wrap{grid-template-columns:1fr}}
+.notes-wrap > img{border-radius:var(--radius);border:1px solid var(--gold-line)}
+.family{
+  display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;
+  margin:0 auto 18px;padding:8px 16px;width:max-content;max-width:100%;
+  border:1px solid var(--gold-line);border-radius:999px;color:#eee;background:rgba(255,255,255,.03);
+}
+.family .ic{color:var(--gold)}
+.family strong{color:var(--gold);font-weight:700}
+.pyramid{display:flex;flex-direction:column;align-items:center;gap:6px;filter:drop-shadow(0 12px 30px rgba(212,175,55,.12))}
+.tier{
+  text-align:center;padding:18px 14% 14px;
+  clip-path:polygon(12% 0,88% 0,100% 100%,0 100%);
+}
+.tier h4{margin:0;font-size:16px;letter-spacing:.5px}
+.tier p{margin:2px 0 0;font-size:14px;line-height:1.5}
+.pyramid .apex{width:0;height:0;border-inline:22px solid transparent;border-bottom:26px solid #fff3b0;margin-bottom:-6px}
+.tier.t1{width:60%;padding:16px 13% 14px;clip-path:polygon(16% 0,84% 0,100% 100%,0 100%);
+  background:linear-gradient(180deg,#fff3b0,#e5c35a);color:#1a1300}
+.tier.t2{width:79%;background:linear-gradient(180deg,#d9b44a,#b8902c);color:#140f00}
+.tier.t3{width:100%;background:linear-gradient(180deg,#8a6a1c,#4a3810);color:#fff3d0}
+.tier.t3 h4{color:#ffe08a}
+@media (max-width:420px){
+  .tier{padding-inline:11%}
+  .tier.t1{width:66%}
+  .tier.t2{width:84%}
+  .tier p{font-size:13px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .gold-text,.btn::after,.hero-bg,.scroll-cue::after{animation:none!important}
+  .hero-content > *{opacity:1;animation:none}
+}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-truck" viewBox="0 0 24 24"><path d="M2.5 6.5h11v9.5h-11zM13.5 10h4.2l3.3 3.4V16h-7.5"/><circle cx="6.5" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></symbol>
+  <symbol id="i-cash" viewBox="0 0 24 24"><rect x="2.5" y="6" width="19" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/><path d="M6 9.5v5M18 9.5v5"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11.2a6.5 6.5 0 0 1 13 0C18.5 15.4 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.3"/></symbol>
+  <symbol id="i-gem" viewBox="0 0 24 24"><path d="M6.5 3.5h11l4 5.5L12 20.5 2.5 9z"/><path d="M2.5 9h19M9 3.5 12 9l3-5.5M12 20.5 8.5 9M12 20.5 15.5 9"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M11 3.5l1.7 4.8 4.8 1.7-4.8 1.7L11 16.5l-1.7-4.8L4.5 10l4.8-1.7z"/><path d="M18 15l.8 2.2 2.2.8-2.2.8L18 21l-.8-2.2-2.2-.8 2.2-.8z"/></symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M5 12v8.5h14V12M12 8v12.5"/><path d="M12 8C10.6 5 8.6 3.6 7.3 4.6 6 5.6 7.6 8 12 8zM12 8c1.4-3 3.4-4.4 4.7-3.4C18 5.6 16.4 8 12 8z"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20.5 11.6a8.4 8.4 0 0 1-12.4 7.4L3.5 20.5l1.5-4.4a8.4 8.4 0 1 1 15.5-4.5z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5"/></symbol>
+  <symbol id="i-insta" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".5"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path d="M14 8.5h2.8V5H14a4 4 0 0 0-4 4v2.5H7.5V15H10v6h3.5v-6h2.8l.7-3.5h-3.5V9a.5.5 0 0 1 .5-.5z"/></symbol>
+  <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.7.6 1.1 1.4 1.1 2.2h5c0-.8.4-1.6 1.1-2.2A6 6 0 0 0 12 3z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L12 16.8l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19C5 10.5 10.5 5 20 4c-.6 9.5-6 15-15 15z"/><path d="M5 19l8.5-8.5"/></symbol>
+  <symbol id="i-diamond" viewBox="0 0 24 24"><path d="M12 2.5 21.5 12 12 21.5 2.5 12z"/><path d="M12 7l5 5-5 5-5-5z"/></symbol>
+</svg>
 
 <!-- ===== HEADER ===== -->
 <header class="header">
@@ -485,26 +604,30 @@ footer nav a:hover{color:var(--gold)}
 <main id="top">
 
 <!-- ===== HERO ===== -->
-<section class="hero">
-  <div class="wrap">
+<section class="hero" id="hero">
+  <picture>
+    <source media="(max-width:760px)" srcset="customer3.webp">
+    <img class="hero-bg" src="customer1.webp" alt="" fetchpriority="high">
+  </picture>
+  <div class="hero-shade"></div>
+  <canvas class="dust" id="dust" aria-hidden="true"></canvas>
+  <div class="wrap hero-content">
     <h1 class="gold-text" data-i18n="hero.title"></h1>
     <p class="lead" data-i18n="hero.lead"></p>
     <a class="btn" href="#products" data-i18n="hero.cta"></a>
     <div class="chips">
-      <span class="chip" data-i18n="chip.free"></span>
-      <span class="chip" data-i18n="chip.cod"></span>
-      <span class="chip" data-i18n="chip.jo"></span>
+      <span class="chip"><svg class="ic" aria-hidden="true"><use href="#i-truck"/></svg><span data-i18n="chip.free"></span></span>
+      <span class="chip"><svg class="ic" aria-hidden="true"><use href="#i-cash"/></svg><span data-i18n="chip.cod"></span></span>
+      <span class="chip"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg><span data-i18n="chip.jo"></span></span>
     </div>
-    <div class="hero-images">
-      <img src="customer1.webp" alt="" fetchpriority="high">
-      <img src="customer3.webp" alt="">
-    </div>
+    <a class="scroll-cue" href="#products" aria-label="scroll"></a>
   </div>
 </section>
 
 <!-- ===== PRODUCTS ===== -->
 <section id="products">
   <div class="wrap">
+    <div class="ornament" aria-hidden="true"><i></i><svg viewBox="0 0 24 24"><use href="#i-diamond"/></svg><i></i></div>
     <h2 class="section-title" data-i18n="products.title"></h2>
     <p class="section-sub" data-i18n="products.sub"></p>
 
@@ -550,6 +673,7 @@ footer nav a:hover{color:var(--gold)}
 <!-- ===== WHY SOLID ===== -->
 <section id="why-solid">
   <div class="wrap">
+    <div class="ornament" aria-hidden="true"><i></i><svg viewBox="0 0 24 24"><use href="#i-diamond"/></svg><i></i></div>
     <h2 class="section-title" data-i18n="cmp.title"></h2>
     <p class="section-sub" data-i18n="cmp.sub"></p>
     <div class="compare reveal">
@@ -566,16 +690,18 @@ footer nav a:hover{color:var(--gold)}
 </section>
 
 <!-- ===== NOTES ===== -->
-<section>
-  <div class="wrap notes">
-    <img src="notes.webp" alt="" loading="lazy" class="reveal">
-    <div class="reveal">
-      <h2 class="section-title" style="text-align:start" data-i18n="notes.title"></h2>
-      <div class="note-list">
-        <div class="note"><h4 data-i18n="notes.family.t"></h4><p data-i18n="notes.family.d"></p></div>
-        <div class="note"><h4 data-i18n="notes.top.t"></h4><p data-i18n="notes.top.d"></p></div>
-        <div class="note"><h4 data-i18n="notes.heart.t"></h4><p data-i18n="notes.heart.d"></p></div>
-        <div class="note"><h4 data-i18n="notes.base.t"></h4><p data-i18n="notes.base.d"></p></div>
+<section id="notes">
+  <div class="wrap">
+    <div class="ornament" aria-hidden="true"><i></i><svg viewBox="0 0 24 24"><use href="#i-diamond"/></svg><i></i></div>
+    <h2 class="section-title" data-i18n="notes.title"></h2>
+    <div class="family"><svg class="ic" aria-hidden="true"><use href="#i-leaf"/></svg><strong data-i18n="notes.family.t"></strong><span data-i18n="notes.family.d"></span></div>
+    <div class="notes-wrap">
+      <img src="notes.webp" alt="" loading="lazy" class="reveal">
+      <div class="pyramid reveal">
+        <div class="apex"></div>
+        <div class="tier t1"><h4 data-i18n="notes.top.t"></h4><p data-i18n="notes.top.d"></p></div>
+        <div class="tier t2"><h4 data-i18n="notes.heart.t"></h4><p data-i18n="notes.heart.d"></p></div>
+        <div class="tier t3"><h4 data-i18n="notes.base.t"></h4><p data-i18n="notes.base.d"></p></div>
       </div>
     </div>
   </div>
@@ -584,6 +710,7 @@ footer nav a:hover{color:var(--gold)}
 <!-- ===== HOW TO USE ===== -->
 <section>
   <div class="wrap">
+    <div class="ornament" aria-hidden="true"><i></i><svg viewBox="0 0 24 24"><use href="#i-diamond"/></svg><i></i></div>
     <h2 class="section-title" data-i18n="how.title"></h2>
     <p class="section-sub" data-i18n="how.sub"></p>
     <div class="grid-3">
@@ -597,13 +724,14 @@ footer nav a:hover{color:var(--gold)}
 <!-- ===== WHY LOR ===== -->
 <section>
   <div class="wrap">
+    <div class="ornament" aria-hidden="true"><i></i><svg viewBox="0 0 24 24"><use href="#i-diamond"/></svg><i></i></div>
     <h2 class="section-title" data-i18n="why.title"></h2>
     <p class="section-sub" data-i18n="why.sub"></p>
     <div class="grid-4">
-      <div class="card feature reveal"><div class="icon">💎</div><h4 data-i18n="why.1.t"></h4><p data-i18n="why.1.d"></p></div>
-      <div class="card feature reveal"><div class="icon">✨</div><h4 data-i18n="why.2.t"></h4><p data-i18n="why.2.d"></p></div>
-      <div class="card feature reveal"><div class="icon">🎁</div><h4 data-i18n="why.3.t"></h4><p data-i18n="why.3.d"></p></div>
-      <div class="card feature reveal"><div class="icon">💵</div><h4 data-i18n="why.4.t"></h4><p data-i18n="why.4.d"></p></div>
+      <div class="card feature reveal"><div class="icon"><svg class="ic" aria-hidden="true"><use href="#i-gem"/></svg></div><h4 data-i18n="why.1.t"></h4><p data-i18n="why.1.d"></p></div>
+      <div class="card feature reveal"><div class="icon"><svg class="ic" aria-hidden="true"><use href="#i-sparkle"/></svg></div><h4 data-i18n="why.2.t"></h4><p data-i18n="why.2.d"></p></div>
+      <div class="card feature reveal"><div class="icon"><svg class="ic" aria-hidden="true"><use href="#i-gift"/></svg></div><h4 data-i18n="why.3.t"></h4><p data-i18n="why.3.d"></p></div>
+      <div class="card feature reveal"><div class="icon"><svg class="ic" aria-hidden="true"><use href="#i-cash"/></svg></div><h4 data-i18n="why.4.t"></h4><p data-i18n="why.4.d"></p></div>
     </div>
   </div>
 </section>
@@ -611,6 +739,7 @@ footer nav a:hover{color:var(--gold)}
 <!-- ===== REVIEWS ===== -->
 <section id="reviews">
   <div class="wrap">
+    <div class="ornament" aria-hidden="true"><i></i><svg viewBox="0 0 24 24"><use href="#i-diamond"/></svg><i></i></div>
     <h2 class="section-title" data-i18n="rev.title"></h2>
     <p class="section-sub" data-i18n="rev.sub"></p>
     <div class="grid-3">
@@ -630,7 +759,7 @@ footer nav a:hover{color:var(--gold)}
         <div class="who"><img src="customer.jpg" alt=""><div><strong data-i18n="rev.3.n"></strong><span data-i18n="rev.3.c"></span></div></div>
       </div>
     </div>
-    <div class="center"><a class="btn ghost" href="reviews.html" data-i18n="rev.all"></a></div>
+    <div class="center"><a class="btn ghost" href="reviews.html"><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><span data-i18n="rev.all"></span></a></div>
   </div>
 </section>
 
@@ -639,7 +768,8 @@ footer nav a:hover{color:var(--gold)}
   <div class="wrap story">
     <img src="story-lor.webp" alt="" loading="lazy" class="reveal">
     <div class="reveal">
-      <h2 class="section-title" style="text-align:start" data-i18n="story.title"></h2>
+      <div class="ornament start" aria-hidden="true"><i></i><svg viewBox="0 0 24 24"><use href="#i-diamond"/></svg><i></i></div>
+    <h2 class="section-title" style="text-align:start" data-i18n="story.title"></h2>
       <p data-i18n="story.p1"></p>
       <p data-i18n="story.p2"></p>
     </div>
@@ -649,6 +779,7 @@ footer nav a:hover{color:var(--gold)}
 <!-- ===== FAQ ===== -->
 <section id="faq">
   <div class="wrap">
+    <div class="ornament" aria-hidden="true"><i></i><svg viewBox="0 0 24 24"><use href="#i-diamond"/></svg><i></i></div>
     <h2 class="section-title" data-i18n="faq.title"></h2>
     <p class="section-sub" data-i18n="faq.sub"></p>
     <div class="faq">
@@ -665,6 +796,7 @@ footer nav a:hover{color:var(--gold)}
 <!-- ===== ORDER ===== -->
 <section id="order">
   <div class="wrap">
+    <div class="ornament" aria-hidden="true"><i></i><svg viewBox="0 0 24 24"><use href="#i-diamond"/></svg><i></i></div>
     <h2 class="section-title" data-i18n="order.title"></h2>
     <p class="section-sub" data-i18n="order.sub"></p>
 
@@ -714,11 +846,11 @@ footer nav a:hover{color:var(--gold)}
         <div><span data-i18n="s.delivery"></span><span id="sDelivery"></span></div>
         <div class="total"><span data-i18n="s.total"></span><span id="sTotal"></span></div>
       </div>
-      <div class="upsell" id="upsell" data-i18n="s.upsell"></div>
+      <div class="upsell" id="upsell"><svg class="ic" aria-hidden="true"><use href="#i-bulb"/></svg> <span data-i18n="s.upsell"></span></div>
 
       <button class="btn" type="submit" data-i18n="order.submit"></button>
       <div class="form-error" id="formError" data-i18n="e.empty"></div>
-      <div class="secure" data-i18n="order.secure"></div>
+      <div class="secure"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg> <span data-i18n="order.secure"></span></div>
     </form>
   </div>
 </section>
@@ -726,12 +858,13 @@ footer nav a:hover{color:var(--gold)}
 <!-- ===== CONTACT ===== -->
 <section id="contact">
   <div class="wrap">
+    <div class="ornament" aria-hidden="true"><i></i><svg viewBox="0 0 24 24"><use href="#i-diamond"/></svg><i></i></div>
     <h2 class="section-title" data-i18n="contact.title"></h2>
     <p class="section-sub" data-i18n="contact.sub"></p>
     <div class="contact-links">
-      <a href="https://wa.me/962790276691" target="_blank" rel="noopener">💬 WhatsApp</a>
-      <a href="https://www.instagram.com/lorperfumejo" target="_blank" rel="noopener">📸 Instagram</a>
-      <a href="https://www.facebook.com/share/1EY1Tc8qNu/?mibextid=wwXIfr" target="_blank" rel="noopener">📘 Facebook</a>
+      <a href="https://wa.me/962790276691" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>WhatsApp</a>
+      <a href="https://www.instagram.com/lorperfumejo" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-insta"/></svg>Instagram</a>
+      <a href="https://www.facebook.com/share/1EY1Tc8qNu/?mibextid=wwXIfr" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-fb"/></svg>Facebook</a>
     </div>
   </div>
 </section>
@@ -783,7 +916,7 @@ const I18N = {
     "nav.products":"المنتجات","nav.story":"قصتنا","nav.faq":"الأسئلة","nav.order":"اطلبي الآن",
     "hero.title":"فن العطر","hero.lead":"عطر صلب فاخر بقوام ناعم يذوب على البشرة ويدوم معك لساعات.",
     "hero.cta":"اختاري طلبك",
-    "chip.free":"🚚 توصيل مجاني مع البكج","chip.cod":"💵 الدفع عند الاستلام","chip.jo":"🇯🇴 لكل محافظات الأردن",
+    "chip.free":"توصيل مجاني مع البكج","chip.cod":"الدفع عند الاستلام","chip.jo":"لكل محافظات الأردن",
     "products.title":"اختاري طلبك","products.sub":"ريحة LOR المميزة — بالبكج الكامل أو العطر الصلب لحاله.",
     "pkg.ribbon":"الأكثر طلبًا","pkg.name":"بكج LOR الكامل","pkg.price":"25 دينار",
     "pkg.i1":"علبة عطر صلب LOR","pkg.i2":"علبتين عطر رش LOR","pkg.i3":"تغليف فاخر جاهز للهدايا",
@@ -801,10 +934,10 @@ const I18N = {
     "cmp.5.l":"الحمل","cmp.5.a":"صغير وسهل بالشنطة","cmp.5.b":"زجاجة أكبر وأتقل",
     "cmp.note":"وبالبكج بتاخدي <strong>الاثنين</strong>: عطر صلب + علبتين عطر رش LOR بنفس الريحة.",
     "notes.title":"المكونات العطرية",
-    "notes.family.t":"🌸 العائلة العطرية","notes.family.d":"الزهور الشرقية",
-    "notes.top.t":"🍐 المكونات العليا","notes.top.d":"الكمثرى، الفلفل الوردي، زهر البرتقال",
-    "notes.heart.t":"☕ المكونات الوسطى","notes.heart.d":"القهوة، الياسمين، اللوز المر، العرقسوس",
-    "notes.base.t":"🌳 مكونات القاعدة","notes.base.d":"الفانيليا، الباتشولي، خشب الكشمير، خشب الأرز",
+    "notes.family.t":"العائلة العطرية","notes.family.d":"الزهور الشرقية",
+    "notes.top.t":"المكونات العليا","notes.top.d":"الكمثرى، الفلفل الوردي، زهر البرتقال",
+    "notes.heart.t":"المكونات الوسطى","notes.heart.d":"القهوة، الياسمين، اللوز المر، العرقسوس",
+    "notes.base.t":"مكونات القاعدة","notes.base.d":"الفانيليا، الباتشولي، خشب الكشمير، خشب الأرز",
     "how.title":"طريقة الاستخدام","how.sub":"لمسة صغيرة هي كل اللي بتحتاجيه.",
     "how.1.t":"اضغطي","how.1.d":"اضغطي بلطف لتاخدي كمية صغيرة.",
     "how.2.t":"ضعيه","how.2.d":"على نقاط النبض: الرقبة، المعصم أو خلف الأذن.",
@@ -821,7 +954,7 @@ const I18N = {
     "rev.2.n":"لين ***","rev.2.c":"إربد",
     "rev.3.q":"\"وصلني اسرع من المتوقع والتغليف مرتب كتير والريحة فخمة بتعطي احساس عطر غالي.\"",
     "rev.3.n":"ميرا ***","rev.3.c":"الزرقاء",
-    "rev.all":"⭐ كل التقييمات",
+    "rev.all":"كل التقييمات",
     "story.title":"قصة LOR",
     "story.p1":"وُلدت LOR من رؤية لإعادة تعريف العطر الفاخر العصري. أكتر من مجرد عطر — هو بصمة أناقة وثقة وهوية.",
     "story.p2":"العطر بيتطور على بشرتك: منعش بالبداية، دافئ بالمنتصف، وعميق بالنهاية.",
@@ -839,8 +972,8 @@ const I18N = {
     "e.name":"اكتبي اسمك","e.phone":"اكتبي رقم أردني صحيح (مثال: 0791234567)","e.city":"اختاري المحافظة",
     "e.address":"اكتبي العنوان","e.empty":"اختاري منتج واحد على الأقل",
     "s.subtotal":"المنتجات","s.delivery":"التوصيل","s.total":"المجموع","s.free":"مجاني",
-    "s.upsell":"💡 أضيفي البكج والتوصيل بصير مجاني على كل الطلب",
-    "order.submit":"إرسال الطلب عبر واتساب","order.secure":"🔒 معلوماتك بتستخدم للتوصيل فقط",
+    "s.upsell":"أضيفي البكج والتوصيل بصير مجاني على كل الطلب",
+    "order.submit":"إرسال الطلب عبر واتساب","order.secure":"معلوماتك بتستخدم للتوصيل فقط",
     "contact.title":"تواصلي معنا","contact.sub":"إحنا هون لأي سؤال أو مساعدة.",
     "ft.privacy":"سياسة الخصوصية","ft.terms":"الشروط والأحكام","ft.cancel":"سياسة الإلغاء","ft.refund":"الاسترجاع والاستبدال",
     "sticky.from":"البكج الكامل","sticky.price":"25 دينار • توصيل مجاني","sticky.cta":"اطلبي الآن",
@@ -853,7 +986,7 @@ const I18N = {
     "nav.products":"Products","nav.story":"Our Story","nav.faq":"FAQ","nav.order":"Order Now",
     "hero.title":"THE ART OF SCENT","hero.lead":"A luxurious solid perfume with a soft texture that melts into your skin and lasts for hours.",
     "hero.cta":"Choose your order",
-    "chip.free":"🚚 Free delivery with the package","chip.cod":"💵 Cash on delivery","chip.jo":"🇯🇴 All over Jordan",
+    "chip.free":"Free delivery with the package","chip.cod":"Cash on delivery","chip.jo":"All over Jordan",
     "products.title":"Choose Your Order","products.sub":"The signature LOR scent — as the full package or the solid perfume alone.",
     "pkg.ribbon":"Best Seller","pkg.name":"The LOR Package","pkg.price":"25 JD",
     "pkg.i1":"1 LOR solid perfume","pkg.i2":"2 LOR spray perfumes","pkg.i3":"Luxury gift-ready packaging",
@@ -871,10 +1004,10 @@ const I18N = {
     "cmp.5.l":"Carrying","cmp.5.a":"Small and easy in your bag","cmp.5.b":"Bigger, heavier bottle",
     "cmp.note":"And with the package you get <strong>both</strong>: the solid perfume + 2 LOR spray perfumes in the same scent.",
     "notes.title":"Fragrance Notes",
-    "notes.family.t":"🌸 Family","notes.family.d":"Oriental Floral",
-    "notes.top.t":"🍐 Top Notes","notes.top.d":"Pear, pink pepper, orange blossom",
-    "notes.heart.t":"☕ Heart Notes","notes.heart.d":"Coffee, jasmine, bitter almond, licorice",
-    "notes.base.t":"🌳 Base Notes","notes.base.d":"Vanilla, patchouli, cashmere wood, cedarwood",
+    "notes.family.t":"Family","notes.family.d":"Oriental Floral",
+    "notes.top.t":"Top Notes","notes.top.d":"Pear, pink pepper, orange blossom",
+    "notes.heart.t":"Heart Notes","notes.heart.d":"Coffee, jasmine, bitter almond, licorice",
+    "notes.base.t":"Base Notes","notes.base.d":"Vanilla, patchouli, cashmere wood, cedarwood",
     "how.title":"How To Use","how.sub":"A small touch is all you need.",
     "how.1.t":"Press","how.1.d":"Press gently to take a small amount.",
     "how.2.t":"Apply","how.2.d":"On pulse points: neck, wrist or behind the ears.",
@@ -891,7 +1024,7 @@ const I18N = {
     "rev.2.n":"Lynn ***","rev.2.c":"Irbid",
     "rev.3.q":"\"It arrived faster than expected, the packaging was very neat, and the scent feels like an expensive perfume.\"",
     "rev.3.n":"Mira ***","rev.3.c":"Zarqa",
-    "rev.all":"⭐ All reviews",
+    "rev.all":"All reviews",
     "story.title":"The LOR Story",
     "story.p1":"LOR was born from a vision of redefining modern luxury fragrance. More than a perfume — a statement of elegance, confidence and identity.",
     "story.p2":"The scent evolves on your skin: fresh at first, warm in the middle, and deep at the end.",
@@ -909,8 +1042,8 @@ const I18N = {
     "e.name":"Enter your name","e.phone":"Enter a valid Jordanian number (e.g. 0791234567)","e.city":"Choose a governorate",
     "e.address":"Enter your address","e.empty":"Choose at least one product",
     "s.subtotal":"Products","s.delivery":"Delivery","s.total":"Total","s.free":"Free",
-    "s.upsell":"💡 Add the package and delivery becomes free for the whole order",
-    "order.submit":"Send order via WhatsApp","order.secure":"🔒 Your info is used for delivery only",
+    "s.upsell":"Add the package and delivery becomes free for the whole order",
+    "order.submit":"Send order via WhatsApp","order.secure":"Your info is used for delivery only",
     "contact.title":"Contact Us","contact.sub":"We're here for any question or help.",
     "ft.privacy":"Privacy Policy","ft.terms":"Terms & Conditions","ft.cancel":"Cancellation Policy","ft.refund":"Refund & Returns",
     "sticky.from":"The full package","sticky.price":"25 JD • Free delivery","sticky.cta":"Order Now",
@@ -1120,6 +1253,51 @@ document.querySelectorAll(".reveal").forEach(el => io.observe(el));
 new IntersectionObserver(([en], obs) => {
   if (en.isIntersecting) { track("ViewContent", { content_ids:["package","solid"], content_type:"product" }); obs.disconnect(); }
 }, { threshold: 0.3 }).observe(document.getElementById("products"));
+
+/* ===== ذرات ذهبية بالواجهة ===== */
+(function(){
+  const c = document.getElementById("dust");
+  if (!c || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const ctx = c.getContext("2d");
+  let w, h, dpr, parts = [], running = false, raf;
+  function size(){
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = c.clientWidth; h = c.clientHeight;
+    c.width = w * dpr; c.height = h * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  function make(randomY){
+    return { x: Math.random() * w, y: randomY ? Math.random() * h : h + 10,
+      r: .6 + Math.random() * 1.8, vy: .15 + Math.random() * .45,
+      sway: Math.random() * 6.28, sp: .004 + Math.random() * .01, a: .25 + Math.random() * .6 };
+  }
+  function init(){
+    size();
+    const n = w < 600 ? 28 : 50;
+    parts = Array.from({ length: n }, () => make(true));
+  }
+  function frame(){
+    ctx.clearRect(0, 0, w, h);
+    for (const p of parts) {
+      p.y -= p.vy; p.sway += p.sp;
+      const x = p.x + Math.sin(p.sway) * 14;
+      if (p.y < -10) Object.assign(p, make(false));
+      const tw = p.a * (.6 + .4 * Math.sin(p.sway * 3));
+      const g = ctx.createRadialGradient(x, p.y, 0, x, p.y, p.r * 3);
+      g.addColorStop(0, `rgba(255,226,140,${tw})`);
+      g.addColorStop(1, "rgba(212,175,55,0)");
+      ctx.fillStyle = g;
+      ctx.beginPath(); ctx.arc(x, p.y, p.r * 3, 0, 6.283); ctx.fill();
+    }
+    raf = requestAnimationFrame(frame);
+  }
+  function start(){ if (!running) { running = true; frame(); } }
+  function stop(){ running = false; cancelAnimationFrame(raf); }
+  init();
+  addEventListener("resize", init);
+  new IntersectionObserver(([e]) => e.isIntersecting ? start() : stop()).observe(c);
+  document.addEventListener("visibilitychange", () => document.hidden ? stop() : start());
+})();
 
 document.getElementById("year").textContent = new Date().getFullYear();
 applyLang(store("lang") || "ar");
