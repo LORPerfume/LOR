@@ -312,17 +312,6 @@ html[lang="ar"] .hero h1{letter-spacing:0;font-family:"Tajawal",sans-serif;font-
   .compare .head > div{font-size:13.5px}
 }
 
-/* ===== INSTAGRAM ===== */
-.insta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:760px;margin:0 auto}
-.insta-grid a{position:relative;display:block;aspect-ratio:1;overflow:hidden;border-radius:12px;border:1px solid var(--gold-line)}
-.insta-grid img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
-.insta-grid a::after{
-  content:"";position:absolute;inset:0;background:rgba(0,0,0,.35);opacity:0;transition:opacity .3s;
-}
-.insta-grid a:hover img{transform:scale(1.06)}
-.insta-grid a:hover::after{opacity:1}
-.insta-handle{display:inline-block;font-family:"Cinzel",serif;letter-spacing:1px;color:var(--gold);text-decoration:none;margin-bottom:22px}
-
 /* ===== NOTES ===== */
 .notes{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
 @media (max-width:760px){.notes{grid-template-columns:1fr}}
@@ -734,23 +723,6 @@ footer nav a:hover{color:var(--gold)}
   </div>
 </section>
 
-<!-- ===== INSTAGRAM ===== -->
-<section id="instagram">
-  <div class="wrap" style="text-align:center">
-    <h2 class="section-title" data-i18n="ig.title"></h2>
-    <a class="insta-handle" dir="ltr" href="https://www.instagram.com/lorperfumejo" target="_blank" rel="noopener">@lorperfumejo</a>
-    <div class="insta-grid">
-      <a href="https://www.instagram.com/lorperfumejo" target="_blank" rel="noopener" aria-label="Instagram"><img src="customer1.webp" alt="" loading="lazy"></a>
-      <a href="https://www.instagram.com/lorperfumejo" target="_blank" rel="noopener" aria-label="Instagram"><img src="package.jpeg" alt="" loading="lazy"></a>
-      <a href="https://www.instagram.com/lorperfumejo" target="_blank" rel="noopener" aria-label="Instagram"><img src="customer3.webp" alt="" loading="lazy"></a>
-      <a href="https://www.instagram.com/lorperfumejo" target="_blank" rel="noopener" aria-label="Instagram"><img src="notes.webp" alt="" loading="lazy"></a>
-      <a href="https://www.instagram.com/lorperfumejo" target="_blank" rel="noopener" aria-label="Instagram"><img src="story-lor.webp" alt="" loading="lazy"></a>
-      <a href="https://www.instagram.com/lorperfumejo" target="_blank" rel="noopener" aria-label="Instagram"><img src="apply.webp" alt="" loading="lazy"></a>
-    </div>
-    <div class="center"><a class="btn ghost" href="https://www.instagram.com/lorperfumejo" target="_blank" rel="noopener" data-i18n="ig.cta"></a></div>
-  </div>
-</section>
-
 <!-- ===== CONTACT ===== -->
 <section id="contact">
   <div class="wrap">
@@ -828,7 +800,6 @@ const I18N = {
     "cmp.4.l":"الثبات","cmp.4.a":"بيدوم معك لساعات","cmp.4.b":"بتحتاجي تعيدي الرش",
     "cmp.5.l":"الحمل","cmp.5.a":"صغير وسهل بالشنطة","cmp.5.b":"زجاجة أكبر وأتقل",
     "cmp.note":"وبالبكج بتاخدي <strong>الاثنين</strong>: عطر صلب + علبتين عطر رش LOR بنفس الريحة.",
-    "ig.title":"تابعينا على إنستغرام","ig.cta":"تابعي LOR على إنستغرام",
     "notes.title":"المكونات العطرية",
     "notes.family.t":"🌸 العائلة العطرية","notes.family.d":"الزهور الشرقية",
     "notes.top.t":"🍐 المكونات العليا","notes.top.d":"الكمثرى، الفلفل الوردي، زهر البرتقال",
@@ -899,7 +870,6 @@ const I18N = {
     "cmp.4.l":"Longevity","cmp.4.a":"Stays with you for hours","cmp.4.b":"Needs reapplying",
     "cmp.5.l":"Carrying","cmp.5.a":"Small and easy in your bag","cmp.5.b":"Bigger, heavier bottle",
     "cmp.note":"And with the package you get <strong>both</strong>: the solid perfume + 2 LOR spray perfumes in the same scent.",
-    "ig.title":"Follow Us On Instagram","ig.cta":"Follow LOR on Instagram",
     "notes.title":"Fragrance Notes",
     "notes.family.t":"🌸 Family","notes.family.d":"Oriental Floral",
     "notes.top.t":"🍐 Top Notes","notes.top.d":"Pear, pink pepper, orange blossom",
