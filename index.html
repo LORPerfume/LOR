@@ -1,2331 +1,842 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-  <head>
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LOR Perfume Luxury | Official</title>
-<meta name="description" content="LOR' Butter Perfume — عطر زبدة فاخر بثبات يدوم لساعات. 25 دينار للعبوة، توصيل سريع والدفع عند الاستلام في الأردن.">
+<title>LOR' Perfume | عطر صلب فاخر</title>
+<meta name="description" content="LOR' Perfume — بكج فاخر (عطر صلب + عطرين رش) بـ 25 دينار مع توصيل مجاني، أو العطر الصلب لحاله بـ 12 دينار. الدفع عند الاستلام في كل الأردن.">
 <link rel="canonical" href="https://lorperfume.com/">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
 <meta name="theme-color" content="#000000">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="LOR Perfume">
-<meta property="og:title" content="LOR' Butter Perfume | عطر زبدة فاخر">
-<meta property="og:description" content="عطر زبدة فاخر بثبات يدوم لساعات. 25 دينار للعبوة، توصيل سريع والدفع عند الاستلام.">
+<meta property="og:title" content="LOR' Perfume | عطر صلب فاخر">
+<meta property="og:description" content="بكج LOR بـ 25 دينار مع توصيل مجاني • الدفع عند الاستلام">
 <meta property="og:url" content="https://lorperfume.com/">
 <meta property="og:image" content="https://lorperfume.com/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
-    <style>
 
-/* ===== GLOBAL ===== */
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --gold:#d4af37;
+  --gold-soft:rgba(212,175,55,.14);
+  --gold-line:rgba(212,175,55,.28);
+  --gold-grad:linear-gradient(90deg,#b8860b,#ffd700,#fff3b0,#d4af37,#b8860b);
+  --bg:#000;
+  --card:#0d0d0d;
+  --card-2:#141414;
+  --text:#fff;
+  --muted:#b5b5b5;
+  --radius:18px;
+  --wrap:1100px;
+  --header-h:64px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 12px)}
 body{
   margin:0;
-  font-family: "Arial", sans-serif;
-background:
-radial-gradient(circle at 20% 20%, rgba(212,175,55,.12), transparent 35%),
-radial-gradient(circle at 80% 70%, rgba(212,175,55,.08), transparent 40%),
-#000;
-  color:white;
-  overflow-x:hidden;
-  scroll-behavior:smooth;
-  line-height:1.6;
-  letter-spacing:0.3px;
-}
-
-/* ===== LOADER ===== */
-#loader{
-  position:fixed;
-  inset:0;
-  background:black;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  z-index:9999;
-}
-
-#loader img{
-  width:90px;
-  animation:pulse 1.5s infinite;
-}
-
-@keyframes pulse{
-  0%{transform:scale(1);opacity:0.5;}
-  50%{transform:scale(1.25);opacity:1;}
-  100%{transform:scale(1);opacity:0.5;}
-}
-
-#loader.hide{
-  opacity:0;
-  pointer-events:none;
-  transition:0.6s;
-}
-
-/* ===== TOPBAR ===== */
-.topbar{
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  width:100%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:14px 18px;
-  background:rgba(0,0,0,0.6);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid rgba(212,175,55,0.2);
-  z-index:1000;
-  box-sizing:border-box;
-}
-
-.right{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-
-.logo{
-  width:45px;
-  border-radius:12px;
-}
-
-.brand{
-  font-size:13px;
-  letter-spacing:3px;
-  color:#fff;
-}
-
-/* NAV */
-.nav{
-  display:flex;
-  gap:10px;
-  align-items:center;
-}
-
-.nav a{
-  color:white;
-  text-decoration:none;
-  font-size:13px;
-  padding:7px 12px;
-  border-radius:8px;
-  transition:0.3s;
-}
-
-.nav a:hover{
-  color:#d4af37;
-  border:1px solid #d4af37;
-}
-
-.buy{
-  background:#d4af37;
-  color:black !important;
-  font-weight:bold;
-
-  font-size:12px;
-
-  padding:5px 10px;
-
-  border-radius:8px;
-}
-/* ===== HERO ===== */
-.hero{
-  text-align:center;
-  padding:60px 20px 50px;
-}
-.hero h1{
-  font-size:28px;
-  letter-spacing:4px;
-}
-
-.hero p{
-  color:#bbb;
-  margin-top:10px;
-}
-
-.glow{
-  width:120px;
-  height:2px;
-  background:#d4af37;
-  margin:15px auto;
-}
-/* ===== SLIDER ===== */
-.slider{
-  width:92%;
-  max-width:430px;
-  margin:40px auto;
-  overflow:hidden;
-  border-radius:18px;
-  border:1px solid rgba(212,175,55,0.25);
-  position:relative;
-}
-
-.slides{
-  display:flex;
-  transition:0.6s ease;
-}
-
-.slides img{
-  width:100%;
-  border-radius:18px;
-}
-
-.btn{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  background:rgba(0,0,0,0.5);
-  border:1px solid rgba(255,255,255,0.2);
-  color:white;
-  padding:8px 10px;
-  cursor:pointer;
-  border-radius:10px;
-}
-
-.prev{left:10px;}
-.next{right:10px;}
-
-/* ===== PRODUCT ===== */
-.product-text{
-  text-align:center;
-  padding:25px;
-}
-
-.badge{
-  background:#d4af37;
-  color:black;
-  padding:6px 12px;
-  font-size:11px;
-  border-radius:20px;
-}
-
-h2{
-  font-size:22px;
-}
-
-/* PRICE */
-.old-price{
-  color:#777;
-  font-size:18px;
-  text-decoration:line-through;
-  opacity:.8;
-}
-
-.new-price{
-  font-size:42px;
-  font-weight:700;
-  background:linear-gradient(
-    90deg,
-    #b8860b,
-    #ffd700,
-    #fff3b0,
-    #d4af37
-  );
-
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-
-  text-shadow:
-    0 0 15px rgba(212,175,55,.4);
-
-  letter-spacing:1px;
-}
-      /* COUNTDOWN */
-.countdown{
-  margin-top:8px;
-  font-size:13px;
-  color:#ffcc70;
-}
-
-/* BUY */
-.buy-now{
-  display:inline-block;
-  margin-top:14px;
-  padding:12px 32px;
-  background:#d4af37;
-  color:black;
-  font-weight:bold;
-  text-decoration:none;
-  border-radius:30px;
-}
-
-/* ===== ABOUT ===== */
-.about{
-  max-width:800px;
-  margin:60px auto;
-  padding:20px;
-}
-
-.about-card{
-  background:rgba(255,255,255,0.04);
-  padding:16px;
-  margin-bottom:12px;
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,0.08);
-}
-
-
-/* ===== CONTACT ===== */
-.contact{
-  background:black;
-  text-align:center;
-  padding:60px 20px;
-}
-
-.contact-buttons{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  flex-wrap:wrap;
-}
-
-.contact-buttons a{
-  display:inline-flex;
-  justify-content:center;
-  align-items:center;
-
-  padding:10px 14px;
-  border-radius:12px;
-
-  color:#d4af37;
-  text-decoration:none;
-  font-weight:bold;
-
-  font-size:13px;
-  min-width:100px;
-
-  background:rgba(255,255,255,0.03);
-  border:1px solid rgba(212,175,55,0.25);
-
-  transition:0.3s;
-}
-/* hover فاخر */
-.contact-buttons a:hover{
-  transform:translateY(-5px);
-  border-color:#d4af37;
-  box-shadow:0 10px 25px rgba(212,175,55,0.15);
-  background:rgba(212,175,55,0.05);
-}
-/* hover effect */
-.contact a:hover{
-  transform:translateY(-5px);
-  box-shadow:0 10px 20px rgba(212,175,55,0.2);
-}
-.contact a{
-  display:inline-block;
-  margin:10px;
-  padding:10px 16px;
-  border-radius:10px;
-  text-decoration:none;
-  color:white;
-}
-
-.wa{background:#25D366;}
-.insta{background:#E1306C;}
-.fb{background:#1877F2;}
-.story-section{
-  max-width:900px;
-  margin:60px auto;
-  padding:30px 20px;
-  text-align:center;
-
-  background: rgba(255,255,255,0.02);
-  border-radius: 15px;
-  border: 1px solid rgba(212,175,55,0.15);
-  backdrop-filter: blur(10px);
-}
-
-.story-title{
-  font-size:22px;
-  color:#d4af37;
-  letter-spacing:3px;
-  margin-bottom:15px;
-}
-
-.story-text{
-  color:#ccc;
-  font-size:14px;
-  line-height:1.9;
-  max-width:800px;
-  margin:0 auto;
-}
-
-.story-highlight{
-  margin-top:20px;
-  padding:15px;
-  border:1px solid rgba(212,175,55,0.25);
-  border-radius:12px;
-  background:rgba(255,255,255,0.03);
-  color:#ddd;
-  font-size:14px;
-}
-  .about-card{
-  transition:0.4s;
-}
-
-.about-card:hover{
-  transform:translateY(-5px);
-  border-color:#d4af37;
-  box-shadow:0 10px 25px rgba(212,175,55,0.15);
-}
-  .inside-box{
-  max-width:900px;
-  margin:60px auto;
-  padding:30px;
-}
-
-.inside-title{
-  text-align:center;
-  color:#d4af37;
-  font-size:22px;
-  letter-spacing:3px;
-  margin-bottom:25px;
-}
-
-.inside-container{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:15px;
-}
-
-@media (max-width:768px){
-  .inside-container{
-    grid-template-columns:repeat(2,1fr);
-  }
-}
-      .inside-item{
-  background:linear-gradient(
-    135deg,
-    rgba(212,175,55,0.12),
-    rgba(255,255,255,0.03)
-  );
-  border:1px solid rgba(212,175,55,0.15);
-  border-radius:16px;
-  padding:25px 15px;
-  text-align:center;
-  transition:.4s;
-}
-
-.inside-item:hover{
-  transform:translateY(-8px);
-  border-color:#d4af37;
-}
-
-.inside-icon{
-  font-size:30px;
-  margin-bottom:12px;
-}
-
-.inside-name{
-  font-size:15px;
-  font-weight:bold;
-  color:#fff;
-}
-
-.inside-desc{
-  margin-top:8px;
-  color:#bbb;
-  font-size:13px;
-}
-  .stats-bar{
-  display:flex;
-  justify-content:center;
-  gap:50px;
-  margin:40px 0;
-  text-align:center;
-  flex-wrap:wrap;
-}
-
-.stats-bar strong{
-  display:block;
-  color:#d4af37;
-  font-size:28px;
-}
-
-.stats-bar span{
-  color:#bbb;
-  font-size:13px;
-}
-  .mood-section{
-  text-align:center;
-  margin:60px 0;
-}
-
-.mood-buttons button{
-  margin:8px;
-  padding:10px 15px;
-  border-radius:20px;
-  border:1px solid #d4af37;
-  background:transparent;
-  color:white;
-  cursor:pointer;
-  transition:0.3s;
-}
-
-.mood-buttons button:hover{
-  background:#d4af37;
-  color:black;
-}
-  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap');
-
-.lux-title{
-  font-family: 'Cinzel', serif;
-  font-size: 46px;
-  letter-spacing: 6px;
-  text-transform: uppercase;
-
-  background: linear-gradient(
-    90deg,
-    #b8860b,
-    #ffd700,
-    #fff3b0,
-    #d4af37,
-    #b8860b
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  text-shadow: 0 0 25px rgba(212,175,55,0.25);
-}
-  .lux-bar{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  background:linear-gradient(90deg,#000,#1a1400,#000);
-  color:#d4af37;
-  text-align:center;
-  font-size:13px;
-  padding:8px;
-  letter-spacing:1px;
-  z-index:99999;
-  border-bottom:1px solid rgba(212,175,55,0.3);
-}
-.product-text h2{
-  font-family:'Cinzel', serif;
-  font-size:32px;
-  letter-spacing:4px;
-
-  background:linear-gradient(
-    90deg,
-    #b8860b,
-    #ffd700,
-    #fff3b0,
-    #d4af37,
-    #b8860b
-  );
-
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-
-  text-shadow:0 0 20px rgba(212,175,55,.3);
-}
-.lux-bar span{
-  color:white;
-  margin-left:10px;
-}
-  .aura-bar{
-  margin-top:120px;
-  text-align:center;
-  padding:10px 15px;
-  max-width:420px;
-  margin-left:auto;
-  margin-right:auto;
-
-  background:rgba(255,255,255,0.03);
-  border:1px solid rgba(212,175,55,0.25);
-  border-radius:14px;
-
-  backdrop-filter: blur(10px);
-  box-shadow:0 0 25px rgba(212,175,55,0.08);
-  position:relative;
-  overflow:hidden;
-}
-
-/* خط ذهبي متحرك */
-.aura-bar::before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:-100%;
-  width:100%;
-  height:100%;
-  background:linear-gradient(120deg,transparent,rgba(212,175,55,0.3),transparent);
-  animation:shine 3s infinite;
-}
-
-@keyframes shine{
-  0%{left:-100%;}
-  100%{left:100%;}
-}
-
-.aura-bar span{
-  display:block;
-  color:#d4af37;
-  font-weight:bold;
-  letter-spacing:3px;
-  font-size:12px;
-}
-
-.aura-bar small{
-  display:block;
-  color:#bbb;
-  font-size:11px;
-  margin-top:3px;
-}
-.price-row{
-  display:flex;
-  flex-direction:column;
-
-  justify-content:center;
-  align-items:center;
-
-  gap:8px;
-
-  margin-top:15px;
-}
-.price-row .countdown{
-  background:rgba(255,204,112,0.12);
-  border:1px solid rgba(255,204,112,0.3);
-  padding:6px 10px;
-  border-radius:10px;
-  font-size:12px;
-  color:#ffcc70;
-}
- 
-
-  @media (max-width: 600px){
-  .contact-buttons{
-    gap:8px;
-  }
-
-  .contact-buttons a{
-    flex:1;
-    min-width:unset;
-    font-size:12px;
-    padding:10px 8px;
-  }
-}
-  html {
-  scroll-behavior: smooth;
-}
-
-@keyframes pulseProduct{
-  0%{
-    transform: scale(1);
-  }
-  50%{
-    transform: scale(1.06);
-  }
-  100%{
-    transform: scale(1);
-  }
-}
- 
-
-@keyframes aura{
-from{transform:scale(1);}
-to{transform:scale(1.2);}
-}
-  .buy-now{
-animation:buyGlow 2s infinite;
-}
-
-@keyframes buyGlow{
-0%,100%{
-box-shadow:0 0 0 rgba(212,175,55,0);
-}
-50%{
-box-shadow:0 0 35px rgba(212,175,55,.7);
-}
-}
-  .hero-images{
-  display:flex;
-  justify-content:center;
-  gap:15px;
-  flex-wrap:wrap;
-}
-  .hero-image{
-  width:160px;
-  margin:15px auto;
-  display:block;
-  border-radius:16px;
-  box-shadow:0 10px 25px rgba(212,175,55,0.25);
-  animation: fadeIn 1s ease;
-}
-
-@keyframes fadeIn{
-  from{opacity:0; transform:translateY(10px);}
-  to{opacity:1; transform:translateY(0);}
-}
- 
-  .hero-product{
-  background: transparent;
-}
-
-.hero-product{
-  display:flex;
-  justify-content:center;
-  margin:70px 0;
-}
-
-.product-card{
-  position:relative;
-  width:280px;
-  height:320px;
-
-  display:flex;
-  justify-content:center;
-  align-items:center;
-
-  background:transparent;
-  border:none;
-  box-shadow:none;
-  backdrop-filter:none;
-  overflow:visible;
-}
-
-.product-glow{
-  position:absolute;
-  width:220px;
-  height:220px;
-  background:radial-gradient(circle, rgba(212,175,55,0.35), transparent 70%);
-  filter:blur(25px);
-  animation:floatGlow 4s infinite ease-in-out;
-}
-
-@keyframes floatGlow{
-  0%{transform:scale(1);}
-  50%{transform:scale(1.2);}
-  100%{transform:scale(1);}
-}
-
-.product-img{
-  width: 200px;
-  height: auto;
-  .product-img{
-  mix-blend-mode: screen;
-}
-
-  display: block;
-  margin: 0 auto;
-
-  /* يخلي الصورة نظيفة ومش مشوهة */
-  object-fit: contain;
-
-  /* ظل ناعم يعطي عمق فقط */
-  filter: drop-shadow(0 25px 30px rgba(0,0,0,0.6));
-
-  /* حركة خفيفة فخمة */
-  animation: floatProduct 3s ease-in-out infinite;
-
-  /* يمنع أي تشوه بالحركة */
-  transform-origin: center;
-}
-
-@keyframes floatProduct{
-  0%,100%{transform:translateY(0);}
-  50%{transform:translateY(-10px);}
-}
-  .lang-switch{
-  background: transparent;
-  border: 1px solid #d4af37;
-  color: #d4af37;
-  padding: 7px 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.lang-switch:hover{
-  background:#d4af37;
-  color:black;
-}
-  body.rtl{
-  direction: rtl;
-  text-align: right;
-}
-.product-card:hover{
-  box-shadow:none;
-  transform:none;
-}
-  .whatsapp-float{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-
-  width:55px;
-  height:55px;
-
-  background:#25D366;
-
-  display:flex;
-  justify-content:center;
-  align-items:center;
-
-  border-radius:50%;
-
-  box-shadow:0 10px 25px rgba(0,0,0,0.3);
-
-  z-index:9999;
-
-  transition:0.3s;
-}
-
-/* حجم شعار واتساب */
-.whatsapp-float img{
-  width:28px;
-  height:28px;
-}
-
-/* hover بسيط */
-.whatsapp-float:hover{
-  transform:scale(1.1);
-  box-shadow:0 15px 30px rgba(37,211,102,0.5);
-}
-.order-form{
-  max-width:1100px;
-  margin:60px auto;
-  padding:25px;
-  background:rgba(255,255,255,0.03);
-  border:1px solid rgba(212,175,55,0.2);
-  border-radius:15px;
-  text-align:center;
-}
-
-.order-form h2{
-  color:#d4af37;
-  margin-bottom:20px;
-}
-
-.order-form input,
-.order-form textarea{
-  width:100%;
-  box-sizing:border-box;
-  margin-bottom:12px;
-  padding:12px;
-  font-size:16px;
-  text-align:right;
-  border:none;
-  border-radius:10px;
-  background:#111;
-  color:white;
-}
-
-.order-form textarea{
-  height:100px;
-  resize:none;
-}
-
-.order-form button{
-  background:#d4af37;
-  color:black;
-  border:none;
-  padding:12px 30px;
-  border-radius:30px;
-  font-weight:bold;
-  cursor:pointer;
-}
-  #story {
-  scroll-margin-top: 120px;
-}
-  #orderForm {
-  scroll-margin-top: 60px;
-}
-  .exit-popup{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.85);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  z-index:99999;
-
-  opacity:0;
-  pointer-events:none;
-  transition:0.4s;
-}
-
-.exit-popup.active{
-  opacity:1;
-  pointer-events:auto;
-}
-
-.popup-box{
-  width:300px;
-  background:linear-gradient(135deg,#111,#000);
-  border:1px solid rgba(212,175,55,0.3);
-  padding:25px;
-  border-radius:15px;
-  text-align:center;
-  color:white;
-  box-shadow:0 0 40px rgba(212,175,55,0.2);
-}
-
-.popup-box h2{
-  color:#d4af37;
-  letter-spacing:3px;
-}
-
-.offer{
-  margin:15px 0;
-  color:#ffcc70;
-  font-weight:bold;
-}
-
-.popup-btn{
-  display:inline-block;
-  margin-top:10px;
-  padding:10px 20px;
-  background:#d4af37;
-  color:black;
-  text-decoration:none;
-  border-radius:20px;
-  font-weight:bold;
-}
-
-.close-btn{
-  margin-top:10px;
-  background:transparent;
-  border:none;
-  color:#aaa;
-  cursor:pointer;
-  font-size:12px;
-}
-  .footer{
-  background:#000;
-  text-align:center;
-  padding:40px 20px;
-  border-top:1px solid rgba(212,175,55,0.2);
-}
-
-.footer h3{
-  color:#d4af37;
-  margin-bottom:15px;
-  letter-spacing:2px;
-}
-
-.footer a{
-  display:block;
-  color:#bbb;
-  text-decoration:none;
-  margin:8px 0;
-  font-size:14px;
-  transition:0.3s;
-}
-
-.footer a:hover{
-  color:#d4af37;
-}
-  .policy-section{
-  max-width:800px;
-  margin:60px auto;
-  padding:20px;
-  background:rgba(255,255,255,0.03);
-  border:1px solid rgba(212,175,55,0.15);
-  border-radius:12px;
-}
-
-.policy-section h2{
-  color:#d4af37;
-  margin-bottom:10px;
-}
-
-.policy-section p{
-  color:#ccc;
-  font-size:14px;
-  line-height:1.8;
-}
-      body::after{
-  content:"";
-  position:fixed;
-  top:0;
-  left:0;
-
-  width:600px;
-  height:600px;
-
+  font-family:"Tajawal",Arial,sans-serif;
   background:
-  radial-gradient(circle,
-  rgba(212,175,55,.10),
-  transparent 70%);
-
-  z-index:-1;
-
-  animation:goldAura 10s infinite alternate ease-in-out;
+    radial-gradient(circle at 15% 10%,rgba(212,175,55,.10),transparent 35%),
+    radial-gradient(circle at 85% 60%,rgba(212,175,55,.07),transparent 40%),
+    var(--bg);
+  color:var(--text);
+  line-height:1.7;
+  overflow-x:hidden;
+  padding-bottom:76px; /* space for mobile sticky bar */
 }
-
-@keyframes goldAura{
-  from{
-    transform:translate(-100px,-50px);
-  }
-
-  to{
-    transform:translate(100px,50px);
-  }
+html[lang="en"] body{font-family:"Tajawal",Arial,sans-serif;letter-spacing:.2px}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font-family:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 16px}
+.latin{font-family:"Cinzel",serif}
+.gold-text{
+  background:var(--gold-grad);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
-      .gold-particles span{
-  position:fixed;
-  width:6px;
-  height:6px;
-  background:#d4af37;
-  border-radius:50%;
-  opacity:.35;
-  box-shadow:0 0 15px rgba(212,175,55,.8);
-  animation:particleMove 12s infinite linear;
-  z-index:-1;
-}
-
-.gold-particles span:nth-child(1){left:10%; top:80%; animation-delay:0s;}
-.gold-particles span:nth-child(2){left:30%; top:90%; animation-delay:2s;}
-.gold-particles span:nth-child(3){left:55%; top:85%; animation-delay:4s;}
-.gold-particles span:nth-child(4){left:75%; top:95%; animation-delay:6s;}
-.gold-particles span:nth-child(5){left:90%; top:88%; animation-delay:8s;}
-
-@keyframes particleMove{
-  0%{
-    transform:translateY(0) scale(1);
-    opacity:.15;
-  }
-  50%{
-    opacity:.45;
-  }
-  100%{
-    transform:translateY(-900px) scale(1.4);
-    opacity:0;
-  }
-}
-      .story-container{
-  display:flex;
-  align-items:center;
-  gap:40px;
-  flex-wrap:wrap;
-}
-
-.story-image{
-  flex:1;
-  min-width:280px;
-}
-
-.story-image img{
-  width:100%;
-  border-radius:18px;
-  box-shadow:0 15px 40px rgba(212,175,55,0.15);
-  border:1px solid rgba(212,175,55,0.2);
-}
-
-.story-content{
-  flex:1;
-  min-width:280px;
-  text-align:left;
-}
-
-.story-features{
-  margin-top:25px;
-}
-
-.feature-item{
-  padding:12px 15px;
-  margin-bottom:10px;
-  border-radius:12px;
-  background:rgba(255,255,255,0.03);
-  border:1px solid rgba(212,175,55,0.15);
-  color:#ddd;
-  transition:.3s;
-}
-
-.feature-item:hover{
-  transform:translateX(5px);
-  border-color:#d4af37;
-}
-
-@media(max-width:768px){
-  .story-container{
-    flex-direction:column;
-  }
-
-  .story-content{
-    text-align:center;
-  }
-}
-      .order-banner2{
-  width:100%;
-  border-radius:18px;
-  margin-bottom:20px;
-
-  border:1px solid rgba(212,175,55,0.2);
-
-  box-shadow:
-  0 15px 40px rgba(212,175,55,0.15);
-
-  transition:.4s;
-}
-
-.order-banner2:hover{
-  transform:scale(1.02);
-}
-.trust-bar{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  flex-wrap:wrap;
-
-  margin-top:15px;
-}
-
-.trust-bar span{
-  padding:8px 12px;
-
-  background:rgba(255,255,255,0.03);
-
-  border:1px solid rgba(212,175,55,0.2);
-
-  border-radius:20px;
-
-  color:#d4af37;
-
-  font-size:12px;
-
-  backdrop-filter:blur(10px);
-}
-      .order-layout{
-  display:flex;
-  align-items:center;
-  gap:40px;
-}
-
-.order-image-side{
-  flex:1;
-}
-.order-image-side img{
-  max-width:280px;
-  width:100%;
-  display:block;
-  margin:auto;
-}
-.order-info-side{
-  flex:1;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-}
-
-.order-info-side input,
-.order-info-side textarea{
-  max-width:360px;
-}
-
-.secure-note{
-  margin:5px 0 12px;
-  color:#bbb;
-  font-size:12px;
+section{padding:56px 0}
+.section-title{
   text-align:center;
+  font-size:26px;
+  font-weight:800;
+  margin:0 0 6px;
+  color:var(--gold);
 }
-      .order-form button{
-  display:block;
-  margin:0 auto;
-}
-@media(max-width:768px){
-  .order-layout{
-    flex-direction:column;
-  }
-}
-      .review-user{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  margin-bottom:15px;
-  text-align:right;
-}
+.section-sub{text-align:center;color:var(--muted);margin:0 auto 28px;max-width:560px}
 
-.avatar{
-  width:50px;
-  height:50px;
-  border-radius:50%;
-  overflow:hidden;
-  background:linear-gradient(135deg,#d4af37,#fff3b0,#8a6d1d);
-  padding:2px;
-  box-shadow:0 0 18px rgba(212,175,55,.35);
+/* ===== HEADER ===== */
+.header{
+  position:fixed;inset:0 0 auto 0;height:var(--header-h);
+  background:rgba(0,0,0,.72);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--gold-line);
+  z-index:100;
 }
-      .avatar img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  border-radius:50%;
-  display:block;
+.header .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{width:40px;height:40px;border-radius:10px;object-fit:cover}
+.brand span{font-family:"Cinzel",serif;font-size:15px;letter-spacing:3px}
+.nav{display:flex;align-items:center;gap:6px}
+.nav a.link{
+  text-decoration:none;font-size:14px;color:#ddd;padding:6px 10px;border-radius:8px;
 }
-.review-user strong{
-  display:block;
-  color:#d4af37;
-  font-size:14px;
+.nav a.link:hover{color:var(--gold)}
+.lang-btn{
+  background:transparent;color:var(--gold);border:1px solid var(--gold-line);
+  border-radius:8px;padding:6px 10px;font-size:13px;font-weight:700;cursor:pointer;
 }
-
-.review-user span{
-  display:block;
-  color:#aaa;
-  font-size:12px;
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  background:var(--gold);color:#000;font-weight:800;text-decoration:none;
+  border:none;border-radius:999px;padding:13px 28px;font-size:16px;cursor:pointer;
+  transition:transform .2s, box-shadow .2s;
 }
-      .how-use{
-  max-width:1000px;
-  margin:70px auto;
-  padding:30px 20px;
-  text-align:center;
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(212,175,55,.28)}
+.btn.small{padding:8px 16px;font-size:14px}
+.btn.ghost{background:transparent;color:var(--gold);border:1px solid var(--gold)}
+@media (max-width:720px){
+  .nav a.link{display:none}
+  .brand span{font-size:13px;letter-spacing:2px}
 }
 
-.how-use h2{
-  color:#d4af37;
-  margin-bottom:10px;
-  letter-spacing:3px;
+/* ===== HERO ===== */
+.hero{padding:calc(var(--header-h) + 36px) 0 30px;text-align:center}
+.hero h1{
+  font-family:"Cinzel","Tajawal",serif;
+  font-size:clamp(32px,7vw,58px);
+  letter-spacing:4px;line-height:1.25;margin:0 0 10px;
+}
+html[lang="ar"] .hero h1{letter-spacing:0;font-family:"Tajawal",sans-serif;font-weight:800}
+.hero p.lead{color:var(--muted);font-size:17px;max-width:560px;margin:0 auto 22px}
+.hero-images{
+  display:grid;grid-template-columns:1fr 1fr;gap:12px;
+  max-width:620px;margin:26px auto 0;
+}
+.hero-images img{
+  width:100%;aspect-ratio:3/4;object-fit:cover;
+  border-radius:var(--radius);border:1px solid var(--gold-line);
+}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:20px}
+.chip{
+  background:rgba(255,255,255,.04);border:1px solid var(--gold-line);
+  border-radius:999px;padding:6px 14px;font-size:14px;color:#eee;
 }
 
-.how-subtitle{
-  color:#bbb;
-  margin-bottom:30px;
+/* ===== PRODUCTS ===== */
+.products{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:760px){.products{grid-template-columns:1fr}}
+.product{
+  position:relative;background:linear-gradient(160deg,var(--card-2),var(--card));
+  border:1px solid var(--gold-line);border-radius:22px;overflow:hidden;
+  display:flex;flex-direction:column;
+}
+.product.featured{border-color:var(--gold);box-shadow:0 0 40px rgba(212,175,55,.14)}
+.product .ribbon{
+  position:absolute;top:14px;inset-inline-start:14px;z-index:2;
+  background:var(--gold);color:#000;font-weight:800;font-size:13px;
+  padding:5px 12px;border-radius:999px;
+}
+.product .media{background:#000;aspect-ratio:3/2;overflow:hidden}
+.product .media img{width:100%;height:100%;object-fit:cover}
+.product .media.contain img{object-fit:contain;padding:12px}
+.product .body{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.product h3{margin:0;font-size:22px}
+.product .price{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.product .price strong{font-size:34px;font-weight:800}
+.product .price .ship{font-size:14px;color:var(--muted)}
+.product .price .ship.free{color:#7ee2a8;font-weight:700}
+.product ul{margin:0;padding:0;list-style:none;display:grid;gap:6px}
+.product li{display:flex;gap:8px;color:#ddd;font-size:15px}
+.product li::before{content:"✦";color:var(--gold)}
+.product .btn{margin-top:auto;width:100%}
+
+/* ===== NOTES ===== */
+.notes{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
+@media (max-width:760px){.notes{grid-template-columns:1fr}}
+.notes img{border-radius:var(--radius);border:1px solid var(--gold-line)}
+.note-list{display:grid;gap:12px}
+.note{
+  background:rgba(255,255,255,.03);border:1px solid var(--gold-line);
+  border-radius:14px;padding:14px 16px;
+}
+.note h4{margin:0 0 2px;color:var(--gold);font-size:16px}
+.note p{margin:0;color:#ddd}
+
+/* ===== STEPS / FEATURES ===== */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media (max-width:760px){
+  .grid-3{grid-template-columns:1fr}
+  .grid-4{grid-template-columns:1fr 1fr}
+}
+.card{
+  background:linear-gradient(160deg,var(--card-2),var(--card));
+  border:1px solid var(--gold-line);border-radius:var(--radius);padding:16px;
+}
+.step img{border-radius:14px;width:100%;aspect-ratio:577/699;object-fit:cover;margin-bottom:12px}
+.step h4,.feature h4{margin:0 0 4px;color:var(--gold);font-size:18px}
+.step p,.feature p{margin:0;color:#ccc;font-size:15px}
+.feature{text-align:center}
+.feature .icon{font-size:28px;margin-bottom:6px}
+
+/* ===== REVIEWS ===== */
+.review .stars{color:var(--gold);letter-spacing:2px}
+.review p{color:#ddd;margin:8px 0 12px}
+.review .who{display:flex;align-items:center;gap:10px}
+.review .who img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:1px solid var(--gold-line)}
+.review .who strong{display:block;font-size:15px}
+.review .who span{font-size:13px;color:var(--muted)}
+.center{text-align:center;margin-top:22px}
+
+/* ===== STORY ===== */
+.story{display:grid;grid-template-columns:1fr 1.2fr;gap:28px;align-items:center}
+@media (max-width:760px){.story{grid-template-columns:1fr}}
+.story img{border-radius:var(--radius);border:1px solid var(--gold-line)}
+.story p{color:#ccc}
+
+/* ===== FAQ ===== */
+.faq{max-width:760px;margin:0 auto;display:grid;gap:10px}
+.faq details{
+  background:rgba(255,255,255,.03);border:1px solid var(--gold-line);
+  border-radius:14px;padding:4px 16px;
+}
+.faq summary{
+  cursor:pointer;list-style:none;padding:12px 0;font-weight:700;
+  display:flex;justify-content:space-between;align-items:center;gap:10px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--gold);font-size:22px;line-height:1;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin:0 0 14px;color:#ccc}
+
+/* ===== ORDER ===== */
+.order{
+  max-width:640px;margin:0 auto;
+  background:linear-gradient(160deg,#151515,#0a0a0a);
+  border:1px solid var(--gold);border-radius:24px;padding:22px;
+  box-shadow:0 0 50px rgba(212,175,55,.10);
+}
+.line-item{
+  display:flex;align-items:center;gap:12px;
+  padding:12px;border:1px solid var(--gold-line);border-radius:14px;margin-bottom:10px;
+  background:rgba(255,255,255,.02);
+}
+.line-item img{width:58px;height:58px;border-radius:10px;object-fit:cover;background:#000}
+.line-item .info{flex:1;min-width:0}
+.line-item .info{line-height:1.4}
+.line-item .info strong{display:block;font-size:15px}
+.line-item .info span{font-size:13px;color:var(--muted)}
+@media (max-width:420px){.stepper button{width:32px;height:32px}.line-item{gap:10px;padding:10px}.line-item img{width:50px;height:50px}}
+.stepper{display:flex;align-items:center;border:1px solid var(--gold-line);border-radius:999px;overflow:hidden}
+.stepper button{
+  width:36px;height:36px;border:none;background:transparent;color:var(--gold);
+  font-size:20px;cursor:pointer;
+}
+.stepper output{min-width:28px;text-align:center;font-weight:800}
+.field{margin-top:12px}
+.field label{display:block;font-size:14px;color:#ddd;margin-bottom:5px}
+.field input,.field select,.field textarea{
+  width:100%;padding:13px 14px;font-size:16px;font-family:inherit;
+  background:#000;color:#fff;border:1px solid #2a2a2a;border-radius:12px;outline:none;
+}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold)}
+.field textarea{min-height:84px;resize:vertical}
+.field .err{color:#ff8a8a;font-size:13px;margin-top:4px;display:none}
+.field.invalid input,.field.invalid select,.field.invalid textarea{border-color:#ff6b6b}
+.field.invalid .err{display:block}
+.summary{margin:18px 0 6px;border-top:1px dashed var(--gold-line);padding-top:12px}
+.summary div{display:flex;justify-content:space-between;color:#ddd;padding:3px 0}
+.summary .total{font-size:20px;font-weight:800;color:var(--gold)}
+.summary .free{color:#7ee2a8;font-weight:700}
+.upsell{
+  margin-top:8px;font-size:14px;color:#ffd98a;background:var(--gold-soft);
+  border-radius:10px;padding:8px 12px;display:none;
+}
+.order .btn{width:100%;margin-top:14px;font-size:17px}
+.secure{text-align:center;color:var(--muted);font-size:13px;margin-top:10px}
+.form-error{color:#ff8a8a;text-align:center;margin-top:10px;display:none}
+
+/* ===== CONTACT / FOOTER ===== */
+.contact-links{display:flex;justify-content:center;flex-wrap:wrap;gap:10px}
+.contact-links a{
+  text-decoration:none;border:1px solid var(--gold-line);border-radius:12px;
+  padding:10px 18px;color:var(--gold);font-weight:700;background:rgba(255,255,255,.03);
+}
+.contact-links a:hover{border-color:var(--gold)}
+footer{border-top:1px solid var(--gold-line);padding:28px 0;text-align:center;color:var(--muted);font-size:14px}
+footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;margin-bottom:10px}
+footer nav a{text-decoration:none;color:#ccc}
+footer nav a:hover{color:var(--gold)}
+
+/* ===== FLOATING / STICKY ===== */
+.wa-float{
+  position:fixed;bottom:88px;inset-inline-end:16px;z-index:90;
+  width:54px;height:54px;border-radius:50%;background:#25D366;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 22px rgba(0,0,0,.45);
+}
+.wa-float svg{width:30px;height:30px;fill:#fff}
+.sticky-bar{
+  position:fixed;inset:auto 0 0 0;z-index:95;
+  background:rgba(0,0,0,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-top:1px solid var(--gold-line);padding:10px 16px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  transition:transform .3s;
+}
+.sticky-bar.hide{transform:translateY(110%)}
+.sticky-bar .p{font-size:14px;color:#ddd;line-height:1.3}
+.sticky-bar .p strong{color:var(--gold);font-size:18px}
+@media (min-width:900px){
+  .sticky-bar{display:none}
+  body{padding-bottom:0}
+  .wa-float{bottom:24px}
 }
 
-.how-steps{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-
-.how-step{
-  background:rgba(255,255,255,0.03);
-  border:1px solid rgba(212,175,55,0.15);
-  border-radius:16px;
-  padding:25px;
-  transition:.3s;
-}
-
-.how-step:hover{
-  transform:translateY(-8px);
-  border-color:#d4af37;
-}
-
-.step-number{
-  width:50px;
-  height:50px;
-  margin:auto;
-  margin-bottom:15px;
-  border-radius:50%;
-  background:#d4af37;
-  color:black;
-  font-weight:bold;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:20px;
-}
-
-.how-step h3{
-  color:#fff;
-  margin-bottom:10px;
-}
-
-.how-step p{
-  color:#bbb;
-  font-size:14px;
-}
-
-@media(max-width:768px){
-
-@media(max-width:768px){
-
-  .how-steps{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:8px;
-  }
-
-  .step-image{
-    height:90px;
-  }
-
-  .how-step{
-    padding:10px;
-  }
-
-  .how-step h3{
-    font-size:12px;
-    margin-top:5px;
-  }
-
-@media(max-width:768px){
-
-  .how-steps{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:8px;
-  }
-
-  .step-image{
-    height:90px;
-  }
-
-  .how-step{
-    padding:10px;
-  }
-
-  .how-step h3{
-    font-size:12px;
-    margin-top:5px;
-  }
-
-  .how-step p{
-    display:block;
-    font-size:10px;
-    line-height:1.4;
-    color:#bbb;
-  }
-
-}
-}
-}
-      .step-image{
-  width:100%;
-  height:220px;
-  object-fit:cover;
-  border-radius:14px;
-  margin-bottom:15px;
-  border:1px solid rgba(212,175,55,0.2);
-  box-shadow:0 10px 25px rgba(212,175,55,0.15);
-}
-      .secure-note{
-  margin-bottom:12px;
-  color:#bbb;
-  font-size:12px;
-  text-align:center;
-}
-      .reviews-page-btn{
-  display:inline-block;
-  padding:12px 28px;
-  background:#d4af37;
-  color:#000;
-  text-decoration:none;
-  font-weight:bold;
-  border-radius:30px;
-  transition:.3s;
-}
-
-.reviews-page-btn:hover{
-  transform:translateY(-3px);
-  box-shadow:0 10px 25px rgba(212,175,55,.25);
-}
-      /* ===== FRAGRANCE NOTES ===== */
-
-.fragrance-section{
-    max-width:1100px;
-    margin:70px auto;
-    padding:30px;
-    display:flex;
-    gap:40px;
-    align-items:center;
-    background:rgba(255,255,255,.03);
-    border:1px solid rgba(212,175,55,.18);
-    border-radius:22px;
-    backdrop-filter:blur(12px);
-}
-
-.fragrance-image{
-    flex:1;
-    text-align:center;
-}
-
-.fragrance-image img{
-    width:100%;
-    max-width:360px;
-    border-radius:20px;
-    border:1px solid rgba(212,175,55,.2);
-    box-shadow:0 20px 40px rgba(212,175,55,.15);
-}
-
-.fragrance-content{
-    flex:1;
-}
-
-.fragrance-content h2{
-    color:#d4af37;
-    margin-bottom:25px;
-    letter-spacing:3px;
-    text-align:center;
-}
-
-.note-card{
-    background:rgba(255,255,255,.03);
-    border:1px solid rgba(212,175,55,.15);
-    padding:18px;
-    border-radius:15px;
-    margin-bottom:15px;
-    transition:.3s;
-}
-
-.note-card:hover{
-    transform:translateY(-5px);
-    border-color:#d4af37;
-    box-shadow:0 10px 25px rgba(212,175,55,.18);
-}
-
-.note-card h3{
-    color:#d4af37;
-    margin-bottom:8px;
-    font-size:18px;
-}
-
-.note-card p{
-    color:#ddd;
-    line-height:1.8;
-    font-size:15px;
-}
-
-@media(max-width:768px){
-
-.fragrance-section{
-    flex-direction:column;
-    text-align:center;
-}
-
-.fragrance-image img{
-    max-width:260px;
-}
-
-}
-      /* ===== PACKAGE BUTTON ===== */
-
-.package-btn{
-  display:block;
-  margin:15px auto 0;
-  padding:11px 28px;
-
-  background:transparent;
-  color:#d4af37;
-
-  border:1px solid #d4af37;
-  border-radius:30px;
-
-  font-size:14px;
-  font-weight:bold;
-
-  cursor:pointer;
-  transition:.3s;
-}
-
-.package-btn:hover{
-  background:#d4af37;
-  color:#000;
-
-  transform:translateY(-3px);
-
-  box-shadow:
-  0 10px 30px rgba(212,175,55,.25);
-}
-
-
-/* ===== PACKAGE POPUP ===== */
-
-.package-modal{
-  position:fixed;
-  inset:0;
-
-  background:rgba(0,0,0,.92);
-
-  display:flex;
-  justify-content:center;
-  align-items:center;
-
-  z-index:999999;
-
-  opacity:0;
-  visibility:hidden;
-
-  transition:.35s;
-}
-
-.package-modal.active{
-  opacity:1;
-  visibility:visible;
-}
-
-.package-modal-content{
-  position:relative;
-
-  width:90%;
-  max-width:500px;
-
-  padding:15px;
-
-  background:#080808;
-
-  border:1px solid rgba(212,175,55,.4);
-  border-radius:20px;
-
-  box-shadow:
-  0 0 50px rgba(212,175,55,.2);
-
-  transform:scale(.85);
-
-  transition:.35s;
-
-  text-align:center;
-}
-
-.package-modal.active .package-modal-content{
-  transform:scale(1);
-}
-
-.package-modal-content img{
-  width:100%;
-  max-height:75vh;
-
-  object-fit:contain;
-
-  border-radius:15px;
-}
-
-.package-modal-title{
-  color:#d4af37;
-
-  margin-top:12px;
-
-  font-size:16px;
-  letter-spacing:2px;
-}
-
-.package-close{
-  position:absolute;
-
-  top:20px;
-  right:25px;
-
-  color:#d4af37;
-
-  font-size:40px;
-
-  cursor:pointer;
-
-  z-index:10;
-}
-
-.package-close:hover{
-  color:white;
+/* reveal on scroll */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s, transform .6s}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
 }
 </style>
-  </head>
-
+</head>
 <body>
 
-<!-- LOADER -->
-<div id="loader">
-  <img src="logo.png">
-</div>
-  <div class="aura-bar">
-  <span>✦ LOR PREMIUM EXPERIENCE</span>
-  <small>Where scent becomes identity</small>
-</div>
-<!-- TOPBAR -->
-<div class="topbar">
-
-  <div class="right">
-    <img src="logo.png" class="logo">
-    <div class="brand">LOR' BUTTER PERFUME</div>
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <img src="logo.png" alt="LOR Perfume">
+      <span>LOR' PERFUME</span>
+    </a>
+    <nav class="nav">
+      <a class="link" href="#products" data-i18n="nav.products"></a>
+      <a class="link" href="#story" data-i18n="nav.story"></a>
+      <a class="link" href="#faq" data-i18n="nav.faq"></a>
+      <button class="lang-btn" id="langBtn" type="button">EN</button>
+      <a class="btn small" href="#order" data-i18n="nav.order"></a>
+    </nav>
   </div>
+</header>
 
-  <div class="nav">
-<a href="#story">OUR STORY</a>
-    <a href="#contact">Contact</a>
-<a class="buy" href="#orderForm">
-  BUY
-</a>
-    <button id="langBtn" class="lang-switch">AR</button>
-  </div>
+<main id="top">
 
-</div>
-
-<!-- HERO -->
-<div class="hero">
-  <h1 class="lux-title">THE ART OF SCENT</h1>
-
-<div class="hero-images">
-  <img src="customer1.webp" class="hero-image">
-  <img src="customer3.webp" class="hero-image">
-</div>
-  <div class="glow"></div>
-  <p>Luxury fragrance experience beyond spraying</p>
-</div>
-  <!-- STORY / BRANDING -->
-<div class="stats-bar">
-
-  <div>
-    <strong>COD</strong>
-    <span>Cash On Delivery</span>
-  </div>
-
-  <div>
-    <strong>100%</strong>
-    <span>Luxury Quality</span>
-  </div>
-
-</div>
-  <!-- FRAGRANCE NOTES -->
-<section class="fragrance-section">
-
-    <div class="fragrance-image">
-        <img src="notes.webp" alt="Fragrance Notes">
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="wrap">
+    <h1 class="gold-text" data-i18n="hero.title"></h1>
+    <p class="lead" data-i18n="hero.lead"></p>
+    <a class="btn" href="#products" data-i18n="hero.cta"></a>
+    <div class="chips">
+      <span class="chip" data-i18n="chip.free"></span>
+      <span class="chip" data-i18n="chip.cod"></span>
+      <span class="chip" data-i18n="chip.jo"></span>
     </div>
-
-    <div class="fragrance-content">
-
-        <h2>FRAGRANCE NOTES</h2>
-
-        <div class="note-card">
-            <h3>🌸 العائلة العطرية</h3>
-            <p>الزهور الشرقية</p>
-        </div>
-
-        <div class="note-card">
-            <h3>🍐 المكونات العليا</h3>
-            <p>الكمثرى، الفلفل الوردي، زهر البرتقال</p>
-        </div>
-
-        <div class="note-card">
-            <h3>☕ المكونات الوسطى</h3>
-            <p>القهوة، الياسمين، اللوز المر، العرقسوس</p>
-        </div>
-
-        <div class="note-card">
-            <h3>🌳 مكونات القاعدة</h3>
-            <p>الفانيليا، الباتشولي، خشب الكشمير، خشب الأرز</p>
-        </div>
-
+    <div class="hero-images">
+      <img src="customer1.webp" alt="" fetchpriority="high">
+      <img src="customer3.webp" alt="">
     </div>
-
+  </div>
 </section>
-<!-- SLIDER -->
-<div class="hero-product">
-  <div class="product-card">
-    <div class="product-glow"></div>
-    <img src="product.webp" class="product-img">
+
+<!-- ===== PRODUCTS ===== -->
+<section id="products">
+  <div class="wrap">
+    <h2 class="section-title" data-i18n="products.title"></h2>
+    <p class="section-sub" data-i18n="products.sub"></p>
+
+    <div class="products">
+      <article class="product featured reveal">
+        <span class="ribbon" data-i18n="pkg.ribbon"></span>
+        <div class="media"><img src="package.jpeg" alt="" loading="lazy"></div>
+        <div class="body">
+          <h3 data-i18n="pkg.name"></h3>
+          <div class="price">
+            <strong class="gold-text"><span data-i18n="pkg.price"></span></strong>
+            <span class="ship free" data-i18n="ship.free"></span>
+          </div>
+          <ul>
+            <li data-i18n="pkg.i1"></li>
+            <li data-i18n="pkg.i2"></li>
+            <li data-i18n="pkg.i3"></li>
+          </ul>
+          <button class="btn" type="button" data-add="package" data-i18n="pkg.cta"></button>
+        </div>
+      </article>
+
+      <article class="product reveal">
+        <div class="media contain"><img src="product.webp" alt="" loading="lazy"></div>
+        <div class="body">
+          <h3 data-i18n="solid.name"></h3>
+          <div class="price">
+            <strong class="gold-text"><span data-i18n="solid.price"></span></strong>
+            <span class="ship" data-i18n="ship.paid"></span>
+          </div>
+          <ul>
+            <li data-i18n="solid.i1"></li>
+            <li data-i18n="solid.i2"></li>
+            <li data-i18n="solid.i3"></li>
+          </ul>
+          <button class="btn ghost" type="button" data-add="solid" data-i18n="solid.cta"></button>
+        </div>
+      </article>
+    </div>
   </div>
-</div>
+</section>
 
-<!-- PRODUCT -->
-<div class="product-text">
-  <h2>Luxury Butter Perfume</h2>
+<!-- ===== NOTES ===== -->
+<section>
+  <div class="wrap notes">
+    <img src="notes.webp" alt="" loading="lazy" class="reveal">
+    <div class="reveal">
+      <h2 class="section-title" style="text-align:start" data-i18n="notes.title"></h2>
+      <div class="note-list">
+        <div class="note"><h4 data-i18n="notes.family.t"></h4><p data-i18n="notes.family.d"></p></div>
+        <div class="note"><h4 data-i18n="notes.top.t"></h4><p data-i18n="notes.top.d"></p></div>
+        <div class="note"><h4 data-i18n="notes.heart.t"></h4><p data-i18n="notes.heart.d"></p></div>
+        <div class="note"><h4 data-i18n="notes.base.t"></h4><p data-i18n="notes.base.d"></p></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <div class="price-row">
-  <div class="new-price">25 JD</div>
-</div>
-  <div class="trust-bar">
+<!-- ===== HOW TO USE ===== -->
+<section>
+  <div class="wrap">
+    <h2 class="section-title" data-i18n="how.title"></h2>
+    <p class="section-sub" data-i18n="how.sub"></p>
+    <div class="grid-3">
+      <div class="card step reveal"><img src="press2.webp" alt="" loading="lazy"><h4 data-i18n="how.1.t"></h4><p data-i18n="how.1.d"></p></div>
+      <div class="card step reveal"><img src="apply.webp" alt="" loading="lazy"><h4 data-i18n="how.2.t"></h4><p data-i18n="how.2.d"></p></div>
+      <div class="card step reveal"><img src="enjoy.webp" alt="" loading="lazy"><h4 data-i18n="how.3.t"></h4><p data-i18n="how.3.d"></p></div>
+    </div>
+  </div>
+</section>
 
-  <span>🚚 Fast Delivery</span>
+<!-- ===== WHY LOR ===== -->
+<section>
+  <div class="wrap">
+    <h2 class="section-title" data-i18n="why.title"></h2>
+    <p class="section-sub" data-i18n="why.sub"></p>
+    <div class="grid-4">
+      <div class="card feature reveal"><div class="icon">💎</div><h4 data-i18n="why.1.t"></h4><p data-i18n="why.1.d"></p></div>
+      <div class="card feature reveal"><div class="icon">✨</div><h4 data-i18n="why.2.t"></h4><p data-i18n="why.2.d"></p></div>
+      <div class="card feature reveal"><div class="icon">🎁</div><h4 data-i18n="why.3.t"></h4><p data-i18n="why.3.d"></p></div>
+      <div class="card feature reveal"><div class="icon">💵</div><h4 data-i18n="why.4.t"></h4><p data-i18n="why.4.d"></p></div>
+    </div>
+  </div>
+</section>
 
-  <span>💵 Cash On Delivery</span>
+<!-- ===== REVIEWS ===== -->
+<section id="reviews">
+  <div class="wrap">
+    <h2 class="section-title" data-i18n="rev.title"></h2>
+    <p class="section-sub" data-i18n="rev.sub"></p>
+    <div class="grid-3">
+      <div class="card review reveal">
+        <div class="stars">★★★★★</div>
+        <p data-i18n="rev.1.q"></p>
+        <div class="who"><img src="customer.jpg" alt=""><div><strong data-i18n="rev.1.n"></strong><span data-i18n="rev.1.c"></span></div></div>
+      </div>
+      <div class="card review reveal">
+        <div class="stars">★★★★★</div>
+        <p data-i18n="rev.2.q"></p>
+        <div class="who"><img src="customer.jpg" alt=""><div><strong data-i18n="rev.2.n"></strong><span data-i18n="rev.2.c"></span></div></div>
+      </div>
+      <div class="card review reveal">
+        <div class="stars">★★★★★</div>
+        <p data-i18n="rev.3.q"></p>
+        <div class="who"><img src="customer.jpg" alt=""><div><strong data-i18n="rev.3.n"></strong><span data-i18n="rev.3.c"></span></div></div>
+      </div>
+    </div>
+    <div class="center"><a class="btn ghost" href="reviews.html" data-i18n="rev.all"></a></div>
+  </div>
+</section>
 
-  <span>✨ Premium Formula</span>
+<!-- ===== STORY ===== -->
+<section id="story">
+  <div class="wrap story">
+    <img src="story-lor.webp" alt="" loading="lazy" class="reveal">
+    <div class="reveal">
+      <h2 class="section-title" style="text-align:start" data-i18n="story.title"></h2>
+      <p data-i18n="story.p1"></p>
+      <p data-i18n="story.p2"></p>
+    </div>
+  </div>
+</section>
 
-</div>
-<a class="buy-now" href="#orderForm">
-  BUY NOW
+<!-- ===== FAQ ===== -->
+<section id="faq">
+  <div class="wrap">
+    <h2 class="section-title" data-i18n="faq.title"></h2>
+    <p class="section-sub" data-i18n="faq.sub"></p>
+    <div class="faq">
+      <details><summary data-i18n="faq.1.q"></summary><p data-i18n="faq.1.a"></p></details>
+      <details><summary data-i18n="faq.2.q"></summary><p data-i18n="faq.2.a"></p></details>
+      <details><summary data-i18n="faq.3.q"></summary><p data-i18n="faq.3.a"></p></details>
+      <details><summary data-i18n="faq.4.q"></summary><p data-i18n="faq.4.a"></p></details>
+      <details><summary data-i18n="faq.5.q"></summary><p data-i18n="faq.5.a"></p></details>
+      <details><summary data-i18n="faq.6.q"></summary><p data-i18n="faq.6.a"></p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ORDER ===== -->
+<section id="order">
+  <div class="wrap">
+    <h2 class="section-title" data-i18n="order.title"></h2>
+    <p class="section-sub" data-i18n="order.sub"></p>
+
+    <form class="order" id="orderForm" novalidate>
+      <div class="line-item">
+        <img src="package.jpeg" alt="">
+        <div class="info"><strong data-i18n="pkg.name"></strong><span data-i18n="order.pkgline"></span></div>
+        <div class="stepper" data-item="package">
+          <button type="button" data-step="-1" aria-label="-">−</button>
+          <output>0</output>
+          <button type="button" data-step="1" aria-label="+">+</button>
+        </div>
+      </div>
+      <div class="line-item">
+        <img src="product.webp" alt="" style="object-fit:contain">
+        <div class="info"><strong data-i18n="solid.name"></strong><span data-i18n="order.solidline"></span></div>
+        <div class="stepper" data-item="solid">
+          <button type="button" data-step="-1" aria-label="-">−</button>
+          <output>0</output>
+          <button type="button" data-step="1" aria-label="+">+</button>
+        </div>
+      </div>
+
+      <div class="field" id="f-name">
+        <label for="name" data-i18n="f.name"></label>
+        <input id="name" autocomplete="name">
+        <div class="err" data-i18n="e.name"></div>
+      </div>
+      <div class="field" id="f-phone">
+        <label for="phone" data-i18n="f.phone"></label>
+        <input id="phone" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" placeholder="07XXXXXXXX">
+        <div class="err" data-i18n="e.phone"></div>
+      </div>
+      <div class="field" id="f-city">
+        <label for="city" data-i18n="f.city"></label>
+        <select id="city"></select>
+        <div class="err" data-i18n="e.city"></div>
+      </div>
+      <div class="field" id="f-address">
+        <label for="address" data-i18n="f.address"></label>
+        <textarea id="address" data-i18n-ph="f.address.ph"></textarea>
+        <div class="err" data-i18n="e.address"></div>
+      </div>
+
+      <div class="summary">
+        <div><span data-i18n="s.subtotal"></span><span id="sSubtotal"></span></div>
+        <div><span data-i18n="s.delivery"></span><span id="sDelivery"></span></div>
+        <div class="total"><span data-i18n="s.total"></span><span id="sTotal"></span></div>
+      </div>
+      <div class="upsell" id="upsell" data-i18n="s.upsell"></div>
+
+      <button class="btn" type="submit" data-i18n="order.submit"></button>
+      <div class="form-error" id="formError" data-i18n="e.empty"></div>
+      <div class="secure" data-i18n="order.secure"></div>
+    </form>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+  <div class="wrap">
+    <h2 class="section-title" data-i18n="contact.title"></h2>
+    <p class="section-sub" data-i18n="contact.sub"></p>
+    <div class="contact-links">
+      <a href="https://wa.me/962790276691" target="_blank" rel="noopener">💬 WhatsApp</a>
+      <a href="https://www.instagram.com/lorperfumejo" target="_blank" rel="noopener">📸 Instagram</a>
+      <a href="https://www.facebook.com/share/1EY1Tc8qNu/?mibextid=wwXIfr" target="_blank" rel="noopener">📘 Facebook</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <nav>
+      <a href="privacy.html" data-i18n="ft.privacy"></a>
+      <a href="terms.html" data-i18n="ft.terms"></a>
+      <a href="cancel.html" data-i18n="ft.cancel"></a>
+      <a href="refund.html" data-i18n="ft.refund"></a>
+    </nav>
+    <div>© <span id="year"></span> LOR' Perfume</div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/962790276691" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.04 3C9.4 3 4 8.36 4 14.97c0 2.11.56 4.17 1.62 5.99L4 29l8.25-1.6a12.1 12.1 0 0 0 3.79.6C22.67 28 28 22.64 28 16.03 28 9.42 22.67 3 16.04 3Zm0 22.9c-1.24 0-2.46-.2-3.62-.6l-.26-.09-4.9.95.97-4.73-.17-.27a9.84 9.84 0 0 1-1.56-5.19c0-5.45 4.47-9.89 9.97-9.89 5.48 0 9.94 4.44 9.94 9.95 0 5.45-4.46 9.87-9.94 9.87Zm5.45-7.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.57-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.48.71.31 1.27.49 1.7.63.71.22 1.36.19 1.88.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/></svg>
 </a>
 
-<button class="package-btn" onclick="openPackage()">
-  🎁 عرض البكج
-</button>
-</div>
-  <!-- HOW TO USE -->
-<div class="how-use">
-
-  <h2>HOW TO USE</h2>
-
-  <p class="how-subtitle">
-    A small touch is all you need.
-  </p>
-
-  <div class="how-steps">
-
-    <div class="how-step">
-<img src="press2.webp" class="step-image">
-      <h3>Press</h3>
-      <p>Press the pump gently to release a small amount.</p>
-    </div>
-
-    <div class="how-step">
-<img src="apply.webp" class="step-image">
-      <h3>Apply</h3>
-      <p>Apply on pulse points like the neck, wrist or behind the ears.</p>
-    </div>
-
-    <div class="how-step">
-<img src="enjoy.webp" class="step-image">
-      <h3>Enjoy</h3>
-      <p>Let the butter perfume melt into your skin and reveal its scent.</p>
-    </div>
-
-  </div>
-
-</div>
-  <!-- WHAT'S INSIDE -->
-<div class="inside-box">
-
-  <div class="inside-title">
-    WHAT'S INSIDE
-  </div>
-
-  <div class="inside-container">
-
-    <div class="inside-item">
-      <div class="inside-icon">💎</div>
-      <div class="inside-name">Luxury Perfume</div>
-      <div class="inside-desc">
-        Premium butter-based fragrance formula.
-      </div>
-    </div>
-
-    <div class="inside-item">
-      <div class="inside-icon">✨</div>
-      <div class="inside-name">Long Lasting</div>
-      <div class="inside-desc">
-        Designed to stay noticeable for hours.
-      </div>
-    </div>
-
-    <div class="inside-item">
-      <div class="inside-icon">🎁</div>
-      <div class="inside-name">Elegant Packaging</div>
-      <div class="inside-desc">
-        Luxury presentation ready for gifting.
-      </div>
-    </div>
-
-    <div class="inside-item">
-      <div class="inside-icon">👑</div>
-      <div class="inside-name">Signature Experience</div>
-      <div class="inside-desc">
-        Crafted to leave a memorable impression.
-      </div>
-    </div>
-
-  </div>
-
-</div>
-
-<!-- ABOUT -->
-<div class="about" id="about">
-</div>
-  <!-- CUSTOMER EXPERIENCE -->
-<div class="about">
-  <h2 style="text-align:center;color:#d4af37;">CUSTOMER EXPERIENCE</h2>
-
-<div class="about-card">
-  <div class="review-user">
-<div class="avatar">
-  <img src="customer.jpg" alt="Customer">
-</div>
-    <div>
-      <strong>سارة ***</strong>
-      <span>عمّان</span>
-    </div>
-  </div>
-
-  ⭐⭐⭐⭐⭐<br><br>
-"أكتر اشي عجبني انه مش عطر رش عادي وقوامه مختلف وفخم كتير والريحة بتضل فواحة لفترة طويلة وكل اللي حولي سألوني عنه."
-</div>
-
-<div class="about-card">
-  <div class="review-user">
-<div class="avatar">
-  <img src="customer.jpg" alt="Customer">
-</div>
-    <div>
-      <strong>لين ***</strong>
-      <span>إربد</span>
-    </div>
-  </div>
-
-  ⭐⭐⭐⭐⭐<br><br>
-"بصراحة ما كنت متوقعة الثبات هيك بحط منه كمية قليله وبتضل الريحة معي لساعات وكمان سهل كتير بالاستخدام"
-</div>
-
-<div class="about-card">
-  <div class="review-user">
-<div class="avatar">
-  <img src="customer.jpg" alt="Customer">
-</div>
-    <div>
-      <strong>ميرا ***</strong>
-      <span>الزرقاء</span>
-    </div>
-  </div>
-
-  ⭐⭐⭐⭐⭐<br><br>
-"وصلني اسرع من المتوقع والتغليف مرتب كتير والريحة فخمة بتعطي احساس عطر غالي "
-</div>
-</div>
-  <div style="text-align:center; margin-top:25px;">
-
-  <a href="reviews.html" class="reviews-page-btn">
-    ⭐ View All Customer Reviews
-  </a>
-
-</div>
-<div class="story-section" id="story">
-
-  <div class="story-container">
-
-    <div class="story-image">
-      <img src="story-lor.webp" alt="LOR Perfume Experience">
-    </div>
-
-    <div class="story-content">
-
-      <div class="story-title">
-        THE STORY OF LOR PERFUME
-      </div>
-
-      <div class="story-text">
-        LOR Perfume was born from a vision of redefining modern luxury fragrance.
-        More than a perfume, it is a statement of elegance, confidence, and identity.
-        Every detail is carefully crafted to deliver a luxurious experience that leaves a lasting impression.
-      </div>
-
-      <div class="story-features">
-
-        <div class="feature-item">
-          ✦ Crafted with premium butter-based fragrance oils
-        </div>
-
-        <div class="feature-item">
-          ✦ Designed for a long-lasting signature scent experience
-        </div>
-
-        <div class="feature-item">
-          ✦ Inspired by luxury fashion houses & modern minimalism
-        </div>
-<div class="feature-item">
-  ✦ Luxurious texture that melts smoothly on the skin
-</div>
-
-<div class="feature-item">
-  ✦ Creates a unique personal scent identity
-</div>
-
-<div class="feature-item">
-  ✦ Suitable for daily wear and special occasions
-</div>
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-  <!-- FRAGRANCE STORY BREAKDOWN -->
-<div class="policy-section">
-
-  <h2>FRAGRANCE STORY BREAKDOWN</h2>
-
-  <p>
-    LOR Perfume was created to redefine what a modern luxury fragrance means.
-    It is not just a scent — it is a personal identity that stays with you.
-  </p>
-
-  <p>
-    The idea behind this fragrance is to combine elegance, confidence, and long-lasting presence
-    in one signature experience.
-  </p>
-
-  <h2>THE EXPERIENCE</h2>
-
-  <p>
-    This perfume evolves on your skin:
-    fresh at first, warm in the middle, and deep at the end.
-  </p>
-
-</div>
-<div class="order-form" id="orderForm">
-
-  <div class="order-layout">
-
-    <div class="order-image-side">
-      <img src="order-banner2.jpeg" class="order-banner2">
-    </div>
-
-    <div class="order-info-side">
-
-      <h2>Place Your Order</h2>
-      <input
-  type="number"
-  id="quantity"
-  min="1"
-  max="50"
-  value="1"
-  placeholder="Quantity"
-style="width:100%;padding:12px;font-size:16px;margin-bottom:12px;border-radius:10px;background:#111;color:white;border:none;"
-        >
-  <div id="totalPrice" style="color:#d4af37;font-weight:bold;margin-bottom:12px;">
-Total Price: 25 JD
-</div>
-  <input type="text" id="customerName" placeholder="Full Name">
-
-<input type="tel" id="customerPhone" placeholder="Phone Number" dir="ltr" inputmode="tel" autocomplete="tel">
-      
-  <textarea id="customerAddress" placeholder="Delivery Address"></textarea>
-
-
-<div class="secure-note">
-  🔒 Your information is used only for delivery purposes.
-</div>
-
-<button onclick="sendOrder()">PLACE ORDER</button>
-
-</div>
-    </div>
-
-  </div>
-
-<!-- CONTACT -->
-<div class="contact" id="contact">
-
-<h2 style="color:#d4af37; letter-spacing:3px;">Contact us</h2>
-  
-  <p style="color:#bbb; font-size:14px; margin-bottom:25px;">
-    We’re here to help you with orders, questions, and support.
-  </p>
-
-  <div class="contact-buttons">
-
-    <a class="wa" href="https://wa.me/962790276691" target="_blank">
-      💬 WhatsApp
-    </a>
-
-    <a class="insta" href="https://www.instagram.com/lorperfumejo?stkn=bzBldjR1bG1sZTgx&utm_source=qr" target="_blank">
-      📸 Instagram
-    </a>
-
-    <a class="fb" href="https://www.facebook.com/share/1EY1Tc8qNu/?mibextid=wwXIfr" target="_blank">
-      📘 Facebook
-    </a>
-
-  </div>
-
+<div class="sticky-bar" id="stickyBar">
+  <div class="p"><span data-i18n="sticky.from"></span><br><strong data-i18n="sticky.price"></strong></div>
+  <a class="btn small" href="#products" data-i18n="sticky.cta"></a>
 </div>
 
 <script>
-const container = document.querySelector(".hero-product");
-const product = document.querySelector(".product-img");
+/* =========================================================
+   الإعدادات — عدّل هون فقط
+   ========================================================= */
+const CONFIG = {
+  whatsapp: "962790276691",
+  products: {
+    package: { price: 25, freeDelivery: true },
+    solid:   { price: 12, freeDelivery: false }
+  },
+  deliveryFee: 2,          // رسوم التوصيل إذا الطلب ما فيه بكج
+  maxQty: 20,
+  pixelId: "",             // رقم Meta Pixel (اتركه فاضي لحد ما يجهز)
+  sheetsUrl: ""            // رابط Google Apps Script لحفظ الطلبات (اختياري)
+};
 
-container.addEventListener("mousemove", (e) => {
-  let x = (container.offsetWidth / 2 - e.offsetX) / 15;
-  let y = (container.offsetHeight / 2 - e.offsetY) / 15;
-
-  product.style.transform = `rotateY(${x}deg) rotateX(${y}deg) scale(1.05)`;
-});
-
-container.addEventListener("mouseleave", () => {
-  product.style.transform = "rotateY(0deg) rotateX(0deg) scale(1)";
-});
-/* loader */
-document.addEventListener("DOMContentLoaded",()=>{
-  const loader=document.getElementById("loader");
-  setTimeout(()=>{
-    loader.classList.add("hide");
-    setTimeout(()=>loader.style.display="none",600);
-  },1200);
-});
-
-
-(function () {
-
-  function forceTop() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-    window.scrollTo(0, 0);
+/* =========================================================
+   النصوص بالعربي والإنجليزي
+   ========================================================= */
+const I18N = {
+  ar: {
+    "nav.products":"المنتجات","nav.story":"قصتنا","nav.faq":"الأسئلة","nav.order":"اطلبي الآن",
+    "hero.title":"فن العطر","hero.lead":"عطر صلب فاخر بقوام ناعم يذوب على البشرة ويدوم معك لساعات.",
+    "hero.cta":"اختاري طلبك",
+    "chip.free":"🚚 توصيل مجاني مع البكج","chip.cod":"💵 الدفع عند الاستلام","chip.jo":"🇯🇴 لكل محافظات الأردن",
+    "products.title":"اختاري طلبك","products.sub":"ريحة LOR المميزة — بالبكج الكامل أو العطر الصلب لحاله.",
+    "pkg.ribbon":"الأكثر طلبًا","pkg.name":"بكج LOR الكامل","pkg.price":"25 دينار",
+    "pkg.i1":"علبة عطر صلب LOR","pkg.i2":"علبتين عطر رش LOR","pkg.i3":"تغليف فاخر جاهز للهدايا",
+    "pkg.cta":"أضيفي البكج",
+    "solid.name":"عطر LOR الصلب","solid.price":"12 دينار",
+    "solid.i1":"علبة عطر صلب واحدة","solid.i2":"سهل الحمل بالشنطة","solid.i3":"ثبات يدوم لساعات",
+    "solid.cta":"أضيفي العطر الصلب",
+    "ship.free":"توصيل مجاني","ship.paid":"+ 2 دينار توصيل",
+    "notes.title":"المكونات العطرية",
+    "notes.family.t":"🌸 العائلة العطرية","notes.family.d":"الزهور الشرقية",
+    "notes.top.t":"🍐 المكونات العليا","notes.top.d":"الكمثرى، الفلفل الوردي، زهر البرتقال",
+    "notes.heart.t":"☕ المكونات الوسطى","notes.heart.d":"القهوة، الياسمين، اللوز المر، العرقسوس",
+    "notes.base.t":"🌳 مكونات القاعدة","notes.base.d":"الفانيليا، الباتشولي، خشب الكشمير، خشب الأرز",
+    "how.title":"طريقة الاستخدام","how.sub":"لمسة صغيرة هي كل اللي بتحتاجيه.",
+    "how.1.t":"اضغطي","how.1.d":"اضغطي بلطف لتاخدي كمية صغيرة.",
+    "how.2.t":"ضعيه","how.2.d":"على نقاط النبض: الرقبة، المعصم أو خلف الأذن.",
+    "how.3.t":"استمتعي","how.3.d":"خلّي العطر يذوب على بشرتك ويكشف عن ريحته.",
+    "why.title":"ليش LOR؟","why.sub":"تفاصيل صغيرة بتعمل الفرق.",
+    "why.1.t":"تركيبة فاخرة","why.1.d":"قوام زبدة عطرية ناعم على البشرة.",
+    "why.2.t":"ثبات طويل","why.2.d":"كمية قليلة بتكفي لساعات.",
+    "why.3.t":"تغليف أنيق","why.3.d":"جاهز للهدايا.",
+    "why.4.t":"الدفع عند الاستلام","why.4.d":"ما بتدفعي إلا لما يوصلك.",
+    "rev.title":"آراء العملاء","rev.sub":"شو حكوا عن LOR.",
+    "rev.1.q":"\"أكتر اشي عجبني انه مش عطر رش عادي وقوامه مختلف وفخم كتير والريحة بتضل فواحة لفترة طويلة وكل اللي حولي سألوني عنه.\"",
+    "rev.1.n":"سارة ***","rev.1.c":"عمّان",
+    "rev.2.q":"\"بصراحة ما كنت متوقعة الثبات هيك بحط منه كمية قليله وبتضل الريحة معي لساعات وكمان سهل كتير بالاستخدام.\"",
+    "rev.2.n":"لين ***","rev.2.c":"إربد",
+    "rev.3.q":"\"وصلني اسرع من المتوقع والتغليف مرتب كتير والريحة فخمة بتعطي احساس عطر غالي.\"",
+    "rev.3.n":"ميرا ***","rev.3.c":"الزرقاء",
+    "rev.all":"⭐ كل التقييمات",
+    "story.title":"قصة LOR",
+    "story.p1":"وُلدت LOR من رؤية لإعادة تعريف العطر الفاخر العصري. أكتر من مجرد عطر — هو بصمة أناقة وثقة وهوية.",
+    "story.p2":"العطر بيتطور على بشرتك: منعش بالبداية، دافئ بالمنتصف، وعميق بالنهاية.",
+    "faq.title":"أسئلة شائعة","faq.sub":"كل اللي بدك تعرفيه قبل ما تطلبي.",
+    "faq.1.q":"شو داخل البكج؟","faq.1.a":"علبة عطر صلب LOR وعلبتين عطر رش LOR، بتغليف فاخر — بـ 25 دينار والتوصيل مجاني.",
+    "faq.2.q":"كم رسوم التوصيل؟","faq.2.a":"أي طلب فيه بكج توصيله مجاني. إذا طلبتي العطر الصلب لحاله بتنضاف 2 دينار توصيل.",
+    "faq.3.q":"كيف بدفع؟","faq.3.a":"الدفع كاش عند الاستلام، ما بتدفعي إلا لما يوصلك الطلب.",
+    "faq.4.q":"كيف بطلب؟","faq.4.a":"اختاري المنتج، عبّي معلوماتك واضغطي «إرسال الطلب» — بينفتح الواتساب برسالة جاهزة، ابعتيها ومنتواصل معك لتأكيد الطلب.",
+    "faq.5.q":"بقدر ألغي الطلب؟","faq.5.a":"نعم، خلال 24 ساعة من الطلب طالما ما انشحن.",
+    "faq.6.q":"إذا وصلني المنتج تالف؟","faq.6.a":"تواصلي معنا خلال 3 أيام من الاستلام ومنحل الموضوع حسب سياسة الاسترجاع.",
+    "order.title":"أكملي طلبك","order.sub":"الدفع عند الاستلام • التأكيد عبر الواتساب",
+    "order.pkgline":"25 دينار • توصيل مجاني","order.solidline":"12 دينار",
+    "f.name":"الاسم الكامل","f.phone":"رقم الهاتف","f.city":"المحافظة","f.address":"العنوان بالتفصيل",
+    "f.address.ph":"المنطقة، الشارع، رقم البناية…","f.city.ph":"اختاري المحافظة",
+    "e.name":"اكتبي اسمك","e.phone":"اكتبي رقم أردني صحيح (مثال: 0791234567)","e.city":"اختاري المحافظة",
+    "e.address":"اكتبي العنوان","e.empty":"اختاري منتج واحد على الأقل",
+    "s.subtotal":"المنتجات","s.delivery":"التوصيل","s.total":"المجموع","s.free":"مجاني",
+    "s.upsell":"💡 أضيفي البكج والتوصيل بصير مجاني على كل الطلب",
+    "order.submit":"إرسال الطلب عبر واتساب","order.secure":"🔒 معلوماتك بتستخدم للتوصيل فقط",
+    "contact.title":"تواصلي معنا","contact.sub":"إحنا هون لأي سؤال أو مساعدة.",
+    "ft.privacy":"سياسة الخصوصية","ft.terms":"الشروط والأحكام","ft.cancel":"سياسة الإلغاء","ft.refund":"الاسترجاع والاستبدال",
+    "sticky.from":"البكج الكامل","sticky.price":"25 دينار • توصيل مجاني","sticky.cta":"اطلبي الآن",
+    "jd":"دينار",
+    "msg.title":"🛍️ طلب جديد","msg.name":"👤 الاسم","msg.phone":"📞 الهاتف","msg.city":"🏙️ المحافظة",
+    "msg.address":"📍 العنوان","msg.items":"📦 الطلب","msg.delivery":"🚚 التوصيل","msg.total":"💰 المجموع",
+    "msg.cod":"💵 الدفع عند الاستلام"
+  },
+  en: {
+    "nav.products":"Products","nav.story":"Our Story","nav.faq":"FAQ","nav.order":"Order Now",
+    "hero.title":"THE ART OF SCENT","hero.lead":"A luxurious solid perfume with a soft texture that melts into your skin and lasts for hours.",
+    "hero.cta":"Choose your order",
+    "chip.free":"🚚 Free delivery with the package","chip.cod":"💵 Cash on delivery","chip.jo":"🇯🇴 All over Jordan",
+    "products.title":"Choose Your Order","products.sub":"The signature LOR scent — as the full package or the solid perfume alone.",
+    "pkg.ribbon":"Best Seller","pkg.name":"The LOR Package","pkg.price":"25 JD",
+    "pkg.i1":"1 LOR solid perfume","pkg.i2":"2 LOR spray perfumes","pkg.i3":"Luxury gift-ready packaging",
+    "pkg.cta":"Add the package",
+    "solid.name":"LOR Solid Perfume","solid.price":"12 JD",
+    "solid.i1":"1 solid perfume","solid.i2":"Easy to carry in your bag","solid.i3":"Lasts for hours",
+    "solid.cta":"Add solid perfume",
+    "ship.free":"Free delivery","ship.paid":"+ 2 JD delivery",
+    "notes.title":"Fragrance Notes",
+    "notes.family.t":"🌸 Family","notes.family.d":"Oriental Floral",
+    "notes.top.t":"🍐 Top Notes","notes.top.d":"Pear, pink pepper, orange blossom",
+    "notes.heart.t":"☕ Heart Notes","notes.heart.d":"Coffee, jasmine, bitter almond, licorice",
+    "notes.base.t":"🌳 Base Notes","notes.base.d":"Vanilla, patchouli, cashmere wood, cedarwood",
+    "how.title":"How To Use","how.sub":"A small touch is all you need.",
+    "how.1.t":"Press","how.1.d":"Press gently to take a small amount.",
+    "how.2.t":"Apply","how.2.d":"On pulse points: neck, wrist or behind the ears.",
+    "how.3.t":"Enjoy","how.3.d":"Let it melt into your skin and reveal its scent.",
+    "why.title":"Why LOR?","why.sub":"Small details that make the difference.",
+    "why.1.t":"Luxury Formula","why.1.d":"Soft butter-based texture on the skin.",
+    "why.2.t":"Long Lasting","why.2.d":"A small amount lasts for hours.",
+    "why.3.t":"Elegant Packaging","why.3.d":"Ready for gifting.",
+    "why.4.t":"Cash On Delivery","why.4.d":"Pay only when it arrives.",
+    "rev.title":"Customer Reviews","rev.sub":"What people say about LOR.",
+    "rev.1.q":"\"What I loved most is that it's not a regular spray perfume. The texture feels luxurious and the scent stays noticeable for a long time. Everyone around me asked about it.\"",
+    "rev.1.n":"Sarah ***","rev.1.c":"Amman",
+    "rev.2.q":"\"Honestly, I didn't expect this longevity. A small amount is enough and the scent stays with me for hours. Very easy to use.\"",
+    "rev.2.n":"Lynn ***","rev.2.c":"Irbid",
+    "rev.3.q":"\"It arrived faster than expected, the packaging was very neat, and the scent feels like an expensive perfume.\"",
+    "rev.3.n":"Mira ***","rev.3.c":"Zarqa",
+    "rev.all":"⭐ All reviews",
+    "story.title":"The LOR Story",
+    "story.p1":"LOR was born from a vision of redefining modern luxury fragrance. More than a perfume — a statement of elegance, confidence and identity.",
+    "story.p2":"The scent evolves on your skin: fresh at first, warm in the middle, and deep at the end.",
+    "faq.title":"FAQ","faq.sub":"Everything you need to know before ordering.",
+    "faq.1.q":"What's in the package?","faq.1.a":"1 LOR solid perfume and 2 LOR spray perfumes in luxury packaging — 25 JD with free delivery.",
+    "faq.2.q":"How much is delivery?","faq.2.a":"Any order that includes a package ships free. The solid perfume alone adds 2 JD delivery.",
+    "faq.3.q":"How do I pay?","faq.3.a":"Cash on delivery — you pay only when your order arrives.",
+    "faq.4.q":"How do I order?","faq.4.a":"Pick your product, fill in your details and tap “Send order” — WhatsApp opens with a ready message. Send it and we'll confirm your order.",
+    "faq.5.q":"Can I cancel?","faq.5.a":"Yes, within 24 hours of ordering as long as it hasn't shipped.",
+    "faq.6.q":"What if it arrives damaged?","faq.6.a":"Contact us within 3 days of delivery and we'll sort it out under our refund policy.",
+    "order.title":"Complete Your Order","order.sub":"Cash on delivery • Confirmed on WhatsApp",
+    "order.pkgline":"25 JD • Free delivery","order.solidline":"12 JD",
+    "f.name":"Full name","f.phone":"Phone number","f.city":"Governorate","f.address":"Detailed address",
+    "f.address.ph":"Area, street, building number…","f.city.ph":"Choose governorate",
+    "e.name":"Enter your name","e.phone":"Enter a valid Jordanian number (e.g. 0791234567)","e.city":"Choose a governorate",
+    "e.address":"Enter your address","e.empty":"Choose at least one product",
+    "s.subtotal":"Products","s.delivery":"Delivery","s.total":"Total","s.free":"Free",
+    "s.upsell":"💡 Add the package and delivery becomes free for the whole order",
+    "order.submit":"Send order via WhatsApp","order.secure":"🔒 Your info is used for delivery only",
+    "contact.title":"Contact Us","contact.sub":"We're here for any question or help.",
+    "ft.privacy":"Privacy Policy","ft.terms":"Terms & Conditions","ft.cancel":"Cancellation Policy","ft.refund":"Refund & Returns",
+    "sticky.from":"The full package","sticky.price":"25 JD • Free delivery","sticky.cta":"Order Now",
+    "jd":"JD",
+    "msg.title":"🛍️ NEW ORDER","msg.name":"👤 Name","msg.phone":"📞 Phone","msg.city":"🏙️ Governorate",
+    "msg.address":"📍 Address","msg.items":"📦 Items","msg.delivery":"🚚 Delivery","msg.total":"💰 Total",
+    "msg.cod":"💵 Cash on delivery"
   }
+};
 
-  // يمنع حفظ آخر مكان
-  if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-  }
+const CITIES = [
+  ["amman","عمّان","Amman"],["zarqa","الزرقاء","Zarqa"],["irbid","إربد","Irbid"],
+  ["balqa","البلقاء / السلط","Balqa / Salt"],["madaba","مادبا","Madaba"],["mafraq","المفرق","Mafraq"],
+  ["jerash","جرش","Jerash"],["ajloun","عجلون","Ajloun"],["karak","الكرك","Karak"],
+  ["tafilah","الطفيلة","Tafilah"],["maan","معان","Ma'an"],["aqaba","العقبة","Aqaba"]
+];
 
-  // تشغيل قوي جداً لكل الحالات
-  window.addEventListener('load', function () {
-    forceTop();
-    setTimeout(forceTop, 50);
-    setTimeout(forceTop, 200);
-  });
+/* ========================================================= */
+let lang = "ar";
+const cart = { package: 0, solid: 0 };
+const t = k => (I18N[lang][k] ?? k);
 
-  window.addEventListener('pageshow', function () {
-    forceTop();
-  });
-})();
-</script>
-<script>
-let isArabic = false;
-
-/* ===== تحديث Highlight ===== */
-function updateHighlight() {
-  const highlight = document.querySelector(".story-highlight");
-  if (!highlight) return;
-
-  highlight.innerHTML = isArabic
-    ? "✦ مصنوع بزيوت عطرية فاخرة من الزبدة<br>✦ مصمم لثبات يدوم مع تجربة عطر مميزة<br>✦ مستوحى من دور الأزياء العالمية والبساطة العصرية"
-    : "✦ Crafted with premium butter-based fragrance oils<br>✦ Designed for long-lasting signature scent experience<br>✦ Inspired by luxury fashion houses & modern minimalism";
+function store(key, val){
+  try { return val === undefined ? localStorage.getItem(key) : localStorage.setItem(key, val); }
+  catch(e){ return null; }
 }
 
-/* ===== تغيير اللغة ===== */
-function setLanguage(lang){
-  isArabic = (lang === "ar");
+/* ===== Meta Pixel (يشتغل بس إذا pixelId موجود) ===== */
+function track(event, data){
+  if (window.fbq) fbq("track", event, data || {});
+}
+if (CONFIG.pixelId) {
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq("init", CONFIG.pixelId);
+  fbq("track", "PageView");
+}
 
-  // حفظ
-  localStorage.setItem("lang", lang);
-
-  // اتجاه الصفحة
+/* ===== اللغة ===== */
+function applyLang(l){
+  lang = I18N[l] ? l : "ar";
   document.documentElement.lang = lang;
-  document.documentElement.dir = isArabic ? "rtl" : "ltr";
-  document.body.classList.toggle("rtl", isArabic);
+  document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+  document.querySelectorAll("[data-i18n]").forEach(el => { el.textContent = t(el.dataset.i18n); });
+  document.querySelectorAll("[data-i18n-ph]").forEach(el => { el.placeholder = t(el.dataset.i18nPh); });
+  document.getElementById("langBtn").textContent = lang === "ar" ? "EN" : "AR";
 
-  // النصوص
-  document.querySelector(".inside-title").innerText =
-    isArabic ? "ماذا يوجد داخل المنتج" : "WHAT'S INSIDE";
+  const sel = document.getElementById("city");
+  const current = sel.value;
+  sel.innerHTML = `<option value="">${t("f.city.ph")}</option>` +
+    CITIES.map(c => `<option value="${c[0]}">${lang === "ar" ? c[1] : c[2]}</option>`).join("");
+  sel.value = current;
 
-  document.querySelector("a[href='#story']").innerText =
-    isArabic ? "حول" : "About";
-
-  document.querySelector("a[href='#contact']").innerText =
-    isArabic ? "تواصل" : "Contact";
-
-  document.querySelector(".hero h1").innerText =
-    isArabic ? "فن العطر" : "THE ART OF SCENT";
-
-  document.querySelector(".hero p").innerText =
-    isArabic ? "تجربة عطر فاخرة تتجاوز الرش" : "Luxury fragrance experience beyond spraying";
-
-document.querySelector(".product-text h2").innerText =
-  isArabic ? "LOR' Perfume" : "LOR' Perfume";
-  // HOW TO USE
-document.querySelector(".how-use h2").innerText =
-  isArabic ? "طريقة الاستخدام" : "HOW TO USE";
-
-document.querySelector(".how-subtitle").innerText =
-  isArabic
-  ? "لمسة صغيرة فقط هي كل ما تحتاجه"
-  : "A small touch is all you need.";
-  document.querySelector(".buy-now").innerText =
-    isArabic ? "اشتري الآن" : "BUY NOW";
-  const reviewsBtn = document.querySelector(".reviews-page-btn");
-
-if(reviewsBtn){
-  reviewsBtn.innerText =
-    isArabic
-    ? "⭐ عرض جميع التقييمات"
-    : "⭐ View All Customer Reviews";
+  store("lang", lang);
+  render();
 }
-document.querySelector(".buy").innerText =
-  isArabic ? "اطلبي الآن" : "BUY";
-  document.querySelector(".story-title").innerText =
-    isArabic ? "قصة عطر LOR" : "THE STORY OF LOR PERFUME";
+document.getElementById("langBtn").addEventListener("click", () => applyLang(lang === "ar" ? "en" : "ar"));
 
-  document.querySelector(".story-text").innerText =
-    isArabic
-      ? "وُلدت LOR Perfume من رؤية لإعادة تعريف الفخامة العطرية الحديثة."
-      : "LOR Perfume was born from a vision of redefining modern luxury fragrance.";
-document.querySelector(".about h2").innerText =
-  isArabic ? "آراء العملاء" : "CUSTOMER EXPERIENCE";
-  document.querySelector(".order-form h2").innerText =
-  isArabic ? "اطلبي الآن" : "Place Your Order";
-  document.querySelector("#contact h2").innerText =
-    isArabic ? "تواصل معنا" : "Contact us";
-
-  document.querySelector("#contact p").innerText =
-    isArabic
-      ? "نحن هنا لمساعدتك في الطلبات والاستفسارات والدعم."
-      : "We’re here to help you with orders, questions, and support.";
-  let trustItems = document.querySelectorAll(".trust-bar span");
-// HOW TO USE STEPS
-let howTitles = document.querySelectorAll(".how-step h3");
-let howText = document.querySelectorAll(".how-step p");
-
-if(howTitles.length >= 3){
-
-  howTitles[0].innerText =
-    isArabic ? "اضغطي" : "Press";
-
-  howTitles[1].innerText =
-    isArabic ? "ضعيه" : "Apply";
-
-  howTitles[2].innerText =
-    isArabic ? "استمتعي" : "Enjoy";
-
-  howText[0].innerText =
-    isArabic
-    ? "اضغطي المضخة بلطف للحصول على كمية صغيرة."
-    : "Press the pump gently to release a small amount.";
-
-  howText[1].innerText =
-    isArabic
-    ? "ضعيه على نقاط النبض مثل الرقبة أو المعصم أو خلف الأذن."
-    : "Apply on pulse points like the neck, wrist or behind the ears.";
-
-  howText[2].innerText =
-    isArabic
-    ? "دعي العطر ينساب على بشرتك ويكشف عن رائحته المميزة."
-    : "Let the butter perfume melt into your skin and reveal its scent.";
+/* ===== الحسابات ===== */
+function totals(){
+  const p = CONFIG.products;
+  const subtotal = cart.package * p.package.price + cart.solid * p.solid.price;
+  const items = cart.package + cart.solid;
+  const delivery = items === 0 || cart.package > 0 ? 0 : CONFIG.deliveryFee;
+  return { subtotal, delivery, total: subtotal + delivery, items };
 }
-if(trustItems.length >= 3){
+const money = n => `${n} ${t("jd")}`;
 
-  trustItems[0].innerText =
-    isArabic ? "🚚 توصيل سريع" : "🚚 Fast Delivery";
-
-  trustItems[1].innerText =
-    isArabic ? "💵 الدفع عند الاستلام" : "💵 Cash On Delivery";
-
-  trustItems[2].innerText =
-    isArabic ? "✨ تركيبة فاخرة" : "✨ Premium Formula";
-
+function render(){
+  document.querySelectorAll(".stepper").forEach(s => {
+    s.querySelector("output").textContent = cart[s.dataset.item];
+  });
+  const { subtotal, delivery, total, items } = totals();
+  document.getElementById("sSubtotal").textContent = money(subtotal);
+  const d = document.getElementById("sDelivery");
+  d.textContent = items && delivery === 0 ? t("s.free") : money(delivery);
+  d.className = items && delivery === 0 ? "free" : "";
+  document.getElementById("sTotal").textContent = money(total);
+  document.getElementById("upsell").style.display = cart.solid > 0 && cart.package === 0 ? "block" : "none";
+  if (items) document.getElementById("formError").style.display = "none";
 }
-let stats = document.querySelectorAll(".stats-bar span");
-document.querySelector(".footer h3").innerText =
-  isArabic ? "خدمة العملاء" : "Customer Service";
-  document.querySelector(".footer h3").innerText =
-  isArabic ? "خدمة العملاء" : "Customer Service";
 
-let footerLinks = document.querySelectorAll(".footer a");
-
-if(footerLinks.length >= 4){
-
-  footerLinks[0].innerText =
-    isArabic ? "سياسة الخصوصية" : "Privacy Policy";
-
-  footerLinks[1].innerText =
-    isArabic ? "الشروط والأحكام" : "Terms and Conditions";
-
-  footerLinks[2].innerText =
-    isArabic ? "سياسة الإلغاء" : "Cancellation Policy";
-
-  footerLinks[3].innerText =
-    isArabic ? "سياسة الاسترجاع والاستبدال" : "Refund & Returns Policy";
-
-}
-if(stats.length >= 2){
-  stats[0].innerText = isArabic ? "الدفع عند الاستلام" : "Cash On Delivery";
-  stats[1].innerText = isArabic ? "جودة فاخرة" : "Luxury Quality";
-}
-  // inside box
-  let names = document.querySelectorAll(".inside-name");
-  let desc = document.querySelectorAll(".inside-desc");
-
-  if (names.length >= 4) {
-    if (isArabic) {
-      names[0].innerText = "عطر فاخر";
-      names[1].innerText = "ثبات طويل";
-      names[2].innerText = "تغليف أنيق";
-      names[3].innerText = "تجربة مميزة";
-
-      desc[0].innerText = "تركيبة عطر فاخرة بزبدة عطرية";
-      desc[1].innerText = "يدوم لساعات طويلة";
-      desc[2].innerText = "تغليف فاخر مناسب للهدايا";
-      desc[3].innerText = "رائحة تترك أثر قوي";
-    } else {
-      names[0].innerText = "Luxury Perfume";
-      names[1].innerText = "Long Lasting";
-      names[2].innerText = "Elegant Packaging";
-      names[3].innerText = "Signature Experience";
-
-      desc[0].innerText = "Premium butter-based fragrance formula.";
-      desc[1].innerText = "Designed to stay noticeable for hours.";
-      desc[2].innerText = "Luxury presentation ready for gifting.";
-      desc[3].innerText = "Crafted to leave a memorable impression.";
-    }
-  document.getElementById("langBtn").innerText = isArabic ? "EN" : "AR";
+function setQty(item, qty){
+  const before = cart[item];
+  cart[item] = Math.max(0, Math.min(CONFIG.maxQty, qty));
+  if (cart[item] > before) {
+    track("AddToCart", { content_ids:[item], content_type:"product",
+      value: CONFIG.products[item].price, currency:"JOD" });
   }
-
-  // reviews
-
-let policyTitles = document.querySelectorAll(".policy-section h2");
-let policyText = document.querySelectorAll(".policy-section p");
-
-if(policyText.length >= 3){
-
-  policyText[0].innerText = isArabic
-  ? "تم ابتكار عطر LOR لإعادة تعريف مفهوم العطر الفاخر العصري، فهو ليس مجرد رائحة بل هو جزء من هويتك."
-  : "LOR Perfume was created to redefine what a modern luxury fragrance means. It is not just a scent — it is a personal identity that stays with you.";
-
-  policyText[1].innerText = isArabic
-  ? "الفكرة وراء هذا العطر هي الجمع بين الأناقة والثقة والحضور طويل الأمد في تجربة واحدة مميزة."
-  : "The idea behind this fragrance is to combine elegance, confidence, and long-lasting presence in one signature experience.";
-
-  policyText[2].innerText = isArabic
-  ? "يتطور العطر على بشرتك ليمنحك تجربة متكاملة تبدأ بنفحات منعشة وتنتهي بلمسات دافئة وعميقة."
-  : "This perfume evolves on your skin: fresh at first, warm in the middle, and deep at the end.";
-}
-if(policyTitles.length >= 2){
-
-  policyTitles[0].innerText =
-    isArabic ? "قصة العطر" : "FRAGRANCE STORY BREAKDOWN";
-
-  policyTitles[1].innerText =
-    isArabic ? "التجربة" : "THE EXPERIENCE";
-
-}
-  document.getElementById("quantity").placeholder =
-  isArabic ? "الكمية" : "Quantity";
-
-document.getElementById("customerName").placeholder =
-  isArabic ? "الاسم الكامل" : "Full Name";
-
-document.getElementById("customerPhone").placeholder =
-  isArabic ? "رقم الهاتف" : "Phone Number";
-
-document.getElementById("customerAddress").placeholder =
-  isArabic ? "عنوان التوصيل" : "Delivery Address";
-  document.querySelector(".order-form button").innerText =
-  isArabic ? "إرسال الطلب" : "PLACE ORDER";
-  let features = document.querySelectorAll(".feature-item");
-document.querySelector(".secure-note").innerText =
-  isArabic
-  ? "🔒 معلوماتك تستخدم فقط لأغراض التوصيل"
-  : "🔒 Your information is used only for delivery purposes.";
-if(features.length >= 6){
-  
-  features[0].innerText =
-    isArabic
-    ? "✦ مصنوع من زيوت عطرية فاخرة قائمة على الزبدة"
-    : "✦ Crafted with premium butter-based fragrance oils";
-
-  features[1].innerText =
-    isArabic
-    ? "✦ مصمم ليمنحك رائحة مميزة تدوم طويلاً"
-    : "✦ Designed for a long-lasting signature scent experience";
-
-  features[2].innerText =
-    isArabic
-    ? "✦ مستوحى من دور الأزياء الفاخرة والبساطة العصرية"
-    : "✦ Inspired by luxury fashion houses & modern minimalism";
-features[3].innerText =
-  isArabic
-  ? "✦ تركيبة فاخرة تنساب بسلاسة على البشرة"
-  : "✦ Luxurious texture that melts smoothly on the skin";
-
-features[4].innerText =
-  isArabic
-  ? "✦ تمنحك هوية عطرية فريدة تعكس شخصيتك"
-  : "✦ Creates a unique personal scent identity";
-
-features[5].innerText =
-  isArabic
-  ? "✦ مناسبة للاستخدام اليومي والمناسبات الخاصة"
-  : "✦ Suitable for daily wear and special occasions";
-}
-  let reviews = document.querySelectorAll(".about-card");
-
-if(reviews.length >= 3){
-
-  if(isArabic){
-
-    reviews[0].querySelector("strong").innerText = "سارة ***";
-    reviews[0].querySelector("span").innerText = "عمّان";
-
-    reviews[1].querySelector("strong").innerText = "لين ***";
-    reviews[1].querySelector("span").innerText = "إربد";
-
-    reviews[2].querySelector("strong").innerText = "ميرا ***";
-    reviews[2].querySelector("span").innerText = "الزرقاء";
-
-  } else {
-
-    reviews[0].querySelector("strong").innerText = "Sarah ***";
-    reviews[0].querySelector("span").innerText = "Amman";
-
-    reviews[1].querySelector("strong").innerText = "Lynn ***";
-    reviews[1].querySelector("span").innerText = "Irbid";
-
-    reviews[2].querySelector("strong").innerText = "Mira ***";
-    reviews[2].querySelector("span").innerText = "Zarqa";
-
-  }
-}
-  if(reviews.length >= 3){
-
-  if(isArabic){
-
-    reviews[0].childNodes[reviews[0].childNodes.length - 1].textContent =
-      '"أكتر اشي عجبني انه مش عطر رش عادي وقوامه مختلف وفخم كتير والريحة بتضل فواحة لفترة طويلة وكل اللي حولي سألوني عنه."';
-
-    reviews[1].childNodes[reviews[1].childNodes.length - 1].textContent =
-      '"بصراحة ما كنت متوقعة الثبات هيك بحط منه كمية قليله وبتضل الريحة معي لساعات وكمان سهل كتير بالاستخدام"';
-
-    reviews[2].childNodes[reviews[2].childNodes.length - 1].textContent =
-      '"وصلني اسرع من المتوقع والتغليف مرتب كتير والريحة فخمة بتعطي احساس عطر غالي"';
-
-  } else {
-
-    reviews[0].childNodes[reviews[0].childNodes.length - 1].textContent =
-      '"What I loved most is that it is not a regular spray perfume. The texture feels luxurious, and the scent stays noticeable for a long time. Everyone around me kept asking about it."';
-
-    reviews[1].childNodes[reviews[1].childNodes.length - 1].textContent =
-      '"Honestly, I did not expect this level of longevity. A small amount is enough, and the scent stays with me for hours. It is also very easy to use."';
-
-    reviews[2].childNodes[reviews[2].childNodes.length - 1].textContent =
-      '"It arrived faster than expected, the packaging was very neat, and the scent feels luxurious like an expensive perfume."';
-
-  }
-}
-  document.querySelector(".popup-box h2").innerText =
-  isArabic ? "انتظري ✦" : "WAIT ✦";
-
-document.querySelector(".popup-box p").innerText =
-  isArabic
-  ? "قبل أن تغادري… أكملي طلبك بأقل من دقيقة"
-  : "Before you go… complete your order in less than a minute";
-
-document.querySelector(".offer").innerText =
-  isArabic
-  ? "🚚 توصيل سريع • 💵 الدفع عند الاستلام"
-  : "🚚 Fast Delivery • 💵 Cash On Delivery";
-
-document.querySelector(".popup-btn").innerText =
-  isArabic ? "اطلبي الآن" : "ORDER NOW";
-
-document.querySelector(".close-btn").innerText =
-  isArabic ? "لا، شكراً" : "No thanks";
-  // highlight
-updateHighlight();
-updatePrice();
+  render();
 }
 
-/* ===== زر اللغة ===== */
-document.getElementById("langBtn").addEventListener("click", () => {
-  const newLang = isArabic ? "en" : "ar";
-  localStorage.setItem("lang", newLang);
-  location.reload();
+document.querySelectorAll(".stepper button").forEach(b => {
+  b.addEventListener("click", () => {
+    const item = b.closest(".stepper").dataset.item;
+    setQty(item, cart[item] + Number(b.dataset.step));
+  });
+});
+document.querySelectorAll("[data-add]").forEach(b => {
+  b.addEventListener("click", () => {
+    const item = b.dataset.add;
+    if (cart[item] === 0) setQty(item, 1);
+    document.getElementById("order").scrollIntoView({ behavior:"smooth" });
+  });
 });
 
-/* ===== تشغيل اللغة عند فتح الصفحة ===== */
-window.addEventListener("load", () => {
-const saved = localStorage.getItem("lang") || "ar";
-  setLanguage(saved);
-});
-</script>
-
-<!-- WhatsApp Floating Button -->
-<a href="https://wa.me/962790276691" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-</a>
-
-<script>
-const UNIT_PRICE = 25; // سعر العبوة الواحدة بالدينار
-
-// تحويل الأرقام العربية/الفارسية إلى إنجليزية
-function toEnglishDigits(str) {
-  return str
-    .replace(/[٠-٩]/g, d => d.charCodeAt(0) - 1632)
-    .replace(/[۰-۹]/g, d => d.charCodeAt(0) - 1776);
+/* ===== التحقق ===== */
+function toEnglishDigits(str){
+  return str.replace(/[٠-٩]/g, d => d.charCodeAt(0) - 1632)
+            .replace(/[۰-۹]/g, d => d.charCodeAt(0) - 1776);
 }
-
-// يرجع الرقم بصيغة 07XXXXXXXX أو null إذا مش رقم أردني صحيح
-function normalizeJordanPhone(raw) {
+function normalizeJordanPhone(raw){
   let p = toEnglishDigits(raw).replace(/[\s\-()]/g, "");
   if (p.startsWith("+962")) p = "0" + p.slice(4);
   else if (p.startsWith("00962")) p = "0" + p.slice(5);
@@ -2333,206 +844,95 @@ function normalizeJordanPhone(raw) {
   else if (/^7[789]\d{7}$/.test(p)) p = "0" + p;
   return /^07[789]\d{7}$/.test(p) ? p : null;
 }
-
-// رقم طلب فريد: تاريخ + وقت + رقمين عشوائيين
-function makeOrderID() {
-  const d = new Date();
-  const pad = n => String(n).padStart(2, "0");
-  return pad(d.getMonth() + 1) + pad(d.getDate()) + "-" +
-         pad(d.getHours()) + pad(d.getMinutes()) +
-         pad(Math.floor(Math.random() * 100));
+function makeOrderID(){
+  const d = new Date(), pad = n => String(n).padStart(2, "0");
+  return pad(d.getMonth()+1) + pad(d.getDate()) + "-" + pad(d.getHours()) + pad(d.getMinutes()) +
+         pad(Math.floor(Math.random()*100));
 }
 
-function sendOrder() {
-  let name = document.getElementById("customerName").value.trim();
-  let phoneRaw = document.getElementById("customerPhone").value.trim();
-  let address = document.getElementById("customerAddress").value.trim();
-  let quantityNum = parseInt(toEnglishDigits(document.getElementById("quantity").value), 10);
-
-  if (!name || !phoneRaw || !address) {
-    alert(isArabic ? "يرجى تعبئة جميع الحقول" : "Please fill all fields");
-    return;
-  }
-
-  let phone = normalizeJordanPhone(phoneRaw);
-  if (!phone) {
-    alert(isArabic
-      ? "يرجى إدخال رقم هاتف أردني صحيح (مثال: 0791234567)"
-      : "Please enter a valid Jordanian phone number (e.g. 0791234567)");
-    return;
-  }
-
-  if (!Number.isInteger(quantityNum) || quantityNum < 1 || quantityNum > 50) {
-    alert(isArabic ? "يرجى إدخال كمية صحيحة" : "Enter valid quantity");
-    return;
-  }
-
-  // كل عبوة 25 دينار
-  let price = quantityNum * UNIT_PRICE;
-  let orderID = makeOrderID();
-
-  let message = isArabic
-? `🛍️ طلب جديد رقم #${orderID}
-
-👤 الاسم: ${name}
-📞 الهاتف: ${phone}
-📦 الكمية: ${quantityNum} عبوة
-💰 السعر: ${price} دينار
-
-📍 العنوان:
-${address}
-
-💎 المنتج: LOR' Perfume`
-: `🛍️ NEW ORDER #${orderID}
-
-👤 Name: ${name}
-📞 Phone: ${phone}
-📦 Quantity: ${quantityNum} Bottle(s)
-💰 Price: ${price} JD
-
-📍 Address:
-${address}
-
-💎 Product: LOR' Perfume`;
-
-  let whatsapp = "https://wa.me/962790276691?text=" + encodeURIComponent(message);
-
-  window.open(whatsapp, "_blank");
-}
-</script>
-<div id="exitPopup" class="exit-popup">
-  <div class="popup-box">
-    <h2>WAIT ✦</h2>
-    <p>Before you go… complete your order in less than a minute</p>
-
-    <div class="offer">
-      🚚 Fast Delivery • 💵 Cash On Delivery
-    </div>
-
-<a href="#orderForm" class="popup-btn" onclick="goToOrder()">ORDER NOW</a>
-    
-    <button onclick="closePopup()" class="close-btn">No thanks</button>
-  </div>
-</div>
-<script>
-let popupShown = false;
-
-document.addEventListener("mouseout", function(e){
-  if (e.clientY <= 0 && !popupShown){
-    document.getElementById("exitPopup").classList.add("active");
-    popupShown = true;
-  }
+let checkoutTracked = false;
+document.getElementById("orderForm").addEventListener("focusin", () => {
+  if (checkoutTracked) return;
+  checkoutTracked = true;
+  const { total, items } = totals();
+  track("InitiateCheckout", { value: total, currency:"JOD", num_items: items });
 });
 
-function closePopup(){
-  document.getElementById("exitPopup").classList.remove("active");
-}
-</script>
-  <script>
-
-  function goToOrder(){
-  // إغلاق البوب أب
-  document.getElementById("exitPopup").classList.remove("active");
-
-  // النزول إلى الفورم
-  document.getElementById("orderForm").scrollIntoView({
-    behavior: "smooth"
+document.getElementById("orderForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const v = id => document.getElementById(id).value.trim();
+  const name = v("name"), phone = normalizeJordanPhone(v("phone")),
+        cityKey = v("city"), address = v("address");
+  const checks = [["f-name", !!name], ["f-phone", !!phone], ["f-city", !!cityKey], ["f-address", !!address]];
+  let firstBad = null;
+  checks.forEach(([id, ok]) => {
+    document.getElementById(id).classList.toggle("invalid", !ok);
+    if (!ok && !firstBad) firstBad = id;
   });
-}
-  </script>
-  <script>
-const quantityInput = document.getElementById("quantity");
-const totalPrice = document.getElementById("totalPrice");
+  const { subtotal, delivery, total, items } = totals();
+  document.getElementById("formError").style.display = items ? "none" : "block";
+  if (!items) { document.querySelector(".line-item").scrollIntoView({behavior:"smooth", block:"center"}); return; }
+  if (firstBad) { document.querySelector(`#${firstBad} input, #${firstBad} select, #${firstBad} textarea`).focus(); return; }
 
-function updatePrice() {
-  let qty = parseInt(toEnglishDigits(quantityInput.value), 10) || 1;
+  const city = CITIES.find(c => c[0] === cityKey);
+  const cityName = lang === "ar" ? city[1] : city[2];
+  const orderID = makeOrderID();
+  const lines = [];
+  if (cart.package) lines.push(`• ${t("pkg.name")} × ${cart.package} = ${money(cart.package * CONFIG.products.package.price)}`);
+  if (cart.solid)   lines.push(`• ${t("solid.name")} × ${cart.solid} = ${money(cart.solid * CONFIG.products.solid.price)}`);
 
-  if(qty < 1) qty = 1;
+  const message =
+`${t("msg.title")} #${orderID}
 
-  let price = qty * UNIT_PRICE;
+${t("msg.name")}: ${name}
+${t("msg.phone")}: ${phone}
+${t("msg.city")}: ${cityName}
+${t("msg.address")}: ${address}
 
-totalPrice.innerHTML = isArabic
-  ? "السعر الإجمالي: " + price + " دينار"
-  : "Total Price: " + price + " JD";
-}
+${t("msg.items")}:
+${lines.join("\n")}
 
-quantityInput.addEventListener("input", updatePrice);
+${t("msg.delivery")}: ${delivery ? money(delivery) : t("s.free")}
+${t("msg.total")}: ${money(total)}
+${t("msg.cod")}`;
 
-updatePrice();
-</script>
-  <!-- FOOTER -->
-<footer class="footer">
-  <h3>Customer Service</h3>
+  track("Purchase", { value: total, currency:"JOD", num_items: items,
+    content_ids: Object.keys(cart).filter(k => cart[k]), content_type:"product" });
 
-  <a href="privacy.html">Privacy Policy</a>
-  <a href="terms.html">Terms and Conditions</a>
-  <a href="cancel.html">Cancellation Policy</a>
-  <a href="refund.html">Refund & Returns Policy</a>
-</footer>
-  <div class="gold-particles">
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
-  <div id="packageModal" class="package-modal">
-
-  <span class="package-close" onclick="closePackage()">×</span>
-
-  <div class="package-modal-content">
-
-    <img src="package.jpeg" alt="LOR Package">
-
-    <div class="package-modal-title">
-      LOR Luxury Package
-    </div>
-
-  </div>
-
-</div>
-  <script>
-
-function openPackage(){
-  document
-  .getElementById("packageModal")
-  .classList.add("active");
-
-  document.body.style.overflow = "hidden";
-}
-
-function closePackage(){
-  document
-  .getElementById("packageModal")
-  .classList.remove("active");
-
-  document.body.style.overflow = "";
-}
-
-
-/* إغلاق عند الضغط خارج الصورة */
-
-document
-.getElementById("packageModal")
-.addEventListener("click", function(e){
-
-  if(e.target === this){
-    closePackage();
+  if (CONFIG.sheetsUrl) {
+    try {
+      fetch(CONFIG.sheetsUrl, { method:"POST", mode:"no-cors",
+        body: JSON.stringify({ orderID, name, phone, city: city[2], address,
+          package: cart.package, solid: cart.solid, subtotal, delivery, total, lang }) });
+    } catch(err) {}
   }
 
+  window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(message)}`, "_blank");
 });
 
-
-/* إغلاق بزر ESC */
-
-document.addEventListener("keydown", function(e){
-
-  if(e.key === "Escape"){
-    closePackage();
-  }
-
+["name","phone","city","address"].forEach(id => {
+  document.getElementById(id).addEventListener("input", () =>
+    document.getElementById("f-" + id).classList.remove("invalid"));
 });
 
+/* ===== شريط الطلب السفلي: يختفي عند قسم الطلب ===== */
+const sticky = document.getElementById("stickyBar");
+new IntersectionObserver(([en]) => sticky.classList.toggle("hide", en.isIntersecting), { threshold: 0.05 })
+  .observe(document.getElementById("order"));
+
+/* ===== ظهور تدريجي ===== */
+const io = new IntersectionObserver(entries => entries.forEach(en => {
+  if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
+}), { threshold: 0.12 });
+document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+/* ===== ViewContent ===== */
+new IntersectionObserver(([en], obs) => {
+  if (en.isIntersecting) { track("ViewContent", { content_ids:["package","solid"], content_type:"product" }); obs.disconnect(); }
+}, { threshold: 0.3 }).observe(document.getElementById("products"));
+
+document.getElementById("year").textContent = new Date().getFullYear();
+applyLang(store("lang") || "ar");
 </script>
 </body>
 </html>
