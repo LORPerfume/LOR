@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LOR' Perfume | عطر صلب فاخر</title>
-<meta name="description" content="LOR' Perfume — بكج فاخر (عطر صلب + عطرين رش) بـ 25 دينار مع توصيل مجاني، أو العطر الصلب لحاله بـ 12 دينار. الدفع عند الاستلام في كل الأردن.">
+<meta name="description" content="LOR' Perfume — عطر صلب فاخر بريحة الفانيليا والورد، صُنع في الأردن. بكج فاخر (عطر صلب + عطرين رش) بـ 25 دينار مع توصيل مجاني، أو العطر الصلب لحاله بـ 12 دينار. الدفع عند الاستلام في كل الأردن.">
 <meta name="robots" content="noindex"><!-- PREVIEW-ONLY -->
 <link rel="canonical" href="https://lorperfume.com/">
 <link rel="icon" type="image/png" href="../favicon.png">
@@ -309,11 +309,10 @@ html[dir="rtl"] .hero h1{text-align:right}
 .fragrance{background:var(--bg-2)}
 .frag-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:44px;align-items:center}
 @media (max-width:860px){.frag-grid{grid-template-columns:1fr;gap:28px}}
-.frag-grid > img{width:100%;border-radius:2px}
-.family{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--ink-2);margin-bottom:22px}
-.family .ic{color:var(--gold)}
+.frag-grid > img{width:100%;max-height:560px;object-fit:cover;object-position:center 30%;border-radius:2px}
+.family-txt{color:var(--ink-2);font-size:15.5px;margin:0 0 24px;max-width:520px}
 .notes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-@media (max-width:560px){.notes{grid-template-columns:1fr}}
+@media (max-width:560px){.notes{gap:8px}.note{padding:16px 8px}.note h4{font-size:14px}.note p{font-size:12.5px}}
 .note{background:var(--card);border:1px solid var(--line);padding:20px 18px;text-align:center}
 .note .lvl{font-family:var(--serif);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);direction:ltr;display:block}
 .note h4{margin:6px 0 6px;font-size:15.5px;font-weight:600}
@@ -334,6 +333,17 @@ html[dir="rtl"] .hero h1{text-align:right}
 .step h4{margin:4px 0 2px;font-size:15px;font-weight:600}
 .step p{margin:0;color:var(--muted);font-size:13.5px}
 .how-side img{width:100%;height:100%;object-fit:cover;min-height:280px}
+
+/* ===== LAYERING ===== */
+.layer-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:40px;align-items:center}
+@media (max-width:860px){.layer-grid{grid-template-columns:1fr;gap:26px;text-align:center}}
+.layer-grid .txt p{color:var(--ink-2);margin:0 0 22px}
+.mixes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media (max-width:560px){.mixes{gap:8px}.mix{padding:18px 8px}.mix .ic{width:28px;height:28px}.mix h4{font-size:13px}.mix p{font-size:12px}}
+.mix{background:var(--card);border:1px solid var(--line);padding:26px 18px;text-align:center}
+.mix .ic{width:34px;height:34px;color:var(--gold);margin:0 auto 12px}
+.mix h4{margin:0 0 4px;font-size:15px;font-weight:600}
+.mix p{margin:0;color:var(--muted);font-size:13.5px}
 
 /* ===== WHY ===== */
 .why{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--card)}
@@ -433,6 +443,10 @@ footer nav a:hover{color:#fff}
   <symbol id="i-cash" viewBox="0 0 24 24"><rect x="2.5" y="6" width="19" height="12" rx="1.5"/><circle cx="12" cy="12" r="2.6"/></symbol>
   <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"/><path d="M5 20c1.2-3.6 3.8-5.5 7-5.5s5.8 1.9 7 5.5"/></symbol>
   <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="1.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11.2a6.5 6.5 0 0 1 13 0C18.5 15.4 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.3"/></symbol>
+  <symbol id="i-flower" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.2"/><path d="M12 9.8C10 7 10 4 12 3c2 1 2 4 0 6.8zM12 14.2c2 2.8 2 5.8 0 6.8-2-1-2-4 0-6.8zM9.8 12C7 14 4 14 3 12c1-2 4-2 6.8 0zM14.2 12c2.8-2 5.8-2 6.8 0-1 2-4 2-6.8 0z"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 21c-3.6 0-6-2.5-6-5.8 0-3.6 3-5.6 4-9.2 1.5 1.4 2.2 3 2.2 4.6 1-.6 1.6-1.6 1.8-2.8 2 1.8 4 4.4 4 7.4 0 3.3-2.4 5.8-6 5.8z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></symbol>
   <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
   <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20.5 11.6a8.4 8.4 0 0 1-12.4 7.4L3.5 20.5l1.5-4.4a8.4 8.4 0 1 1 15.5-4.5z"/></symbol>
   <symbol id="i-insta" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/></symbol>
@@ -460,6 +474,7 @@ footer nav a:hover{color:#fff}
 <div class="drawer" id="drawer">
   <a href="#products" data-i18n="nav.products"></a>
   <a href="#fragrance" data-i18n="nav.fragrance"></a>
+  <a href="#layering" data-i18n="nav.layering"></a>
   <a href="#reviews" data-i18n="nav.reviews"></a>
   <a href="#faq" data-i18n="nav.faq"></a>
   <a href="#contact" data-i18n="nav.contact"></a>
@@ -481,7 +496,7 @@ footer nav a:hover{color:#fff}
       <div class="badges">
         <div><svg class="ic"><use href="#i-leaf"/></svg><span data-i18n="b.1"></span></div>
         <div><svg class="ic"><use href="#i-bag"/></svg><span data-i18n="b.2"></span></div>
-        <div><svg class="ic"><use href="#i-clock"/></svg><span data-i18n="b.3"></span></div>
+        <div><svg class="ic"><use href="#i-pin"/></svg><span data-i18n="b.3"></span></div>
       </div>
     </div>
     <div class="hero-img"><img src="../hero-lor.webp" alt="LOR Velvet Touch" fetchpriority="high"></div>
@@ -549,11 +564,11 @@ footer nav a:hover{color:#fff}
 <!-- ===== FRAGRANCE ===== -->
 <section class="fragrance" id="fragrance">
   <div class="wrap frag-grid">
-    <img src="../notes.webp" alt="" loading="lazy" class="reveal">
+    <img src="../story-lor.webp" alt="" loading="lazy" class="reveal">
     <div class="reveal">
       <span class="eyebrow">The Fragrance</span>
       <h2 class="h2" data-i18n="frag.title"></h2>
-      <div class="family"><svg class="ic"><use href="#i-leaf"/></svg><strong data-i18n="frag.family"></strong></div>
+      <p class="family-txt" data-i18n="frag.family"></p>
       <div class="notes">
         <div class="note"><span class="lvl">Top</span><h4 data-i18n="frag.top.t"></h4><p data-i18n="frag.top.d"></p></div>
         <div class="note"><span class="lvl">Heart</span><h4 data-i18n="frag.heart.t"></h4><p data-i18n="frag.heart.d"></p></div>
@@ -578,6 +593,23 @@ footer nav a:hover{color:#fff}
         <div class="step reveal"><img src="../enjoy.webp" alt="" loading="lazy"><span class="n">03</span><h4 data-i18n="how.3.t"></h4><p data-i18n="how.3.d"></p></div>
       </div>
       <div class="how-side reveal"><img src="../customer3.webp" alt="" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LAYERING ===== -->
+<section id="layering" style="background:var(--bg-2)">
+  <div class="wrap layer-grid">
+    <div class="txt reveal">
+      <span class="eyebrow">Layering Ideas</span>
+      <h2 class="h2" data-i18n="lay.title"></h2>
+      <p data-i18n="lay.p"></p>
+      <a class="btn" href="#products" data-i18n="lay.cta"></a>
+    </div>
+    <div class="mixes">
+      <div class="mix reveal"><svg class="ic"><use href="#i-flower"/></svg><h4 data-i18n="lay.1.t"></h4><p data-i18n="lay.1.d"></p></div>
+      <div class="mix reveal"><svg class="ic"><use href="#i-flame"/></svg><h4 data-i18n="lay.2.t"></h4><p data-i18n="lay.2.d"></p></div>
+      <div class="mix reveal"><svg class="ic"><use href="#i-sun"/></svg><h4 data-i18n="lay.3.t"></h4><p data-i18n="lay.3.d"></p></div>
     </div>
   </div>
 </section>
@@ -622,6 +654,7 @@ footer nav a:hover{color:#fff}
         <details><summary data-i18n="faq.4.q"></summary><p data-i18n="faq.4.a"></p></details>
         <details><summary data-i18n="faq.5.q"></summary><p data-i18n="faq.5.a"></p></details>
         <details><summary data-i18n="faq.6.q"></summary><p data-i18n="faq.6.a"></p></details>
+        <details><summary data-i18n="faq.7.q"></summary><p data-i18n="faq.7.a"></p></details>
       </div>
     </div>
     <div class="ritual reveal">
@@ -722,23 +755,29 @@ const CONFIG = {
 const I18N = {
   ar: {
     "nav.home":"الرئيسية","nav.products":"منتجاتنا","nav.fragrance":"الرائحة","nav.reviews":"آراء العملاء","nav.faq":"الأسئلة","nav.contact":"تواصل معنا","nav.order":"اطلبي الآن",
-    "hero.title":"طريقة جديدة لارتداء العطر","hero.lead":"عطر LOR الصلب بقوام زبدة عطرية ناعم يذوب على البشرة ويدوم معك لساعات، بتصميم أنيق يرافقك أينما كنتِ.",
+    "hero.title":"طريقة جديدة لارتداء العطر","hero.lead":"تجربة عطرية كريمية تجمع بين الفانيليا والورد، بقوام زبدة ناعم يذوب على البشرة ويدوم معك لساعات، وبتصميم أنيق يرافقك أينما كنتِ.",
     "hero.cta":"تسوّقي الآن","hero.cta2":"اكتشفي الرائحة",
-    "b.1":"قوام كريمي ناعم","b.2":"سهل الحمل","b.3":"ثبات يدوم لساعات",
+    "b.1":"قوام كريمي ناعم","b.2":"سهل الحمل","b.3":"صُنع في الأردن",
     "what.title":"شو هو عطر LOR الصلب؟",
     "what.1.t":"زبدة عطرية","what.1.d":"قوام كريمي ناعم بيذوب على البشرة بدل الرش بالهوا.",
     "what.2.t":"لمسة صغيرة بتكفي","what.2.d":"ضعيه على نقاط النبض: الرقبة، المعصم أو خلف الأذن.",
-    "what.3.t":"ومعه عطر رش","what.3.d":"البكج الكامل فيه علبتين عطر رش LOR بنفس الريحة.",
+    "what.3.t":"بدك تعملي Layering؟","what.3.d":"رشّي فوقه عطر LOR السائل أو أي عطر بتحبيه، واستمتعي بمكسات جديدة بطريقتك.",
     "products.title":"اختاري ما يناسبك","products.sub":"البكج الكامل بتوصيل مجاني، أو العطر الصلب لحاله.",
     "pkg.tag":"الأكثر طلبًا","pkg.name":"البكج الكامل","pkg.desc":"عطر صلب + علبتين عطر رش، بتغليف فاخر جاهز للهدايا.",
     "pkg.i1":"علبة عطر صلب LOR","pkg.i2":"علبتين عطر رش LOR","pkg.i3":"تغليف هدايا فاخر",
     "solid.name":"العطر الصلب فقط","solid.desc":"عطر LOR الصلب بقوام زبدة عطرية ناعم.",
     "solid.i1":"علبة عطر صلب واحدة","solid.i2":"صغير وسهل بالشنطة","solid.i3":"ثبات يدوم لساعات",
     "ship.free":"توصيل مجاني","ship.paid":"+ 2 دينار توصيل","add":"أضيفي إلى السلة",
-    "frag.title":"رائحة شرقية زهرية دافئة","frag.family":"العائلة العطرية: الزهور الشرقية",
-    "frag.top.t":"المقدمة","frag.top.d":"الكمثرى، الفلفل الوردي، زهر البرتقال",
-    "frag.heart.t":"القلب","frag.heart.d":"القهوة، الياسمين، اللوز المر، العرقسوس",
-    "frag.base.t":"القاعدة","frag.base.d":"الفانيليا، الباتشولي، خشب الكشمير، خشب الأرز",
+    "frag.title":"رائحة تجمع بين الفانيليا والورد","frag.family":"مزيج دافئ وأنثوي من الفانيليا الناعمة والورد، يمنحك تجربة عطرية مميزة تبقى معك طوال اليوم.",
+    "frag.top.t":"مقدمة العطر","frag.top.d":"الفانيليا",
+    "frag.heart.t":"قلب العطر","frag.heart.d":"الورد",
+    "frag.base.t":"قاعدة العطر","frag.base.d":"لمسات دافئة وناعمة",
+    "nav.layering":"مكسات العطر",
+    "lay.title":"مكسات بروائح جديدة","lay.p":"استخدمي عطر LOR الصلب كأساس، وبعدين رشّي فوقه أي عطر بتحبيه، للحصول على مزيج فريد بيعكس شخصيتك.",
+    "lay.cta":"اكتشفي البكج",
+    "lay.1.t":"مع الروائح الزهرية","lay.1.d":"لمسة أنثوية ناعمة","lay.2.t":"مع الروائح الشرقية","lay.2.d":"دفء وحضور أقوى",
+    "lay.3.t":"مع الروائح المنعشة","lay.3.d":"انتعاش بطريقتك",
+    "faq.7.q":"بقدر أستخدمه مع عطر تاني؟","faq.7.a":"أكيد! حطّي عطر LOR الصلب أول، وبعدين رشّي فوقه عطر LOR السائل أو أي عطر بتحبيه، وبتطلعي بمكس خاص فيكِ.",
     "how.title":"كيفية الاستخدام","how.sub":"لمسة صغيرة هي كل اللي بتحتاجيه.",
     "how.1.t":"اضغطي","how.1.d":"اضغطي بلطف لتاخدي كمية صغيرة.",
     "how.2.t":"ضعيه","how.2.d":"على نقاط النبض: الرقبة، المعصم أو خلف الأذن.",
@@ -778,23 +817,29 @@ const I18N = {
   },
   en: {
     "nav.home":"Home","nav.products":"Our Products","nav.fragrance":"The Fragrance","nav.reviews":"Reviews","nav.faq":"FAQ","nav.contact":"Contact","nav.order":"Order Now",
-    "hero.title":"A New Way to Wear Perfume","hero.lead":"LOR solid perfume — a soft scented butter that melts into your skin and stays with you for hours, in an elegant bottle that goes wherever you go.",
+    "hero.title":"A New Way to Wear Perfume","hero.lead":"A creamy fragrance of vanilla and rose — a soft scented butter that melts into your skin and stays with you for hours, in an elegant bottle that goes wherever you go.",
     "hero.cta":"Shop Now","hero.cta2":"Discover the Scent",
-    "b.1":"Creamy Texture","b.2":"Travel Friendly","b.3":"Long Lasting",
+    "b.1":"Creamy Texture","b.2":"Travel Friendly","b.3":"Made in Jordan",
     "what.title":"What is LOR Solid Perfume?",
     "what.1.t":"Scented Butter","what.1.d":"A soft creamy texture that melts into skin instead of spraying into the air.",
     "what.2.t":"A Small Touch","what.2.d":"Apply on pulse points: neck, wrist or behind the ears.",
-    "what.3.t":"Plus a Spray","what.3.d":"The full package includes 2 LOR spray perfumes in the same scent.",
+    "what.3.t":"Want to Layer?","what.3.d":"Spray LOR liquid perfume — or any scent you love — on top for your own unique mix.",
     "products.title":"Choose Yours","products.sub":"The full package with free delivery, or the solid perfume on its own.",
     "pkg.tag":"Best Seller","pkg.name":"The Full Package","pkg.desc":"Solid perfume + 2 spray perfumes in luxury gift packaging.",
     "pkg.i1":"1 LOR solid perfume","pkg.i2":"2 LOR spray perfumes","pkg.i3":"Luxury gift box",
     "solid.name":"Solid Perfume Only","solid.desc":"LOR solid perfume with a soft scented-butter texture.",
     "solid.i1":"1 solid perfume","solid.i2":"Small, easy in your bag","solid.i3":"Lasts for hours",
     "ship.free":"Free delivery","ship.paid":"+ 2 JOD delivery","add":"Add to Cart",
-    "frag.title":"A Warm Oriental Floral","frag.family":"Family: Oriental Floral",
-    "frag.top.t":"Top Notes","frag.top.d":"Pear, pink pepper, orange blossom",
-    "frag.heart.t":"Heart Notes","frag.heart.d":"Coffee, jasmine, bitter almond, licorice",
-    "frag.base.t":"Base Notes","frag.base.d":"Vanilla, patchouli, cashmere wood, cedarwood",
+    "frag.title":"Vanilla Meets Rose","frag.family":"A warm, feminine blend of soft vanilla and rose — a signature scent that stays with you all day.",
+    "frag.top.t":"Top Note","frag.top.d":"Vanilla",
+    "frag.heart.t":"Heart Note","frag.heart.d":"Rose",
+    "frag.base.t":"Base Note","frag.base.d":"Warm, soft accords",
+    "nav.layering":"Layering",
+    "lay.title":"Create Your Own Mix","lay.p":"Use LOR solid perfume as your base, then spray any fragrance you love on top for a unique blend that reflects you.",
+    "lay.cta":"Discover the Package",
+    "lay.1.t":"With Florals","lay.1.d":"A soft feminine touch","lay.2.t":"With Orientals","lay.2.d":"Warmth and stronger presence",
+    "lay.3.t":"With Fresh Scents","lay.3.d":"Freshness, your way",
+    "faq.7.q":"Can I use it with another perfume?","faq.7.a":"Absolutely! Apply LOR solid perfume first, then spray LOR liquid perfume or any scent you love on top for your own signature mix.",
     "how.title":"How to Use","how.sub":"A small touch is all you need.",
     "how.1.t":"Press","how.1.d":"Press gently to take a small amount.",
     "how.2.t":"Apply","how.2.d":"On pulse points: neck, wrist or behind the ears.",
