@@ -276,28 +276,53 @@ html[dir="rtl"] .hero h1{text-align:right}
 }
 
 /* ===== PRODUCTS ===== */
-.products{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-@media (max-width:860px){.products{grid-template-columns:1fr}}
-.product{display:grid;grid-template-columns:1fr 1.1fr;background:var(--card);border:1px solid var(--line);overflow:hidden}
-.product .media{background:#efe6da;min-height:260px}
-.product .media img{width:100%;height:100%;object-fit:cover}
-.product .media.contain img{object-fit:contain;padding:18px}
-.product .body{padding:26px 24px;display:flex;flex-direction:column;gap:8px}
-.product .tag{align-self:flex-start;font-size:11px;letter-spacing:.14em;color:var(--gold);border:1px solid var(--gold);padding:2px 10px;border-radius:20px}
-.product h3{margin:0;font-size:20px;font-weight:600}
-.product .desc{margin:0;color:var(--muted);font-size:14px}
-.product ul{list-style:none;margin:4px 0 0;padding:0;color:var(--ink-2);font-size:13.5px;display:grid;gap:3px}
-.product li::before{content:"— ";color:var(--gold)}
+.products{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:760px;margin:0 auto}
+@media (max-width:520px){.products{gap:12px}}
+.pcard{display:block;width:100%;padding:0;border:1px solid var(--line);background:var(--card);cursor:pointer;text-align:center;font:inherit;color:inherit;transition:transform .25s,box-shadow .25s}
+.pcard:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(46,35,28,.08)}
+.pcard .media{position:relative;aspect-ratio:1/1;background:#efe6da;overflow:hidden}
+.pcard .media img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.pcard:hover .media img{transform:scale(1.04)}
+.pcard .media.contain img{object-fit:contain;padding:14%}
+.pcard .tag{position:absolute;top:10px;inset-inline-start:10px;background:var(--btn);color:#f7efe6;font-size:10.5px;letter-spacing:.06em;padding:3px 9px;border-radius:20px}
+.pcard .info{padding:14px 10px 16px}
+.pcard h3{margin:0 0 4px;font-size:15px;font-weight:600;line-height:1.4}
+.pcard .p{font-family:var(--serif);font-size:22px;font-weight:600;direction:ltr;display:block;line-height:1.2}
+.pcard .ship{display:block;font-size:11.5px;color:var(--muted);margin-top:2px}
+.pcard .ship.free{color:#4f7a4a;font-weight:600}
+.pcard .more{display:inline-block;margin-top:8px;font-size:12px;color:var(--ink-2);border-bottom:1px solid var(--line);padding-bottom:1px}
+@media (max-width:520px){.pcard h3{font-size:13.5px}.pcard .p{font-size:20px}}
+
+/* product details sheet */
+.sheet{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
+.sheet.open{display:flex}
+.sheet .backdrop{position:absolute;inset:0;background:rgba(46,35,28,.45);animation:fade .25s}
+.sheet .panel{position:relative;background:var(--bg);width:100%;max-width:820px;max-height:90vh;overflow:auto;display:grid;grid-template-columns:1fr 1fr;animation:pop .3s cubic-bezier(.2,.7,.2,1)}
+.sheet .panel .media{background:#efe6da;min-height:320px}
+.sheet .panel .media img{width:100%;height:100%;object-fit:cover}
+.sheet .panel .media.contain img{object-fit:contain;padding:10%}
+.sheet .body{padding:30px 26px;display:flex;flex-direction:column;gap:8px}
+.sheet .close{position:absolute;top:10px;inset-inline-end:10px;z-index:2;width:38px;height:38px;border-radius:50%;border:none;background:rgba(251,247,242,.92);color:var(--ink);font-size:22px;line-height:1;cursor:pointer}
+.sheet .tag{align-self:flex-start;font-size:11px;letter-spacing:.14em;color:var(--gold);border:1px solid var(--gold);padding:2px 10px;border-radius:20px}
+.sheet h3{margin:0;font-size:22px;font-weight:600}
+.sheet .desc{margin:0;color:var(--muted);font-size:14.5px}
+.sheet ul{list-style:none;margin:4px 0 0;padding:0;color:var(--ink-2);font-size:14px;display:grid;gap:4px}
+.sheet li::before{content:"— ";color:var(--gold)}
 .price{display:flex;align-items:baseline;gap:10px;margin-top:6px}
 .price strong{font-family:var(--serif);font-size:30px;font-weight:600;direction:ltr}
 .price span{font-size:12.5px;color:var(--muted)}
 .price span.free{color:#4f7a4a;font-weight:600}
-.buy-row{display:flex;gap:10px;margin-top:auto;padding-top:12px;align-items:stretch}
-.buy-row .btn{flex:1;padding:12px 16px;font-size:13.5px}
-@media (max-width:520px){
-  .product{grid-template-columns:1fr}
-  .product .media{min-height:0;aspect-ratio:4/3}
+.buy-row{display:flex;gap:10px;margin-top:auto;padding-top:14px;align-items:stretch}
+.buy-row .btn{flex:1;padding:12px 16px;font-size:14px}
+@keyframes fade{from{opacity:0}}
+@keyframes pop{from{opacity:0;transform:translateY(20px)}}
+@media (max-width:640px){
+  .sheet{align-items:flex-end;padding:0}
+  .sheet .panel{grid-template-columns:1fr;max-height:92vh;border-radius:16px 16px 0 0}
+  .sheet .panel .media{min-height:0;aspect-ratio:4/3}
+  .sheet .body{padding:22px 20px 26px}
 }
+body.locked{overflow:hidden}
 
 /* stepper */
 .stepper{display:flex;align-items:center;border:1px solid var(--line);border-radius:var(--radius);background:#fff;direction:ltr}
@@ -511,36 +536,64 @@ footer nav a:hover{color:#fff}
       <p class="sub" data-i18n="products.sub"></p>
     </div>
     <div class="products">
-      <article class="product reveal">
-        <div class="media"><img src="package.jpeg" alt="" loading="lazy"></div>
-        <div class="body">
-          <span class="tag" data-i18n="pkg.tag"></span>
+      <button class="pcard reveal" type="button" data-open="package">
+        <div class="media"><img src="package.jpeg" alt="" loading="lazy"><span class="tag" data-i18n="pkg.tag"></span></div>
+        <div class="info">
           <h3 data-i18n="pkg.name"></h3>
-          <p class="desc" data-i18n="pkg.desc"></p>
-          <ul><li data-i18n="pkg.i1"></li><li data-i18n="pkg.i2"></li><li data-i18n="pkg.i3"></li></ul>
-          <div class="price"><strong>25 JOD</strong><span class="free" data-i18n="ship.free"></span></div>
-          <div class="buy-row">
-            <div class="stepper" data-item="package"><button type="button" data-step="-1" aria-label="-">−</button><output>0</output><button type="button" data-step="1" aria-label="+">+</button></div>
-            <button class="btn" type="button" data-add="package" data-i18n="add"></button>
-          </div>
+          <span class="p">25 JOD</span>
+          <span class="ship free" data-i18n="ship.free"></span>
+          <span class="more" data-i18n="details"></span>
         </div>
-      </article>
-      <article class="product reveal">
+      </button>
+      <button class="pcard reveal" type="button" data-open="solid">
         <div class="media contain"><img src="product.webp" alt="" loading="lazy"></div>
-        <div class="body">
+        <div class="info">
           <h3 data-i18n="solid.name"></h3>
-          <p class="desc" data-i18n="solid.desc"></p>
-          <ul><li data-i18n="solid.i1"></li><li data-i18n="solid.i2"></li><li data-i18n="solid.i3"></li></ul>
-          <div class="price"><strong>12 JOD</strong><span data-i18n="ship.paid"></span></div>
-          <div class="buy-row">
-            <div class="stepper" data-item="solid"><button type="button" data-step="-1" aria-label="-">−</button><output>0</output><button type="button" data-step="1" aria-label="+">+</button></div>
-            <button class="btn" type="button" data-add="solid" data-i18n="add"></button>
-          </div>
+          <span class="p">12 JOD</span>
+          <span class="ship" data-i18n="ship.paid"></span>
+          <span class="more" data-i18n="details"></span>
         </div>
-      </article>
+      </button>
     </div>
   </div>
 </section>
+
+<!-- product details -->
+<div class="sheet" id="sheet-package" role="dialog" aria-modal="true">
+  <div class="backdrop" data-close></div>
+  <div class="panel">
+    <button class="close" type="button" data-close aria-label="close">×</button>
+    <div class="media"><img src="package.jpeg" alt="" loading="lazy"></div>
+    <div class="body">
+      <span class="tag" data-i18n="pkg.tag"></span>
+      <h3 data-i18n="pkg.name"></h3>
+      <p class="desc" data-i18n="pkg.desc"></p>
+      <ul><li data-i18n="pkg.i1"></li><li data-i18n="pkg.i2"></li><li data-i18n="pkg.i3"></li></ul>
+      <div class="price"><strong>25 JOD</strong><span class="free" data-i18n="ship.free"></span></div>
+      <div class="buy-row">
+        <div class="stepper" data-item="package"><button type="button" data-step="-1" aria-label="-">−</button><output>0</output><button type="button" data-step="1" aria-label="+">+</button></div>
+        <button class="btn" type="button" data-add="package" data-i18n="add"></button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="sheet" id="sheet-solid" role="dialog" aria-modal="true">
+  <div class="backdrop" data-close></div>
+  <div class="panel">
+    <button class="close" type="button" data-close aria-label="close">×</button>
+    <div class="media contain"><img src="product.webp" alt="" loading="lazy"></div>
+    <div class="body">
+      <h3 data-i18n="solid.name"></h3>
+      <p class="desc" data-i18n="solid.desc"></p>
+      <ul><li data-i18n="solid.i1"></li><li data-i18n="solid.i2"></li><li data-i18n="solid.i3"></li></ul>
+      <div class="price"><strong>12 JOD</strong><span data-i18n="ship.paid"></span></div>
+      <div class="buy-row">
+        <div class="stepper" data-item="solid"><button type="button" data-step="-1" aria-label="-">−</button><output>0</output><button type="button" data-step="1" aria-label="+">+</button></div>
+        <button class="btn" type="button" data-add="solid" data-i18n="add"></button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- ===== WHAT IS ===== -->
 <section style="padding-top:0">
@@ -766,7 +819,7 @@ const I18N = {
     "pkg.i1":"علبة عطر صلب LOR","pkg.i2":"علبتين عطر رش LOR","pkg.i3":"تغليف هدايا فاخر",
     "solid.name":"العطر الصلب فقط","solid.desc":"عطر LOR الصلب بقوام زبدة عطرية ناعم.",
     "solid.i1":"علبة عطر صلب واحدة","solid.i2":"صغير وسهل بالشنطة","solid.i3":"ثبات يدوم لساعات",
-    "ship.free":"توصيل مجاني","ship.paid":"+ 2 دينار توصيل","add":"أضيفي إلى السلة",
+    "ship.free":"توصيل مجاني","ship.paid":"+ 2 دينار توصيل","add":"أضيفي إلى السلة","details":"التفاصيل",
     "frag.title":"رائحة تجمع بين الفانيليا والورد","frag.family":"مزيج دافئ وأنثوي من الفانيليا الناعمة والورد، يمنحك تجربة عطرية مميزة تبقى معك طوال اليوم.",
     "frag.top.t":"مقدمة العطر","frag.top.d":"الفانيليا",
     "frag.heart.t":"قلب العطر","frag.heart.d":"الورد",
@@ -828,7 +881,7 @@ const I18N = {
     "pkg.i1":"1 LOR solid perfume","pkg.i2":"2 LOR spray perfumes","pkg.i3":"Luxury gift box",
     "solid.name":"Solid Perfume Only","solid.desc":"LOR solid perfume with a soft scented-butter texture.",
     "solid.i1":"1 solid perfume","solid.i2":"Small, easy in your bag","solid.i3":"Lasts for hours",
-    "ship.free":"Free delivery","ship.paid":"+ 2 JOD delivery","add":"Add to Cart",
+    "ship.free":"Free delivery","ship.paid":"+ 2 JOD delivery","add":"Add to Cart","details":"Details",
     "frag.title":"Vanilla Meets Rose","frag.family":"A warm, feminine blend of soft vanilla and rose — a signature scent that stays with you all day.",
     "frag.top.t":"Top Note","frag.top.d":"Vanilla",
     "frag.heart.t":"Heart Note","frag.heart.d":"Rose",
@@ -972,10 +1025,29 @@ document.querySelectorAll(".stepper button").forEach(b => {
     setQty(item, cart[item] + Number(b.dataset.step));
   });
 });
+/* ===== تفاصيل المنتج ===== */
+let openSheet = null;
+function showSheet(item){
+  openSheet = document.getElementById("sheet-" + item);
+  openSheet.classList.add("open");
+  document.body.classList.add("locked");
+  track("ViewContent", { content_ids:[item], content_type:"product", value: CONFIG.products[item].price, currency:"JOD" });
+}
+function hideSheet(){
+  if (!openSheet) return;
+  openSheet.classList.remove("open");
+  document.body.classList.remove("locked");
+  openSheet = null;
+}
+document.querySelectorAll("[data-open]").forEach(c => c.addEventListener("click", () => showSheet(c.dataset.open)));
+document.querySelectorAll("[data-close]").forEach(c => c.addEventListener("click", hideSheet));
+document.addEventListener("keydown", e => { if (e.key === "Escape") hideSheet(); });
+
 document.querySelectorAll("[data-add]").forEach(b => {
   b.addEventListener("click", () => {
     const item = b.dataset.add;
     if (cart[item] === 0) setQty(item, 1);
+    hideSheet();
     document.getElementById("order").scrollIntoView({ behavior:"smooth" });
   });
 });
