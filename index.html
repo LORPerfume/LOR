@@ -67,7 +67,7 @@
    "name": "بكج LOR الكامل — LOR Perfume Package",
    "description": "بكج LOR الفاخر: علبة عطر صلب LOR وعلبتين عطر رش LOR بتغليف جاهز للهدايا. توصيل مجاني لكل الأردن والدفع عند الاستلام.",
    "image": [
-    "https://lorperfume.com/package.jpeg"
+    "https://lorperfume.com/package-box.webp"
    ],
    "brand": {
     "@id": "https://lorperfume.com/#brand"
@@ -109,7 +109,7 @@
    "name": "عطر LOR الصلب — LOR Solid Perfume",
    "description": "عطر LOR الصلب بقوام زبدة عطرية ناعم يذوب على البشرة ويدوم لساعات. الدفع عند الاستلام في كل الأردن.",
    "image": [
-    "https://lorperfume.com/product.webp"
+    "https://lorperfume.com/solid-bottle.webp"
    ],
    "brand": {
     "@id": "https://lorperfume.com/#brand"
@@ -537,7 +537,7 @@ footer nav a:hover{color:#fff}
     </div>
     <div class="products">
       <button class="pcard reveal" type="button" data-open="package">
-        <div class="media"><img src="package.jpeg" alt="" loading="lazy"><span class="tag" data-i18n="pkg.tag"></span></div>
+        <div class="media"><img src="package-box.webp" alt="" loading="lazy"><span class="tag" data-i18n="pkg.tag"></span></div>
         <div class="info">
           <h3 data-i18n="pkg.name"></h3>
           <span class="p">25 JOD</span>
@@ -546,7 +546,7 @@ footer nav a:hover{color:#fff}
         </div>
       </button>
       <button class="pcard reveal" type="button" data-open="solid">
-        <div class="media contain"><img src="product.webp" alt="" loading="lazy"></div>
+        <div class="media"><img src="solid-bottle.webp" alt="" loading="lazy" style="object-position:center 40%"></div>
         <div class="info">
           <h3 data-i18n="solid.name"></h3>
           <span class="p">12 JOD</span>
@@ -563,7 +563,7 @@ footer nav a:hover{color:#fff}
   <div class="backdrop" data-close></div>
   <div class="panel">
     <button class="close" type="button" data-close aria-label="close">×</button>
-    <div class="media"><img src="package.jpeg" alt="" loading="lazy"></div>
+    <div class="media"><img src="package-box.webp" alt="" loading="lazy"></div>
     <div class="body">
       <span class="tag" data-i18n="pkg.tag"></span>
       <h3 data-i18n="pkg.name"></h3>
@@ -581,7 +581,7 @@ footer nav a:hover{color:#fff}
   <div class="backdrop" data-close></div>
   <div class="panel">
     <button class="close" type="button" data-close aria-label="close">×</button>
-    <div class="media contain"><img src="product.webp" alt="" loading="lazy"></div>
+    <div class="media"><img src="solid-bottle.webp" alt="" loading="lazy"></div>
     <div class="body">
       <h3 data-i18n="solid.name"></h3>
       <p class="desc" data-i18n="solid.desc"></p>
@@ -730,12 +730,12 @@ footer nav a:hover{color:#fff}
     </div>
     <form class="order-wrap" id="orderForm" novalidate>
       <div class="line-item">
-        <img src="package.jpeg" alt="">
+        <img src="package-box.webp" alt="">
         <div class="info"><strong data-i18n="pkg.name"></strong><span data-i18n="order.pkgline"></span></div>
         <div class="stepper" data-item="package"><button type="button" data-step="-1" aria-label="-">−</button><output>0</output><button type="button" data-step="1" aria-label="+">+</button></div>
       </div>
       <div class="line-item">
-        <img src="product.webp" alt="" style="object-fit:contain">
+        <img src="solid-bottle.webp" alt="">
         <div class="info"><strong data-i18n="solid.name"></strong><span data-i18n="order.solidline"></span></div>
         <div class="stepper" data-item="solid"><button type="button" data-step="-1" aria-label="-">−</button><output>0</output><button type="button" data-step="1" aria-label="+">+</button></div>
       </div>
@@ -815,10 +815,10 @@ const I18N = {
     "what.2.t":"لمسة صغيرة بتكفي","what.2.d":"ضعيه على نقاط النبض: الرقبة، المعصم أو خلف الأذن.",
     "what.3.t":"بدك تعملي Layering؟","what.3.d":"رشّي فوقه عطر LOR السائل أو أي عطر بتحبيه، واستمتعي بمكسات جديدة بطريقتك.",
     "products.title":"اختاري ما يناسبك","products.sub":"البكج الكامل بتوصيل مجاني، أو العطر الصلب لحاله.",
-    "pkg.tag":"الأكثر طلبًا","pkg.name":"البكج الكامل","pkg.desc":"عطر صلب + علبتين عطر رش، بتغليف فاخر جاهز للهدايا.",
-    "pkg.i1":"علبة عطر صلب LOR","pkg.i2":"علبتين عطر رش LOR","pkg.i3":"تغليف هدايا فاخر",
-    "solid.name":"العطر الصلب فقط","solid.desc":"عطر LOR الصلب بقوام زبدة عطرية ناعم.",
-    "solid.i1":"علبة عطر صلب واحدة","solid.i2":"صغير وسهل بالشنطة","solid.i3":"ثبات يدوم لساعات",
+    "pkg.tag":"الأكثر طلبًا","pkg.name":"البكج الكامل","pkg.desc":"عطر صلب 30 مل + علبتين عطر رش 10 مل، بتغليف فاخر جاهز للهدايا.",
+    "pkg.i1":"علبة عطر صلب LOR — 30 مل","pkg.i2":"علبتين عطر رش LOR — 10 مل لكل علبة","pkg.i3":"تغليف هدايا فاخر",
+    "solid.name":"العطر الصلب فقط","solid.desc":"عطر LOR الصلب بقوام زبدة عطرية ناعم — 30 مل.",
+    "solid.i1":"علبة عطر صلب واحدة — 30 مل","solid.i2":"صغير وسهل بالشنطة","solid.i3":"ثبات يدوم لساعات",
     "ship.free":"توصيل مجاني","ship.paid":"+ 2 دينار توصيل","add":"أضيفي إلى السلة","details":"التفاصيل",
     "frag.title":"رائحة تجمع بين الفانيليا والورد","frag.family":"مزيج دافئ وأنثوي من الفانيليا الناعمة والورد، يمنحك تجربة عطرية مميزة تبقى معك طوال اليوم.",
     "frag.top.t":"مقدمة العطر","frag.top.d":"الفانيليا",
@@ -844,7 +844,7 @@ const I18N = {
     "rev.3.q":"\"وصلني أسرع من المتوقع والتغليف مرتب كتير والريحة فخمة بتعطي إحساس عطر غالي.\"","rev.3.n":"ميرا — الزرقاء",
     "rev.all":"شاهدوا المزيد من التقييمات",
     "faq.title":"الأسئلة الشائعة",
-    "faq.1.q":"شو داخل البكج الكامل؟","faq.1.a":"علبة عطر صلب LOR وعلبتين عطر رش LOR، بتغليف فاخر — بـ 25 دينار والتوصيل مجاني.",
+    "faq.1.q":"شو داخل البكج الكامل؟","faq.1.a":"علبة عطر صلب LOR (30 مل) وعلبتين عطر رش LOR (10 مل لكل علبة)، بتغليف فاخر — بـ 25 دينار والتوصيل مجاني.",
     "faq.2.q":"كم رسوم التوصيل؟","faq.2.a":"أي طلب فيه بكج توصيله مجاني. إذا طلبتي العطر الصلب لحاله بتنضاف 2 دينار توصيل.",
     "faq.3.q":"كيف بدفع؟","faq.3.a":"الدفع كاش عند الاستلام، ما بتدفعي إلا لما يوصلك الطلب.",
     "faq.4.q":"كيف بطلب؟","faq.4.a":"اختاري المنتج، عبّي معلوماتك واضغطي «إرسال الطلب» — بينفتح الواتساب برسالة جاهزة، ابعتيها ومنتواصل معك لتأكيد الطلب.",
@@ -877,10 +877,10 @@ const I18N = {
     "what.2.t":"A Small Touch","what.2.d":"Apply on pulse points: neck, wrist or behind the ears.",
     "what.3.t":"Want to Layer?","what.3.d":"Spray LOR liquid perfume — or any scent you love — on top for your own unique mix.",
     "products.title":"Choose Yours","products.sub":"The full package with free delivery, or the solid perfume on its own.",
-    "pkg.tag":"Best Seller","pkg.name":"The Full Package","pkg.desc":"Solid perfume + 2 spray perfumes in luxury gift packaging.",
-    "pkg.i1":"1 LOR solid perfume","pkg.i2":"2 LOR spray perfumes","pkg.i3":"Luxury gift box",
-    "solid.name":"Solid Perfume Only","solid.desc":"LOR solid perfume with a soft scented-butter texture.",
-    "solid.i1":"1 solid perfume","solid.i2":"Small, easy in your bag","solid.i3":"Lasts for hours",
+    "pkg.tag":"Best Seller","pkg.name":"The Full Package","pkg.desc":"30 ml solid perfume + 2 × 10 ml spray perfumes in luxury gift packaging.",
+    "pkg.i1":"1 LOR solid perfume — 30 ml","pkg.i2":"2 LOR spray perfumes — 10 ml each","pkg.i3":"Luxury gift box",
+    "solid.name":"Solid Perfume Only","solid.desc":"LOR solid perfume with a soft scented-butter texture — 30 ml.",
+    "solid.i1":"1 solid perfume — 30 ml","solid.i2":"Small, easy in your bag","solid.i3":"Lasts for hours",
     "ship.free":"Free delivery","ship.paid":"+ 2 JOD delivery","add":"Add to Cart","details":"Details",
     "frag.title":"Vanilla Meets Rose","frag.family":"A warm, feminine blend of soft vanilla and rose — a signature scent that stays with you all day.",
     "frag.top.t":"Top Note","frag.top.d":"Vanilla",
@@ -906,7 +906,7 @@ const I18N = {
     "rev.3.q":"\"It arrived faster than expected, beautifully packed, and it smells like an expensive perfume.\"","rev.3.n":"Mira — Zarqa",
     "rev.all":"See more reviews",
     "faq.title":"Frequently Asked Questions",
-    "faq.1.q":"What's in the full package?","faq.1.a":"1 LOR solid perfume and 2 LOR spray perfumes in luxury packaging — 25 JOD with free delivery.",
+    "faq.1.q":"What's in the full package?","faq.1.a":"1 LOR solid perfume (30 ml) and 2 LOR spray perfumes (10 ml each) in luxury packaging — 25 JOD with free delivery.",
     "faq.2.q":"How much is delivery?","faq.2.a":"Any order with a package ships free. The solid perfume alone adds 2 JOD delivery.",
     "faq.3.q":"How do I pay?","faq.3.a":"Cash on delivery — you pay only when your order arrives.",
     "faq.4.q":"How do I order?","faq.4.a":"Pick your product, fill in your details and tap “Send order” — WhatsApp opens with a ready message. Send it and we'll confirm.",
