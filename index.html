@@ -801,6 +801,7 @@ const CONFIG = {
   deliveryFee: 2,
   maxQty: 20,
   pixelId: "657651724645375", // رقم Meta Pixel (Dataset ID)
+  gaId: "G-GWRGSSJ8B2",       // Google Analytics 4
   sheetsUrl: ""
 };
 
@@ -949,8 +950,27 @@ function store(key, val){
 }
 
 /* ===== Meta Pixel (يشتغل بس إذا pixelId موجود) ===== */
+const GA_EVENTS = { ViewContent:"view_item", AddToCart:"add_to_cart", InitiateCheckout:"begin_checkout", Purchase:"purchase" };
 function track(event, data){
-  if (window.fbq) fbq("track", event, data || {});
+  data = data || {};
+  if (window.fbq) fbq("track", event, data);
+  if (window.gtag && GA_EVENTS[event]) {
+    const ga = { currency:"JOD", value: data.value || 0,
+      items: (data.content_ids || []).map(id => ({ item_id: id, item_name: id, price: CONFIG.products[id].price, quantity: cart[id] || 1 })) };
+    if (data.order_id) ga.transaction_id = data.order_id;
+    gtag("event", GA_EVENTS[event], ga);
+  }
+}
+
+/* ===== Google Analytics ===== */
+if (CONFIG.gaId) {
+  const g = document.createElement("script");
+  g.async = true; g.src = "https://www.googletagmanager.com/gtag/js?id=" + CONFIG.gaId;
+  document.head.appendChild(g);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function(){ dataLayer.push(arguments); };
+  gtag("js", new Date());
+  gtag("config", CONFIG.gaId);
 }
 if (CONFIG.pixelId) {
   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -1117,7 +1137,7 @@ ${t("msg.delivery")}: ${delivery ? money(delivery) : t("s.free")}
 ${t("msg.total")}: ${money(total)}
 ${t("msg.cod")}`;
 
-  track("Purchase", { value: total, currency:"JOD", num_items: items,
+  track("Purchase", { value: total, currency:"JOD", num_items: items, order_id: orderID,
     content_ids: Object.keys(cart).filter(k => cart[k]), content_type:"product" });
 
   if (CONFIG.sheetsUrl) {
