@@ -392,13 +392,28 @@ body.locked{overflow:hidden}
 }
 
 /* ===== REVIEWS ===== */
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-@media (max-width:860px){.reviews{grid-template-columns:1fr}}
-.review{background:var(--card);border:1px solid var(--line);padding:26px 24px;text-align:center}
-.stars{color:var(--gold);letter-spacing:4px;font-size:14px}
-.review p{margin:12px 0 14px;color:var(--ink-2);font-size:14.5px}
-.who{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
-.who .ic{width:18px;height:18px;color:var(--gold)}
+.rv-wrap{position:relative}
+.rv-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 2px 14px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.rv-track::-webkit-scrollbar{display:none}
+.rv-item{flex:0 0 calc((100% - 42px)/4);scroll-snap-align:start;padding:0;border:1px solid var(--line);background:var(--card);cursor:zoom-in;overflow:hidden;border-radius:6px}
+.rv-item img{width:100%;aspect-ratio:640/1137;object-fit:cover;display:block;transition:transform .4s}
+.rv-item:hover img{transform:scale(1.03)}
+@media (max-width:860px){.rv-item{flex-basis:calc((100% - 14px)/2)}}
+@media (max-width:520px){.rv-item{flex-basis:62%}}
+.rv-nav{position:absolute;top:calc(50% - 28px);width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:rgba(251,247,242,.95);color:var(--ink);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(46,35,28,.1);z-index:2}
+.rv-prev{inset-inline-start:-14px}.rv-next{inset-inline-end:-14px}
+@media (max-width:520px){.rv-nav{display:none}}
+html[dir="rtl"] .rv-nav,html[dir="rtl"] .lb .lb-prev,html[dir="rtl"] .lb .lb-next{transform:scaleX(-1)}
+.rv-hint{text-align:center;color:var(--muted);font-size:12.5px;margin-top:4px}
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:300;background:rgba(20,15,12,.92);display:none;align-items:center;justify-content:center}
+.lb.open{display:flex}
+.lb img{max-width:92vw;max-height:86vh;border-radius:8px;box-shadow:0 10px 40px rgba(0,0,0,.4)}
+.lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:none;width:46px;height:46px;border-radius:50%;font-size:24px;cursor:pointer}
+.lb .lb-close{top:16px;inset-inline-end:16px}
+.lb .lb-prev{inset-inline-start:12px;top:calc(50% - 23px)}
+.lb .lb-next{inset-inline-end:12px;top:calc(50% - 23px)}
+.lb .lb-count{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:#ddd;font-size:13px;direction:ltr}
 
 /* ===== FAQ + RITUAL ===== */
 .faq-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:stretch}
@@ -691,15 +706,41 @@ footer nav a:hover{color:#fff}
 <!-- ===== REVIEWS ===== -->
 <section id="reviews">
   <div class="wrap">
-    <div class="center"><span class="eyebrow">Reviews</span><h2 class="h2" data-i18n="rev.title" style="margin-bottom:30px"></h2></div>
-    <div class="reviews">
-      <div class="review reveal"><div class="stars">★★★★★</div><p data-i18n="rev.1.q"></p><span class="who"><svg class="ic"><use href="#i-user"/></svg><span data-i18n="rev.1.n"></span></span></div>
-      <div class="review reveal"><div class="stars">★★★★★</div><p data-i18n="rev.2.q"></p><span class="who"><svg class="ic"><use href="#i-user"/></svg><span data-i18n="rev.2.n"></span></span></div>
-      <div class="review reveal"><div class="stars">★★★★★</div><p data-i18n="rev.3.q"></p><span class="who"><svg class="ic"><use href="#i-user"/></svg><span data-i18n="rev.3.n"></span></span></div>
+    <div class="center"><span class="eyebrow">Reviews</span><h2 class="h2" data-i18n="rev.title"></h2><p class="sub" data-i18n="rev.sub"></p></div>
+    <div class="rv-wrap">
+      <button class="rv-nav rv-prev" type="button" aria-label="prev">‹</button>
+      <div class="rv-track" id="rvTrack">
+        <button class="rv-item" type="button" data-rv="1"><img src="reviews/r01.webp" alt="" loading="lazy"></button>
+        <button class="rv-item" type="button" data-rv="2"><img src="reviews/r02.webp" alt="" loading="lazy"></button>
+        <button class="rv-item" type="button" data-rv="3"><img src="reviews/r03.webp" alt="" loading="lazy"></button>
+        <button class="rv-item" type="button" data-rv="4"><img src="reviews/r04.webp" alt="" loading="lazy"></button>
+        <button class="rv-item" type="button" data-rv="5"><img src="reviews/r05.webp" alt="" loading="lazy"></button>
+        <button class="rv-item" type="button" data-rv="6"><img src="reviews/r06.webp" alt="" loading="lazy"></button>
+        <button class="rv-item" type="button" data-rv="7"><img src="reviews/r07.webp" alt="" loading="lazy"></button>
+        <button class="rv-item" type="button" data-rv="8"><img src="reviews/r08.webp" alt="" loading="lazy"></button>
+        <button class="rv-item" type="button" data-rv="9"><img src="reviews/r09.webp" alt="" loading="lazy"></button>
+        <button class="rv-item" type="button" data-rv="10"><img src="reviews/r10.webp" alt="" loading="lazy"></button>
+        <button class="rv-item" type="button" data-rv="11"><img src="reviews/r11.webp" alt="" loading="lazy"></button>
+        <button class="rv-item" type="button" data-rv="12"><img src="reviews/r12.webp" alt="" loading="lazy"></button>
+        <button class="rv-item" type="button" data-rv="13"><img src="reviews/r13.webp" alt="" loading="lazy"></button>
+        <button class="rv-item" type="button" data-rv="14"><img src="reviews/r14.webp" alt="" loading="lazy"></button>
+        <button class="rv-item" type="button" data-rv="15"><img src="reviews/r15.webp" alt="" loading="lazy"></button>
+        <button class="rv-item" type="button" data-rv="16"><img src="reviews/r16.webp" alt="" loading="lazy"></button>
+      </div>
+      <button class="rv-nav rv-next" type="button" aria-label="next">›</button>
     </div>
-    <div class="center" style="margin-top:28px"><a class="btn" href="reviews.html" data-i18n="rev.all"></a></div>
+    <p class="rv-hint" data-i18n="rev.hint"></p>
+    <div class="center" style="margin-top:18px"><a class="btn ghost" href="reviews.html" data-i18n="rev.all"></a></div>
   </div>
 </section>
+
+<div class="lb" id="lightbox" role="dialog" aria-modal="true">
+  <button class="lb-close" type="button" aria-label="close">×</button>
+  <button class="lb-prev" type="button" aria-label="prev">‹</button>
+  <img id="lbImg" alt="">
+  <button class="lb-next" type="button" aria-label="next">›</button>
+  <div class="lb-count" id="lbCount"></div>
+</div>
 
 <!-- ===== FAQ + RITUAL ===== -->
 <section id="faq" style="padding-top:20px">
@@ -848,10 +889,7 @@ const I18N = {
     "why.3.t":"سهل الحمل","why.3.d":"صغير ومناسب للشنطة","why.4.t":"تغليف أنيق","why.4.d":"جاهز للهدايا",
     "why.5.t":"الدفع عند الاستلام","why.5.d":"ما بتدفعي إلا لما يوصلك",
     "rev.title":"آراء عملائنا",
-    "rev.1.q":"\"أكتر اشي عجبني انه مش عطر رش عادي، قوامه مختلف وفخم كتير والريحة بتضل فواحة لفترة طويلة.\"","rev.1.n":"سارة — عمّان",
-    "rev.2.q":"\"ما كنت متوقعة الثبات هيك، بحط منه كمية قليلة وبتضل الريحة معي لساعات.\"","rev.2.n":"لين — إربد",
-    "rev.3.q":"\"وصلني أسرع من المتوقع والتغليف مرتب كتير والريحة فخمة بتعطي إحساس عطر غالي.\"","rev.3.n":"ميرا — الزرقاء",
-    "rev.all":"شاهدوا المزيد من التقييمات",
+    "rev.sub":"رسائل حقيقية من عميلاتنا بعد ما وصلهم الطلب 🤍","rev.hint":"اسحبي لتشوفي المزيد • اضغطي على الصورة لتكبيرها","rev.all":"شوفي كل التقييمات",
     "faq.title":"الأسئلة الشائعة",
     "faq.1.q":"شو داخل البكج الكامل؟","faq.1.a":"علبة عطر صلب LOR (30 مل) وعلبتين عطر رش LOR (10 مل لكل علبة)، بتغليف فاخر — بـ 25 دينار والتوصيل مجاني.",
     "faq.2.q":"كم رسوم التوصيل؟","faq.2.a":"أي طلب فيه بكج توصيله مجاني. إذا طلبتي العطر الصلب لحاله بتنضاف 2 دينار توصيل.",
@@ -910,10 +948,7 @@ const I18N = {
     "why.3.t":"Travel Friendly","why.3.d":"Fits in any bag","why.4.t":"Elegant Packaging","why.4.d":"Ready for gifting",
     "why.5.t":"Cash on Delivery","why.5.d":"Pay when it arrives",
     "rev.title":"What Our Customers Say",
-    "rev.1.q":"\"What I loved most is that it's not a regular spray. The texture feels luxurious and the scent lasts a long time.\"","rev.1.n":"Sarah — Amman",
-    "rev.2.q":"\"I didn't expect this longevity. A small amount is enough and the scent stays with me for hours.\"","rev.2.n":"Lynn — Irbid",
-    "rev.3.q":"\"It arrived faster than expected, beautifully packed, and it smells like an expensive perfume.\"","rev.3.n":"Mira — Zarqa",
-    "rev.all":"See more reviews",
+    "rev.sub":"Real messages from our customers after their orders arrived 🤍","rev.hint":"Swipe for more • Tap an image to enlarge","rev.all":"See all reviews",
     "faq.title":"Frequently Asked Questions",
     "faq.1.q":"What's in the full package?","faq.1.a":"1 LOR solid perfume (30 ml) and 2 LOR spray perfumes (10 ml each) in luxury packaging — 25 JOD with free delivery.",
     "faq.2.q":"How much is delivery?","faq.2.a":"Any order with a package ships free. The solid perfume alone adds 2 JOD delivery.",
@@ -1044,6 +1079,42 @@ document.querySelectorAll(".stepper button").forEach(b => {
     setQty(item, cart[item] + Number(b.dataset.step));
   });
 });
+/* ===== التقييمات ===== */
+(function(){
+  const track = document.getElementById("rvTrack");
+  const items = [...track.querySelectorAll(".rv-item")];
+  const step = () => items[0].getBoundingClientRect().width + 14;
+  const dir = () => document.documentElement.dir === "rtl" ? -1 : 1;
+  document.querySelector(".rv-next").addEventListener("click", () => track.scrollBy({ left: step() * dir() }));
+  document.querySelector(".rv-prev").addEventListener("click", () => track.scrollBy({ left: -step() * dir() }));
+  const lb = document.getElementById("lightbox"), img = document.getElementById("lbImg"), cnt = document.getElementById("lbCount");
+  let cur = 0;
+  function show(i){
+    cur = (i + items.length) % items.length;
+    img.src = items[cur].querySelector("img").src;
+    cnt.textContent = (cur + 1) + " / " + items.length;
+  }
+  items.forEach((b, i) => b.addEventListener("click", () => { show(i); lb.classList.add("open"); document.body.classList.add("locked"); }));
+  const close = () => { lb.classList.remove("open"); document.body.classList.remove("locked"); };
+  lb.querySelector(".lb-close").addEventListener("click", close);
+  lb.addEventListener("click", e => { if (e.target === lb) close(); });
+  lb.querySelector(".lb-next").addEventListener("click", () => show(cur + 1));
+  lb.querySelector(".lb-prev").addEventListener("click", () => show(cur - 1));
+  document.addEventListener("keydown", e => {
+    if (!lb.classList.contains("open")) return;
+    if (e.key === "Escape") close();
+    if (e.key === "ArrowRight") show(cur + dir());
+    if (e.key === "ArrowLeft") show(cur - dir());
+  });
+  let x0 = null;
+  lb.addEventListener("touchstart", e => { x0 = e.touches[0].clientX; }, { passive:true });
+  lb.addEventListener("touchend", e => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0; x0 = null;
+    if (Math.abs(dx) > 40) show(cur + (dx < 0 ? 1 : -1) * dir());
+  });
+})();
+
 /* ===== تفاصيل المنتج ===== */
 let openSheet = null;
 function showSheet(item){
