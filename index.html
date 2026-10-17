@@ -284,8 +284,8 @@ html[dir="rtl"] .hero h1{text-align:right}
 }
 
 /* ===== PRODUCTS ===== */
-.products{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:760px;margin:0 auto}
-@media (max-width:520px){.products{gap:12px}}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1080px;margin:0 auto}
+@media (max-width:520px){.products{gap:8px}.pcard .info{padding:10px 4px 12px}.pcard .tag{font-size:9.5px;padding:2px 7px;top:6px;inset-inline-start:6px}.pcard .more{font-size:11px}.pcard .ship{font-size:10.5px}}
 .pcard{display:block;width:100%;padding:0;border:1px solid var(--line);background:var(--card);cursor:pointer;text-align:center;font:inherit;color:inherit;transition:transform .25s,box-shadow .25s}
 .pcard:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(46,35,28,.08)}
 .pcard .media{position:relative;aspect-ratio:1/1;background:#efe6da;overflow:hidden}
@@ -299,7 +299,13 @@ html[dir="rtl"] .hero h1{text-align:right}
 .pcard .ship{display:block;font-size:11.5px;color:var(--muted);margin-top:2px}
 .pcard .ship.free{color:#4f7a4a;font-weight:600}
 .pcard .more{display:inline-block;margin-top:8px;font-size:12px;color:var(--ink-2);border-bottom:1px solid var(--line);padding-bottom:1px}
-@media (max-width:520px){.pcard h3{font-size:13.5px}.pcard .p{font-size:20px}}
+@media (max-width:520px){.pcard h3{font-size:12.5px}.pcard .p{font-size:17px}}
+.pcard.soon{cursor:default}
+.pcard.soon:hover{transform:none;box-shadow:none}
+.pcard.soon:hover .media img{transform:none}
+.pcard.soon .tag{background:var(--gold)}
+.pcard .soon-txt{display:block;font-size:13px;color:var(--gold);font-weight:600;margin-top:4px}
+@media (max-width:520px){.pcard .soon-txt{font-size:11.5px}}
 
 /* product details sheet */
 .sheet{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
@@ -577,6 +583,14 @@ footer nav a:hover{color:#fff}
           <span class="more" data-i18n="details"></span>
         </div>
       </button>
+      <div class="pcard soon reveal">
+        <div class="media"><img src="soon-100ml.webp" alt="" loading="lazy"><span class="tag" data-i18n="soon.tag"></span></div>
+        <div class="info">
+          <h3 data-i18n="soon.name"></h3>
+          <span class="p">100 ML</span>
+          <span class="soon-txt" data-i18n="soon.txt"></span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -883,7 +897,7 @@ const I18N = {
     "pkg.i1":"علبة عطر صلب LOR — 30 مل","pkg.i2":"علبتين عطر رش LOR — 10 مل لكل علبة","pkg.i3":"تغليف هدايا فاخر",
     "solid.name":"العطر الصلب فقط","solid.desc":"عطر LOR الصلب بقوام زبدة عطرية ناعم — 30 مل.",
     "solid.i1":"علبة عطر صلب واحدة — 30 مل","solid.i2":"صغير وسهل بالشنطة","solid.i3":"ثبات يدوم لساعات",
-    "ship.free":"توصيل مجاني","ship.paid":"+ 2 دينار توصيل","add":"أضيفي إلى السلة","details":"التفاصيل",
+    "ship.free":"توصيل مجاني","ship.paid":"+ 2 دينار توصيل","add":"أضيفي إلى السلة","details":"التفاصيل","soon.tag":"قريبًا","soon.name":"عطر LOR السائل","soon.txt":"سيتوفر قريبًا",
     "frag.title":"رائحة تجمع بين الفانيليا والورد","frag.family":"مزيج دافئ وأنثوي من الفانيليا الناعمة والورد، يمنحك تجربة عطرية مميزة تبقى معك طوال اليوم.",
     "frag.top.t":"مقدمة العطر","frag.top.d":"الفانيليا",
     "frag.heart.t":"قلب العطر","frag.heart.d":"الورد",
@@ -942,7 +956,7 @@ const I18N = {
     "pkg.i1":"1 LOR solid perfume — 30 ml","pkg.i2":"2 LOR spray perfumes — 10 ml each","pkg.i3":"Luxury gift box",
     "solid.name":"Solid Perfume Only","solid.desc":"LOR solid perfume with a soft scented-butter texture — 30 ml.",
     "solid.i1":"1 solid perfume — 30 ml","solid.i2":"Small, easy in your bag","solid.i3":"Lasts for hours",
-    "ship.free":"Free delivery","ship.paid":"+ 2 JOD delivery","add":"Add to Cart","details":"Details",
+    "ship.free":"Free delivery","ship.paid":"+ 2 JOD delivery","add":"Add to Cart","details":"Details","soon.tag":"Soon","soon.name":"LOR Eau de Parfum","soon.txt":"Coming soon",
     "frag.title":"Vanilla Meets Rose","frag.family":"A warm, feminine blend of soft vanilla and rose — a signature scent that stays with you all day.",
     "frag.top.t":"Top Note","frag.top.d":"Vanilla",
     "frag.heart.t":"Heart Note","frag.heart.d":"Rose",
