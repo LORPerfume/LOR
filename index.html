@@ -13,7 +13,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LOR' Perfume | عطر صلب فاخر</title>
-<meta name="description" content="LOR' Perfume — عطر صلب فاخر بريحة الفانيليا والورد، صُنع في الأردن. بكج فاخر (عطر صلب + عطرين رش) بـ 25 دينار مع توصيل مجاني، أو العطر الصلب لحاله بـ 12 دينار. الدفع عند الاستلام في كل الأردن.">
+<meta name="description" content="LOR' Perfume — عطر صلب فاخر بريحة الفانيليا والورد، صُنع في الأردن. بكج فاخر (عطر صلب + عطرين رش) بـ 18 دينار بدل 36، أو العطر الصلب بـ 10 دنانير بدل 20 — شامل التوصيل. الدفع عند الاستلام في كل الأردن.">
 <link rel="canonical" href="https://lorperfume.com/">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
@@ -21,7 +21,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="LOR Perfume">
 <meta property="og:title" content="LOR' Perfume | عطر صلب فاخر">
-<meta property="og:description" content="بكج LOR بـ 25 دينار مع توصيل مجاني • الدفع عند الاستلام">
+<meta property="og:description" content="بكج LOR بـ 18 دينار شامل التوصيل • الدفع عند الاستلام">
 <meta property="og:url" content="https://lorperfume.com/">
 <meta property="og:image" content="https://lorperfume.com/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -85,7 +85,7 @@
    "offers": {
     "@type": "Offer",
     "url": "https://lorperfume.com/#products",
-    "price": 25,
+    "price": 18,
     "priceCurrency": "JOD",
     "availability": "https://schema.org/InStock",
     "itemCondition": "https://schema.org/NewCondition",
@@ -127,7 +127,7 @@
    "offers": {
     "@type": "Offer",
     "url": "https://lorperfume.com/#products",
-    "price": 12,
+    "price": 10,
     "priceCurrency": "JOD",
     "availability": "https://schema.org/InStock",
     "itemCondition": "https://schema.org/NewCondition",
@@ -138,7 +138,7 @@
      "@type": "OfferShippingDetails",
      "shippingRate": {
       "@type": "MonetaryAmount",
-      "value": 2,
+      "value": 0,
       "currency": "JOD"
      },
      "shippingDestination": {
@@ -296,6 +296,8 @@ html[dir="rtl"] .hero h1{text-align:right}
 .pcard .tag{position:absolute;top:10px;inset-inline-start:10px;background:var(--btn);color:#f7efe6;font-size:10.5px;letter-spacing:.06em;padding:3px 9px;border-radius:20px}
 .pcard .info{padding:14px 10px 16px}
 .pcard h3{margin:0 0 4px;font-size:15px;font-weight:600;line-height:1.4}
+s.old{font-family:var(--sans);color:#a14b45;font-weight:500;font-size:.62em;margin-inline-end:8px;text-decoration-thickness:1.5px;opacity:.85;vertical-align:.12em}
+.price s.old{font-size:20px;margin:0}
 .pcard .p{font-family:var(--serif);font-size:22px;font-weight:600;direction:ltr;display:block;line-height:1.2}
 .pcard .ship{display:block;font-size:11.5px;color:var(--muted);margin-top:2px}
 .pcard .ship.free{color:#4f7a4a;font-weight:600}
@@ -567,7 +569,7 @@ footer nav a:hover{color:#fff}
         <div class="media"><img src="package-box.webp" alt="" loading="lazy"><span class="tag" data-i18n="pkg.tag"></span></div>
         <div class="info">
           <h3 data-i18n="pkg.name"></h3>
-          <span class="p">25 JOD</span>
+          <span class="p"><s class="old">36</s> 18 JOD</span>
           <span class="ship free" data-i18n="ship.free"></span>
           <span class="more" data-i18n="details"></span>
         </div>
@@ -576,8 +578,8 @@ footer nav a:hover{color:#fff}
         <div class="media"><img src="solid-bottle.webp" alt="" loading="lazy" style="object-position:center 40%"></div>
         <div class="info">
           <h3 data-i18n="solid.name"></h3>
-          <span class="p">12 JOD</span>
-          <span class="ship" data-i18n="ship.paid"></span>
+          <span class="p"><s class="old">20</s> 10 JOD</span>
+          <span class="ship free" data-i18n="ship.free"></span>
           <span class="more" data-i18n="details"></span>
         </div>
       </button>
@@ -605,7 +607,7 @@ footer nav a:hover{color:#fff}
       <h3 data-i18n="pkg.name"></h3>
       <p class="desc" data-i18n="pkg.desc"></p>
       <ul><li data-i18n="pkg.i1"></li><li data-i18n="pkg.i2"></li><li data-i18n="pkg.i3"></li></ul>
-      <div class="price"><strong>25 JOD</strong><span class="free" data-i18n="ship.free"></span></div>
+      <div class="price"><s class="old" dir="ltr">36 JOD</s><strong>18 JOD</strong><span class="free" data-i18n="ship.free"></span></div>
       <div class="buy-row">
         <div class="stepper" data-item="package"><button type="button" data-step="-1" aria-label="-">−</button><output>0</output><button type="button" data-step="1" aria-label="+">+</button></div>
         <button class="btn" type="button" data-add="package" data-i18n="add"></button>
@@ -639,7 +641,7 @@ footer nav a:hover{color:#fff}
       <h3 data-i18n="solid.name"></h3>
       <p class="desc" data-i18n="solid.desc"></p>
       <ul><li data-i18n="solid.i1"></li><li data-i18n="solid.i2"></li><li data-i18n="solid.i3"></li></ul>
-      <div class="price"><strong>12 JOD</strong><span data-i18n="ship.paid"></span></div>
+      <div class="price"><s class="old" dir="ltr">20 JOD</s><strong>10 JOD</strong><span class="free" data-i18n="ship.free"></span></div>
       <div class="buy-row">
         <div class="stepper" data-item="solid"><button type="button" data-step="-1" aria-label="-">−</button><output>0</output><button type="button" data-step="1" aria-label="+">+</button></div>
         <button class="btn" type="button" data-add="solid" data-i18n="add"></button>
@@ -888,10 +890,10 @@ footer nav a:hover{color:#fff}
 const CONFIG = {
   whatsapp: "962790276691",
   products: {
-    package: { price: 25, freeDelivery: true },
-    solid:   { price: 12, freeDelivery: false }
+    package: { price: 18, oldPrice: 36, freeDelivery: true },
+    solid:   { price: 10, oldPrice: 20, freeDelivery: true }
   },
-  deliveryFee: 2,
+  deliveryFee: 0,          // التوصيل شامل بالسعر
   maxQty: 20,
   pixelId: "657651724645375", // رقم Meta Pixel (Dataset ID)
   gaId: "G-GWRGSSJ8B2",       // Google Analytics 4
@@ -908,12 +910,12 @@ const I18N = {
     "what.1.t":"زبدة عطرية","what.1.d":"قوام كريمي ناعم بيذوب على البشرة بدل الرش بالهوا.",
     "what.2.t":"لمسة صغيرة بتكفي","what.2.d":"ضعيه على نقاط النبض: الرقبة، المعصم أو خلف الأذن.",
     "what.3.t":"بدك تعملي Layering؟","what.3.d":"رشّي فوقه عطر LOR السائل أو أي عطر بتحبيه، واستمتعي بمكسات جديدة بطريقتك.",
-    "products.title":"اختاري ما يناسبك","products.sub":"البكج الكامل بتوصيل مجاني، أو العطر الصلب لحاله.",
+    "products.title":"اختاري ما يناسبك","products.sub":"أسعار جديدة 🤍 كل الأسعار شاملة التوصيل لكل محافظات الأردن.",
     "pkg.tag":"الأكثر طلبًا","pkg.name":"البكج الكامل","pkg.desc":"عطر صلب 30 مل + علبتين عطر رش 10 مل، بتغليف فاخر جاهز للهدايا.",
     "pkg.i1":"علبة عطر صلب LOR — 30 مل","pkg.i2":"علبتين عطر رش LOR — 10 مل لكل علبة","pkg.i3":"تغليف هدايا فاخر",
     "solid.name":"العطر الصلب فقط","solid.desc":"عطر LOR الصلب بقوام زبدة عطرية ناعم — 30 مل.",
     "solid.i1":"علبة عطر صلب واحدة — 30 مل","solid.i2":"صغير وسهل بالشنطة","solid.i3":"ثبات يدوم لساعات",
-    "ship.free":"توصيل مجاني","ship.paid":"+ 2 دينار توصيل","add":"أضيفي إلى السلة","details":"التفاصيل","soon.tag":"قريبًا","soon.name":"عطر LOR السائل","soon.txt":"سيتوفر قريبًا","soon.desc":"عطر LOR السائل بريحة Velvet Touch المميزة، بعبوة كبيرة 100 مل.","soon.i1":"عطر سائل — 100 مل","soon.i2":"نفس ريحة الفانيليا والورد","soon.i3":"مثالي للـ Layering مع العطر الصلب",
+    "ship.free":"شامل التوصيل","ship.paid":"+ 2 دينار توصيل","add":"أضيفي إلى السلة","details":"التفاصيل","soon.tag":"قريبًا","soon.name":"عطر LOR السائل","soon.txt":"سيتوفر قريبًا","soon.desc":"عطر LOR السائل بريحة Velvet Touch المميزة، بعبوة كبيرة 100 مل.","soon.i1":"عطر سائل — 100 مل","soon.i2":"نفس ريحة الفانيليا والورد","soon.i3":"مثالي للـ Layering مع العطر الصلب",
     "frag.title":"رائحة تجمع بين الفانيليا والورد","frag.family":"مزيج دافئ وأنثوي من الفانيليا الناعمة والورد، يمنحك تجربة عطرية مميزة تبقى معك طوال اليوم.",
     "frag.top.t":"مقدمة العطر","frag.top.d":"الفانيليا",
     "frag.heart.t":"قلب العطر","frag.heart.d":"الورد",
@@ -935,15 +937,15 @@ const I18N = {
     "rev.title":"آراء عملائنا",
     "rev.sub":"رسائل حقيقية من عميلاتنا بعد ما وصلهم الطلب 🤍","rev.hint":"اسحبي لتشوفي المزيد • اضغطي على الصورة لتكبيرها","rev.all":"شوفي كل التقييمات",
     "faq.title":"الأسئلة الشائعة",
-    "faq.1.q":"شو داخل البكج الكامل؟","faq.1.a":"علبة عطر صلب LOR (30 مل) وعلبتين عطر رش LOR (10 مل لكل علبة)، بتغليف فاخر — بـ 25 دينار والتوصيل مجاني.",
-    "faq.2.q":"كم رسوم التوصيل؟","faq.2.a":"أي طلب فيه بكج توصيله مجاني. إذا طلبتي العطر الصلب لحاله بتنضاف 2 دينار توصيل.",
+    "faq.1.q":"شو داخل البكج الكامل؟","faq.1.a":"علبة عطر صلب LOR (30 مل) وعلبتين عطر رش LOR (10 مل لكل علبة)، بتغليف فاخر — بـ 18 دينار بدل 36، شامل التوصيل.",
+    "faq.2.q":"كم رسوم التوصيل؟","faq.2.a":"التوصيل مجاني وشامل بالسعر لكل محافظات الأردن: البكج 18 دينار، والعطر الصلب 10 دنانير.",
     "faq.3.q":"كيف بدفع؟","faq.3.a":"الدفع كاش عند الاستلام، ما بتدفعي إلا لما يوصلك الطلب.",
     "faq.4.q":"كيف بطلب؟","faq.4.a":"اختاري المنتج، عبّي معلوماتك واضغطي «إرسال الطلب» — بينفتح الواتساب برسالة جاهزة، ابعتيها ومنتواصل معك لتأكيد الطلب.",
     "faq.5.q":"بقدر ألغي الطلب؟","faq.5.a":"نعم، خلال 24 ساعة من الطلب طالما ما انشحن.",
     "faq.6.q":"إذا وصلني المنتج تالف؟","faq.6.a":"تواصلي معنا خلال 3 أيام من الاستلام ومنحل الموضوع حسب سياسة الاسترجاع.",
     "ritual.p":"خلّي عطرك جزء من كل يوم.",
     "order.title":"أكملي طلبك","order.sub":"الدفع عند الاستلام • التأكيد عبر الواتساب",
-    "order.pkgline":"25 دينار • توصيل مجاني","order.solidline":"12 دينار",
+    "order.pkgline":"18 دينار • شامل التوصيل","order.solidline":"10 دنانير • شامل التوصيل",
     "f.name":"الاسم الكامل","f.phone":"رقم الهاتف","f.city":"المحافظة","f.address":"العنوان بالتفصيل",
     "f.address.ph":"المنطقة، الشارع، رقم البناية…","f.city.ph":"اختاري المحافظة",
     "e.name":"اكتبي اسمك","e.phone":"اكتبي رقم أردني صحيح (مثال: 0791234567)","e.city":"اختاري المحافظة",
@@ -967,12 +969,12 @@ const I18N = {
     "what.1.t":"Scented Butter","what.1.d":"A soft creamy texture that melts into skin instead of spraying into the air.",
     "what.2.t":"A Small Touch","what.2.d":"Apply on pulse points: neck, wrist or behind the ears.",
     "what.3.t":"Want to Layer?","what.3.d":"Spray LOR liquid perfume — or any scent you love — on top for your own unique mix.",
-    "products.title":"Choose Yours","products.sub":"The full package with free delivery, or the solid perfume on its own.",
+    "products.title":"Choose Yours","products.sub":"New prices 🤍 All prices include delivery across Jordan.",
     "pkg.tag":"Best Seller","pkg.name":"The Full Package","pkg.desc":"30 ml solid perfume + 2 × 10 ml spray perfumes in luxury gift packaging.",
     "pkg.i1":"1 LOR solid perfume — 30 ml","pkg.i2":"2 LOR spray perfumes — 10 ml each","pkg.i3":"Luxury gift box",
     "solid.name":"Solid Perfume Only","solid.desc":"LOR solid perfume with a soft scented-butter texture — 30 ml.",
     "solid.i1":"1 solid perfume — 30 ml","solid.i2":"Small, easy in your bag","solid.i3":"Lasts for hours",
-    "ship.free":"Free delivery","ship.paid":"+ 2 JOD delivery","add":"Add to Cart","details":"Details","soon.tag":"Soon","soon.name":"LOR Eau de Parfum","soon.txt":"Coming soon","soon.desc":"LOR liquid perfume in the signature Velvet Touch scent, in a large 100 ml bottle.","soon.i1":"Eau de parfum — 100 ml","soon.i2":"The same vanilla & rose scent","soon.i3":"Perfect for layering with the solid perfume",
+    "ship.free":"Delivery included","ship.paid":"+ 2 JOD delivery","add":"Add to Cart","details":"Details","soon.tag":"Soon","soon.name":"LOR Eau de Parfum","soon.txt":"Coming soon","soon.desc":"LOR liquid perfume in the signature Velvet Touch scent, in a large 100 ml bottle.","soon.i1":"Eau de parfum — 100 ml","soon.i2":"The same vanilla & rose scent","soon.i3":"Perfect for layering with the solid perfume",
     "frag.title":"Vanilla Meets Rose","frag.family":"A warm, feminine blend of soft vanilla and rose — a signature scent that stays with you all day.",
     "frag.top.t":"Top Note","frag.top.d":"Vanilla",
     "frag.heart.t":"Heart Note","frag.heart.d":"Rose",
@@ -994,15 +996,15 @@ const I18N = {
     "rev.title":"What Our Customers Say",
     "rev.sub":"Real messages from our customers after their orders arrived 🤍","rev.hint":"Swipe for more • Tap an image to enlarge","rev.all":"See all reviews",
     "faq.title":"Frequently Asked Questions",
-    "faq.1.q":"What's in the full package?","faq.1.a":"1 LOR solid perfume (30 ml) and 2 LOR spray perfumes (10 ml each) in luxury packaging — 25 JOD with free delivery.",
-    "faq.2.q":"How much is delivery?","faq.2.a":"Any order with a package ships free. The solid perfume alone adds 2 JOD delivery.",
+    "faq.1.q":"What's in the full package?","faq.1.a":"1 LOR solid perfume (30 ml) and 2 LOR spray perfumes (10 ml each) in luxury packaging — 18 JOD instead of 36, delivery included.",
+    "faq.2.q":"How much is delivery?","faq.2.a":"Delivery is free and included in the price across Jordan: the package is 18 JOD and the solid perfume 10 JOD.",
     "faq.3.q":"How do I pay?","faq.3.a":"Cash on delivery — you pay only when your order arrives.",
     "faq.4.q":"How do I order?","faq.4.a":"Pick your product, fill in your details and tap “Send order” — WhatsApp opens with a ready message. Send it and we'll confirm.",
     "faq.5.q":"Can I cancel?","faq.5.a":"Yes, within 24 hours of ordering as long as it hasn't shipped.",
     "faq.6.q":"What if it arrives damaged?","faq.6.a":"Contact us within 3 days of delivery and we'll sort it out under our refund policy.",
     "ritual.p":"Make your scent part of every day.",
     "order.title":"Complete Your Order","order.sub":"Cash on delivery • Confirmed on WhatsApp",
-    "order.pkgline":"25 JOD • Free delivery","order.solidline":"12 JOD",
+    "order.pkgline":"18 JOD • Delivery included","order.solidline":"10 JOD • Delivery included",
     "f.name":"Full name","f.phone":"Phone number","f.city":"Governorate","f.address":"Detailed address",
     "f.address.ph":"Area, street, building number…","f.city.ph":"Choose governorate",
     "e.name":"Enter your name","e.phone":"Enter a valid Jordanian number (e.g. 0791234567)","e.city":"Choose a governorate",
@@ -1103,7 +1105,7 @@ function render(){
   d.className = items && delivery === 0 ? "free" : "";
   document.getElementById("sTotal").textContent = money(total);
   const cc = document.getElementById("cartCount"); cc.textContent = items; cc.dataset.n = items;
-  document.getElementById("upsell").style.display = cart.solid > 0 && cart.package === 0 ? "block" : "none";
+  document.getElementById("upsell").style.display = "none";
   if (items) document.getElementById("formError").style.display = "none";
 }
 
