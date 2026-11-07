@@ -13,7 +13,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LOR' Perfume | عطر صلب فاخر</title>
-<meta name="description" content="LOR' Perfume — عطر صلب فاخر بريحة الفانيليا والورد، صُنع في الأردن. بكج فاخر (عطر صلب + عطرين رش) بـ 25 دينار مع توصيل مجاني، أو العطر الصلب لحاله بـ 12 دينار. الدفع عند الاستلام في كل الأردن.">
+<meta name="description" content="LOR' Perfume — عطر صلب فاخر بريحة الفانيليا والورد، صُنع في الأردن. بكج فاخر (عطر صلب + عطرين رش) بـ 20 دينار، وبكج الدبل بـ 25 دينار، مع توصيل مجاني، أو العطر الصلب لحاله بـ 12 دينار. الدفع عند الاستلام في كل الأردن.">
 <link rel="canonical" href="https://lorperfume.com/">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
@@ -21,7 +21,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="LOR Perfume">
 <meta property="og:title" content="LOR' Perfume | عطر صلب فاخر">
-<meta property="og:description" content="بكج LOR بـ 25 دينار مع توصيل مجاني • الدفع عند الاستلام">
+<meta property="og:description" content="بكجات LOR من 20 دينار مع توصيل مجاني • الدفع عند الاستلام">
 <meta property="og:url" content="https://lorperfume.com/">
 <meta property="og:image" content="https://lorperfume.com/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -82,6 +82,48 @@
     "@id": "https://lorperfume.com/#brand"
    },
    "sku": "LOR-PACKAGE",
+   "offers": {
+    "@type": "Offer",
+    "url": "https://lorperfume.com/#products",
+    "price": 20,
+    "priceCurrency": "JOD",
+    "availability": "https://schema.org/InStock",
+    "itemCondition": "https://schema.org/NewCondition",
+    "seller": {
+     "@id": "https://lorperfume.com/#org"
+    },
+    "shippingDetails": {
+     "@type": "OfferShippingDetails",
+     "shippingRate": {
+      "@type": "MonetaryAmount",
+      "value": 0,
+      "currency": "JOD"
+     },
+     "shippingDestination": {
+      "@type": "DefinedRegion",
+      "addressCountry": "JO"
+     }
+    },
+    "hasMerchantReturnPolicy": {
+     "@type": "MerchantReturnPolicy",
+     "applicableCountry": "JO",
+     "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+     "merchantReturnDays": 3
+    }
+   }
+  },
+  {
+   "@type": "Product",
+   "@id": "https://lorperfume.com/#duo",
+   "name": "بكج LOR الدبل — LOR Double Package",
+   "description": "بكج LOR الدبل: علبتين عطر صلب LOR وعلبتين عطر رش LOR بتغليف جاهز للهدايا. توصيل مجاني لكل الأردن والدفع عند الاستلام.",
+   "image": [
+    "https://lorperfume.com/package-box.webp"
+   ],
+   "brand": {
+    "@id": "https://lorperfume.com/#brand"
+   },
+   "sku": "LOR-DUO",
    "offers": {
     "@type": "Offer",
     "url": "https://lorperfume.com/#products",
@@ -285,7 +327,9 @@ html[dir="rtl"] .hero h1{text-align:right}
 }
 
 /* ===== PRODUCTS ===== */
-.products{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1080px;margin:0 auto}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1180px;margin:0 auto}
+@media (max-width:760px){.products{grid-template-columns:repeat(2,1fr)}}
+.pcard .qty-badge{position:absolute;bottom:8px;inset-inline-end:8px;background:rgba(251,247,242,.94);color:var(--ink);font-family:var(--serif);font-weight:600;font-size:15px;padding:2px 10px;border:1px solid var(--line);direction:ltr}
 @media (max-width:520px){.products{gap:8px}.pcard .info{padding:10px 4px 12px}.pcard .tag{font-size:9.5px;padding:2px 7px;top:6px;inset-inline-start:6px}.pcard .more{font-size:11px}.pcard .ship{font-size:10.5px}}
 .pcard{display:block;width:100%;padding:0;border:1px solid var(--line);background:var(--card);cursor:pointer;text-align:center;font:inherit;color:inherit;transition:transform .25s,box-shadow .25s}
 .pcard:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(46,35,28,.08)}
@@ -567,6 +611,15 @@ footer nav a:hover{color:#fff}
         <div class="media"><img src="package-box.webp" alt="" loading="lazy"><span class="tag" data-i18n="pkg.tag"></span></div>
         <div class="info">
           <h3 data-i18n="pkg.name"></h3>
+          <span class="p">20 JOD</span>
+          <span class="ship free" data-i18n="ship.free"></span>
+          <span class="more" data-i18n="details"></span>
+        </div>
+      </button>
+      <button class="pcard reveal" type="button" data-open="duo">
+        <div class="media"><img src="package-box.webp" alt="" loading="lazy"><span class="tag" data-i18n="duo.tag"></span><span class="qty-badge">2 + 2</span></div>
+        <div class="info">
+          <h3 data-i18n="duo.name"></h3>
           <span class="p">25 JOD</span>
           <span class="ship free" data-i18n="ship.free"></span>
           <span class="more" data-i18n="details"></span>
@@ -605,10 +658,28 @@ footer nav a:hover{color:#fff}
       <h3 data-i18n="pkg.name"></h3>
       <p class="desc" data-i18n="pkg.desc"></p>
       <ul><li data-i18n="pkg.i1"></li><li data-i18n="pkg.i2"></li><li data-i18n="pkg.i3"></li></ul>
-      <div class="price"><strong>25 JOD</strong><span class="free" data-i18n="ship.free"></span></div>
+      <div class="price"><strong>20 JOD</strong><span class="free" data-i18n="ship.free"></span></div>
       <div class="buy-row">
         <div class="stepper" data-item="package"><button type="button" data-step="-1" aria-label="-">−</button><output>0</output><button type="button" data-step="1" aria-label="+">+</button></div>
         <button class="btn" type="button" data-add="package" data-i18n="add"></button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="sheet" id="sheet-duo" role="dialog" aria-modal="true">
+  <div class="backdrop" data-close></div>
+  <div class="panel">
+    <button class="close" type="button" data-close aria-label="close">×</button>
+    <div class="media"><img src="package-box.webp" alt="" loading="lazy"></div>
+    <div class="body">
+      <span class="tag" data-i18n="duo.tag"></span>
+      <h3 data-i18n="duo.name"></h3>
+      <p class="desc" data-i18n="duo.desc"></p>
+      <ul><li data-i18n="duo.i1"></li><li data-i18n="duo.i2"></li><li data-i18n="duo.i3"></li></ul>
+      <div class="price"><strong>25 JOD</strong><span class="free" data-i18n="ship.free"></span></div>
+      <div class="buy-row">
+        <div class="stepper" data-item="duo"><button type="button" data-step="-1" aria-label="-">−</button><output>0</output><button type="button" data-step="1" aria-label="+">+</button></div>
+        <button class="btn" type="button" data-add="duo" data-i18n="add"></button>
       </div>
     </div>
   </div>
@@ -828,6 +899,11 @@ footer nav a:hover{color:#fff}
         <div class="stepper" data-item="package"><button type="button" data-step="-1" aria-label="-">−</button><output>0</output><button type="button" data-step="1" aria-label="+">+</button></div>
       </div>
       <div class="line-item">
+        <img src="package-box.webp" alt="">
+        <div class="info"><strong data-i18n="duo.name"></strong><span data-i18n="order.duoline"></span></div>
+        <div class="stepper" data-item="duo"><button type="button" data-step="-1" aria-label="-">−</button><output>0</output><button type="button" data-step="1" aria-label="+">+</button></div>
+      </div>
+      <div class="line-item">
         <img src="solid-bottle.webp" alt="">
         <div class="info"><strong data-i18n="solid.name"></strong><span data-i18n="order.solidline"></span></div>
         <div class="stepper" data-item="solid"><button type="button" data-step="-1" aria-label="-">−</button><output>0</output><button type="button" data-step="1" aria-label="+">+</button></div>
@@ -888,7 +964,8 @@ footer nav a:hover{color:#fff}
 const CONFIG = {
   whatsapp: "962790276691",
   products: {
-    package: { price: 25, freeDelivery: true },
+    package: { price: 20, freeDelivery: true },
+    duo:     { price: 25, freeDelivery: true },
     solid:   { price: 12, freeDelivery: false }
   },
   deliveryFee: 2,
@@ -908,9 +985,10 @@ const I18N = {
     "what.1.t":"زبدة عطرية","what.1.d":"قوام كريمي ناعم بيذوب على البشرة بدل الرش بالهوا.",
     "what.2.t":"لمسة صغيرة بتكفي","what.2.d":"ضعيه على نقاط النبض: الرقبة، المعصم أو خلف الأذن.",
     "what.3.t":"بدك تعملي Layering؟","what.3.d":"رشّي فوقه عطر LOR السائل أو أي عطر بتحبيه، واستمتعي بمكسات جديدة بطريقتك.",
-    "products.title":"اختاري ما يناسبك","products.sub":"البكج الكامل بتوصيل مجاني، أو العطر الصلب لحاله.",
+    "products.title":"اختاري ما يناسبك","products.sub":"البكجات بتوصيل مجاني، أو العطر الصلب لحاله.",
     "pkg.tag":"الأكثر طلبًا","pkg.name":"البكج الكامل","pkg.desc":"عطر صلب 30 مل + علبتين عطر رش 10 مل، بتغليف فاخر جاهز للهدايا.",
     "pkg.i1":"علبة عطر صلب LOR — 30 مل","pkg.i2":"علبتين عطر رش LOR — 10 مل لكل علبة","pkg.i3":"تغليف هدايا فاخر",
+    "duo.tag":"الأوفر","duo.name":"بكج الدبل","duo.desc":"علبتين عطر صلب 30 مل + علبتين عطر رش 10 مل، بتغليف فاخر — إلك ولحبيبتك أو كهدية.","duo.i1":"علبتين عطر صلب LOR — 30 مل لكل علبة","duo.i2":"علبتين عطر رش LOR — 10 مل لكل علبة","duo.i3":"تغليف هدايا فاخر",
     "solid.name":"العطر الصلب فقط","solid.desc":"عطر LOR الصلب بقوام زبدة عطرية ناعم — 30 مل.",
     "solid.i1":"علبة عطر صلب واحدة — 30 مل","solid.i2":"صغير وسهل بالشنطة","solid.i3":"ثبات يدوم لساعات",
     "ship.free":"توصيل مجاني","ship.paid":"+ 2 دينار توصيل","add":"أضيفي إلى السلة","details":"التفاصيل","soon.tag":"قريبًا","soon.name":"عطر LOR السائل","soon.txt":"سيتوفر قريبًا","soon.desc":"عطر LOR السائل بريحة Velvet Touch المميزة، بعبوة كبيرة 100 مل.","soon.i1":"عطر سائل — 100 مل","soon.i2":"نفس ريحة الفانيليا والورد","soon.i3":"مثالي للـ Layering مع العطر الصلب",
@@ -935,15 +1013,15 @@ const I18N = {
     "rev.title":"آراء عملائنا",
     "rev.sub":"رسائل حقيقية من عميلاتنا بعد ما وصلهم الطلب 🤍","rev.hint":"اسحبي لتشوفي المزيد • اضغطي على الصورة لتكبيرها","rev.all":"شوفي كل التقييمات",
     "faq.title":"الأسئلة الشائعة",
-    "faq.1.q":"شو داخل البكج الكامل؟","faq.1.a":"علبة عطر صلب LOR (30 مل) وعلبتين عطر رش LOR (10 مل لكل علبة)، بتغليف فاخر — بـ 25 دينار والتوصيل مجاني.",
-    "faq.2.q":"كم رسوم التوصيل؟","faq.2.a":"أي طلب فيه بكج توصيله مجاني. إذا طلبتي العطر الصلب لحاله بتنضاف 2 دينار توصيل.",
+    "faq.1.q":"شو داخل البكج الكامل؟","faq.1.a":"علبة عطر صلب LOR (30 مل) وعلبتين عطر رش LOR (10 مل لكل علبة)، بتغليف فاخر — بـ 20 دينار والتوصيل مجاني. وفي كمان بكج الدبل (علبتين صلب + علبتين رش) بـ 25 دينار.",
+    "faq.2.q":"كم رسوم التوصيل؟","faq.2.a":"أي طلب فيه بكج (الكامل أو الدبل) توصيله مجاني. إذا طلبتي العطر الصلب لحاله بتنضاف 2 دينار توصيل.",
     "faq.3.q":"كيف بدفع؟","faq.3.a":"الدفع كاش عند الاستلام، ما بتدفعي إلا لما يوصلك الطلب.",
     "faq.4.q":"كيف بطلب؟","faq.4.a":"اختاري المنتج، عبّي معلوماتك واضغطي «إرسال الطلب» — بينفتح الواتساب برسالة جاهزة، ابعتيها ومنتواصل معك لتأكيد الطلب.",
     "faq.5.q":"بقدر ألغي الطلب؟","faq.5.a":"نعم، خلال 24 ساعة من الطلب طالما ما انشحن.",
     "faq.6.q":"إذا وصلني المنتج تالف؟","faq.6.a":"تواصلي معنا خلال 3 أيام من الاستلام ومنحل الموضوع حسب سياسة الاسترجاع.",
     "ritual.p":"خلّي عطرك جزء من كل يوم.",
     "order.title":"أكملي طلبك","order.sub":"الدفع عند الاستلام • التأكيد عبر الواتساب",
-    "order.pkgline":"25 دينار • توصيل مجاني","order.solidline":"12 دينار",
+    "order.pkgline":"20 دينار • توصيل مجاني","order.duoline":"25 دينار • توصيل مجاني","order.solidline":"12 دينار",
     "f.name":"الاسم الكامل","f.phone":"رقم الهاتف","f.city":"المحافظة","f.address":"العنوان بالتفصيل",
     "f.address.ph":"المنطقة، الشارع، رقم البناية…","f.city.ph":"اختاري المحافظة",
     "e.name":"اكتبي اسمك","e.phone":"اكتبي رقم أردني صحيح (مثال: 0791234567)","e.city":"اختاري المحافظة",
@@ -967,9 +1045,10 @@ const I18N = {
     "what.1.t":"Scented Butter","what.1.d":"A soft creamy texture that melts into skin instead of spraying into the air.",
     "what.2.t":"A Small Touch","what.2.d":"Apply on pulse points: neck, wrist or behind the ears.",
     "what.3.t":"Want to Layer?","what.3.d":"Spray LOR liquid perfume — or any scent you love — on top for your own unique mix.",
-    "products.title":"Choose Yours","products.sub":"The full package with free delivery, or the solid perfume on its own.",
+    "products.title":"Choose Yours","products.sub":"Packages with free delivery, or the solid perfume on its own.",
     "pkg.tag":"Best Seller","pkg.name":"The Full Package","pkg.desc":"30 ml solid perfume + 2 × 10 ml spray perfumes in luxury gift packaging.",
     "pkg.i1":"1 LOR solid perfume — 30 ml","pkg.i2":"2 LOR spray perfumes — 10 ml each","pkg.i3":"Luxury gift box",
+    "duo.tag":"Best Value","duo.name":"The Double Package","duo.desc":"2 × 30 ml solid perfumes + 2 × 10 ml spray perfumes in luxury packaging — for you and someone special, or as a gift.","duo.i1":"2 LOR solid perfumes — 30 ml each","duo.i2":"2 LOR spray perfumes — 10 ml each","duo.i3":"Luxury gift box",
     "solid.name":"Solid Perfume Only","solid.desc":"LOR solid perfume with a soft scented-butter texture — 30 ml.",
     "solid.i1":"1 solid perfume — 30 ml","solid.i2":"Small, easy in your bag","solid.i3":"Lasts for hours",
     "ship.free":"Free delivery","ship.paid":"+ 2 JOD delivery","add":"Add to Cart","details":"Details","soon.tag":"Soon","soon.name":"LOR Eau de Parfum","soon.txt":"Coming soon","soon.desc":"LOR liquid perfume in the signature Velvet Touch scent, in a large 100 ml bottle.","soon.i1":"Eau de parfum — 100 ml","soon.i2":"The same vanilla & rose scent","soon.i3":"Perfect for layering with the solid perfume",
@@ -994,7 +1073,7 @@ const I18N = {
     "rev.title":"What Our Customers Say",
     "rev.sub":"Real messages from our customers after their orders arrived 🤍","rev.hint":"Swipe for more • Tap an image to enlarge","rev.all":"See all reviews",
     "faq.title":"Frequently Asked Questions",
-    "faq.1.q":"What's in the full package?","faq.1.a":"1 LOR solid perfume (30 ml) and 2 LOR spray perfumes (10 ml each) in luxury packaging — 25 JOD with free delivery.",
+    "faq.1.q":"What's in the full package?","faq.1.a":"1 LOR solid perfume (30 ml) and 2 LOR spray perfumes (10 ml each) in luxury packaging — 20 JOD with free delivery. There is also the Double Package (2 solid + 2 spray) for 25 JOD.",
     "faq.2.q":"How much is delivery?","faq.2.a":"Any order with a package ships free. The solid perfume alone adds 2 JOD delivery.",
     "faq.3.q":"How do I pay?","faq.3.a":"Cash on delivery — you pay only when your order arrives.",
     "faq.4.q":"How do I order?","faq.4.a":"Pick your product, fill in your details and tap “Send order” — WhatsApp opens with a ready message. Send it and we'll confirm.",
@@ -1002,7 +1081,7 @@ const I18N = {
     "faq.6.q":"What if it arrives damaged?","faq.6.a":"Contact us within 3 days of delivery and we'll sort it out under our refund policy.",
     "ritual.p":"Make your scent part of every day.",
     "order.title":"Complete Your Order","order.sub":"Cash on delivery • Confirmed on WhatsApp",
-    "order.pkgline":"25 JOD • Free delivery","order.solidline":"12 JOD",
+    "order.pkgline":"20 JOD • Free delivery","order.duoline":"25 JOD • Free delivery","order.solidline":"12 JOD",
     "f.name":"Full name","f.phone":"Phone number","f.city":"Governorate","f.address":"Detailed address",
     "f.address.ph":"Area, street, building number…","f.city.ph":"Choose governorate",
     "e.name":"Enter your name","e.phone":"Enter a valid Jordanian number (e.g. 0791234567)","e.city":"Choose a governorate",
@@ -1028,7 +1107,7 @@ const CITIES = [
 
 /* ========================================================= */
 let lang = "ar";
-const cart = { package: 0, solid: 0 };
+const cart = { package: 0, duo: 0, solid: 0 };
 const t = k => (I18N[lang][k] ?? k);
 
 function store(key, val){
@@ -1085,9 +1164,9 @@ document.getElementById("langBtn").addEventListener("click", () => applyLang(lan
 /* ===== الحسابات ===== */
 function totals(){
   const p = CONFIG.products;
-  const subtotal = cart.package * p.package.price + cart.solid * p.solid.price;
-  const items = cart.package + cart.solid;
-  const delivery = items === 0 || cart.package > 0 ? 0 : CONFIG.deliveryFee;
+  const subtotal = cart.package * p.package.price + cart.duo * p.duo.price + cart.solid * p.solid.price;
+  const items = cart.package + cart.duo + cart.solid;
+  const delivery = items === 0 || cart.package > 0 || cart.duo > 0 ? 0 : CONFIG.deliveryFee;
   return { subtotal, delivery, total: subtotal + delivery, items };
 }
 const money = n => `${n} ${t("jd")}`;
@@ -1103,7 +1182,7 @@ function render(){
   d.className = items && delivery === 0 ? "free" : "";
   document.getElementById("sTotal").textContent = money(total);
   const cc = document.getElementById("cartCount"); cc.textContent = items; cc.dataset.n = items;
-  document.getElementById("upsell").style.display = cart.solid > 0 && cart.package === 0 ? "block" : "none";
+  document.getElementById("upsell").style.display = cart.solid > 0 && cart.package === 0 && cart.duo === 0 ? "block" : "none";
   if (items) document.getElementById("formError").style.display = "none";
 }
 
@@ -1234,6 +1313,7 @@ document.getElementById("orderForm").addEventListener("submit", e => {
   const orderID = makeOrderID();
   const lines = [];
   if (cart.package) lines.push(`• ${t("pkg.name")} × ${cart.package} = ${money(cart.package * CONFIG.products.package.price)}`);
+  if (cart.duo)     lines.push(`• ${t("duo.name")} × ${cart.duo} = ${money(cart.duo * CONFIG.products.duo.price)}`);
   if (cart.solid)   lines.push(`• ${t("solid.name")} × ${cart.solid} = ${money(cart.solid * CONFIG.products.solid.price)}`);
 
   const message =
@@ -1258,7 +1338,7 @@ ${t("msg.cod")}`;
     try {
       fetch(CONFIG.sheetsUrl, { method:"POST", mode:"no-cors",
         body: JSON.stringify({ orderID, name, phone, city: city[2], address,
-          package: cart.package, solid: cart.solid, subtotal, delivery, total, lang }) });
+          package: cart.package, duo: cart.duo, solid: cart.solid, subtotal, delivery, total, lang }) });
     } catch(err) {}
   }
 
@@ -1278,7 +1358,7 @@ document.querySelectorAll(".reveal").forEach(el => io.observe(el));
 
 /* ===== ViewContent ===== */
 new IntersectionObserver(([en], obs) => {
-  if (en.isIntersecting) { track("ViewContent", { content_ids:["package","solid"], content_type:"product" }); obs.disconnect(); }
+  if (en.isIntersecting) { track("ViewContent", { content_ids:["package","duo","solid"], content_type:"product" }); obs.disconnect(); }
 }, { threshold: 0.3 }).observe(document.getElementById("products"));
 
 /* ===== الهيدر والقائمة ===== */
